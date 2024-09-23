@@ -1,0 +1,224 @@
+{
+  "product": [
+    {
+      "id": 1,
+      "image": "https://example.com/images/vintage-book.jpg",
+      "title": "Vintage First Edition Book",
+      "description": "A rare first edition of a classic novel, beautifully preserved with minimal wear.",
+      "status": "Live",
+      "basePrice": "$200",
+      "latestBid": "$250",
+      "latestBidder": {
+        "name": "John Doe",
+        "image": "https://example.com/images/john-doe.jpg"
+      },
+      "longDescription": "This is a rare first edition of a highly sought-after novel, published in 1920. It has been kept in excellent condition, making it a perfect addition to any collection."
+    },
+    {
+      "id": 2,
+      "image": "https://example.com/images/antique-clock.jpg",
+      "title": "Antique Grandfather Clock",
+      "description": "An 18th-century wooden clock with intricate carvings, still in working condition.",
+      "status": "Happening Soon",
+      "basePrice": "$500",
+      "latestBid": null,
+      "latestBidder": null,
+      "longDescription": "This grandfather clock features stunning craftsmanship from the 18th century and still keeps accurate time. A perfect centerpiece for any room."
+    },
+    {
+      "id": 3,
+      "image": "https://example.com/images/vintage-camera.jpg",
+      "title": "Vintage Film Camera",
+      "description": "A classic film camera from the 1960s, perfect for collectors or photography enthusiasts.",
+      "status": "Live",
+      "basePrice": "$300",
+      "latestBid": "$320",
+      "latestBidder": {
+        "name": "Jane Smith",
+        "image": "https://example.com/images/jane-smith.jpg"
+      },
+      "longDescription": "This vintage camera is a collector's dream, featuring a classic design and functionality that appeals to both enthusiasts and professionals."
+    },
+    {
+      "id": 4,
+      "image": "https://example.com/images/antique-coin.jpg",
+      "title": "Antique Silver Coin",
+      "description": "A silver coin from the 1800s, in excellent condition and a great addition to any collection.",
+      "status": "Live",
+      "basePrice": "$150",
+      "latestBid": "$175",
+      "latestBidder": {
+        "name": "Mike Johnson",
+        "image": "https://example.com/images/mike-johnson.jpg"
+      },
+      "longDescription": "This antique coin is not just a piece of history but also a valuable collectible. It showcases exquisite craftsmanship from the 1800s."
+    },
+    {
+      "id": 5,
+      "image": "https://example.com/images/vintage-jewelry.jpg",
+      "title": "Vintage Pearl Necklace",
+      "description": "A stunning vintage pearl necklace, perfect for special occasions.",
+      "status": "Happening Soon",
+      "basePrice": "$400",
+      "latestBid": null,
+      "latestBidder": null,
+      "longDescription": "This elegant pearl necklace radiates sophistication and is an ideal accessory for weddings or formal events."
+    },
+    {
+      "id": 6,
+      "image": "https://example.com/images/retro-game-console.jpg",
+      "title": "Retro Game Console",
+      "description": "A classic gaming console that brings back nostalgia with its collection of retro games.",
+      "status": "Live",
+      "basePrice": "$250",
+      "latestBid": "$270",
+      "latestBidder": {
+        "name": "Emily White",
+        "image": "https://example.com/images/emily-white.jpg"
+      },
+      "longDescription": "Relive the golden age of gaming with this retro console. It comes with multiple classic games that will provide hours of fun."
+    },
+    {
+      "id": 7,
+      "image": "https://example.com/images/antique-vase.jpg",
+      "title": "Antique Ceramic Vase",
+      "description": "An exquisite ceramic vase from the Ming Dynasty, intricately designed.",
+      "status": "Happening Soon",
+      "basePrice": "$800",
+      "latestBid": null,
+      "latestBidder": null,
+      "longDescription": "This Ming Dynasty vase is a true work of art, showcasing detailed craftsmanship and history. A perfect addition to any fine art collection."
+    },
+    {
+      "id": 8,
+      "image": "https://example.com/images/vintage-guitar.jpg",
+      "title": "Vintage Acoustic Guitar",
+      "description": "A beautiful vintage acoustic guitar, perfect for musicians and collectors alike.",
+      "status": "Live",
+      "basePrice": "$600",
+      "latestBid": "$650",
+      "latestBidder": {
+        "name": "Sarah Lee",
+        "image": "https://example.com/images/sarah-lee.jpg"
+      },
+      "longDescription": "This vintage guitar produces a rich sound and is crafted with high-quality materials, ideal for performances or personal use."
+    },
+    {
+      "id": 9,
+      "image": "https://example.com/images/antique-furniture.jpg",
+      "title": "Antique Wooden Furniture Set",
+      "description": "A complete set of antique wooden furniture, showcasing timeless craftsmanship.",
+      "status": "Live",
+      "basePrice": "$1,200",
+      "latestBid": "$1,250",
+      "latestBidder": {
+        "name": "Tom Green",
+        "image": "https://example.com/images/tom-green.jpg"
+      },
+      "longDescription": "This antique furniture set brings elegance to any home and features exquisite detailing that tells a story of its rich history."
+    },
+    {
+      "id": 10,
+      "image": "https://example.com/images/vintage-posters.jpg",
+      "title": "Collection of Vintage Posters",
+      "description": "A collection of rare vintage posters from the 1950s, perfect for collectors.",
+      "status": "Happening Soon",
+      "basePrice": "$100",
+      "latestBid": null,
+      "latestBidder": null,
+      "longDescription": "These vintage posters are a great addition to any collection, featuring iconic designs from the 1950s and showcasing the art of that era."
+    }
+  ],
+  "auctions": [
+    {
+      "id": 1,
+      "image": "https://example.com/images/vintage-book.jpg",
+      "title": "Vintage First Edition Book",
+      "description": "A rare first edition of a classic novel, beautifully preserved with minimal wear.",
+      "status": "Live",
+      "basePrice": "$200",
+      "latestBid": "$250"
+    },
+    {
+      "id": 2,
+      "image": "https://example.com/images/antique-clock.jpg",
+      "title": "Antique Grandfather Clock",
+      "description": "An 18th-century wooden clock with intricate carvings, still in working condition.",
+      "status": "Happening Soon",
+      "basePrice": "$500",
+      "latestBid": null
+    },
+    {
+      "id": 3,
+      "image": "https://example.com/images/vintage-camera.jpg",
+      "title": "Vintage Film Camera",
+      "description": "A classic film camera from the 1960s, perfect for collectors or photography enthusiasts.",
+      "status": "Live",
+      "basePrice": "$300",
+      "latestBid": "$320"
+    },
+    {
+      "id": 4,
+      "image": "https://example.com/images/antique-coin.jpg",
+      "title": "Antique Silver Coin",
+      "description": "A silver coin from the 19th century, well-preserved and rare.",
+      "status": "Happening Soon",
+      "basePrice": "$100",
+      "latestBid": null
+    },
+    {
+      "id": 5,
+      "image": "https://example.com/images/vintage-painting.jpg",
+      "title": "Vintage Oil Painting",
+      "description": "An oil painting from the 1920s, featuring a serene landscape scene.",
+      "status": "Live",
+      "basePrice": "$700",
+      "latestBid": "$750"
+    },
+    {
+      "id": 6,
+      "image": "https://example.com/images/antique-furniture.jpg",
+      "title": "Antique Oak Chair",
+      "description": "A solid oak chair from the early 1900s, in excellent condition with original upholstery.",
+      "status": "Live",
+      "basePrice": "$150",
+      "latestBid": "$180"
+    },
+    {
+      "id": 7,
+      "image": "https://example.com/images/vintage-watch.jpg",
+      "title": "Vintage Pocket Watch",
+      "description": "A classic pocket watch with a gold chain, dating back to the 1900s.",
+      "status": "Happening Soon",
+      "basePrice": "$250",
+      "latestBid": null
+    },
+    {
+      "id": 8,
+      "image": "https://example.com/images/antique-vase.jpg",
+      "title": "Antique Chinese Vase",
+      "description": "A delicate porcelain vase with hand-painted designs from the Qing dynasty.",
+      "status": "Live",
+      "basePrice": "$1,000",
+      "latestBid": "$1,200"
+    },
+    {
+      "id": 9,
+      "image": "https://example.com/images/antique-map.jpg",
+      "title": "18th Century World Map",
+      "description": "An original hand-drawn world map from the 1700s, framed and preserved.",
+      "status": "Happening Soon",
+      "basePrice": "$600",
+      "latestBid": null
+    },
+    {
+      "id": 10,
+      "image": "https://example.com/images/vintage-typewriter.jpg",
+      "title": "Vintage Typewriter",
+      "description": "A well-preserved typewriter from the early 20th century, fully functional.",
+      "status": "Live",
+      "basePrice": "$400",
+      "latestBid": "$450"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+.pageNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6.4rem;
+}
+.pageNav ul {
+  list-style: none;
+  display: flex;
+  margin-right: 1.2rem;
+  gap: 2.4rem;
+}
+
+.pageNav ul li a {
+  color: inherit;
+  font-size: 1.6rem;
+  color: #1c1c1c;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.pageNav ul li a:hover {
+  color: #42b4b9;
+  transition: all 0.3s;
+}

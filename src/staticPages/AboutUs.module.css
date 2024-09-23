@@ -1,0 +1,41 @@
+.aboutUs {
+  color: #686a6f;
+  padding: 4rem;
+  max-width: 100rem;
+  margin: 0 auto;
+}
+
+.aboutUs h1 {
+  color: #359094;
+  font-size: 4.2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.aboutUs h2 {
+  color: #3ba2a7; /* Secondary color for sub-headers */
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  font-size: 2.8rem;
+}
+
+.aboutUs p {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+.aboutUs ul {
+  list-style-type: square;
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+  font-size: 1.6rem;
+}
+
+.aboutUs ul li {
+  margin-bottom: 1rem;
+}
+
+strong {
+  color: #42b4b9;
+}

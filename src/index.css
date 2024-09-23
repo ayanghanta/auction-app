@@ -1,0 +1,36 @@
+/* 
+BRAND COLOR: #42b4b9
+BACKGROUND COLOR:#fff
+HEADING COLOR:#1c1c1c
+DESCRIPTION COLOR :#686a6f
+ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #fff;
+  color: #444;
+  font-family: "Rubik", sans-serif;
+  /* font-family: "Asap", sans-serif; */
+}
+html {
+  font-size: 62.5%;
+}
+h1,
+h2 {
+  font-family: "Asap", sans-serif;
+}
+main {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 135rem;
+  padding: 0 1.2rem;
+  min-height: 65vh;
+}
+.grid-col-sidebar-main {
+  display: grid;
+  grid-template-columns: 15fr 85fr;
+  column-gap: 2.4rem;
+}

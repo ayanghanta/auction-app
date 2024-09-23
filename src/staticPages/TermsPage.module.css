@@ -1,0 +1,41 @@
+.termsContainer {
+  color: #686a6f;
+  padding: 4rem;
+  max-width: 100rem;
+  margin: 0 auto;
+  border-radius: 0.8rem;
+}
+
+.termsContainer h1 {
+  color: #359094;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.8rem;
+}
+
+.termsContainer h2 {
+  color: #3ba2a7;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.termsContainer p,
+.termsContainer ul {
+  font-size: 1.4rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+.termsContainer ul {
+  list-style-type: square;
+  margin-left: 2rem;
+}
+
+.termsContainer ul li {
+  margin-bottom: 1rem;
+}
+
+strong {
+  color: #42b4b9;
+}

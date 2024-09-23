@@ -1,0 +1,26 @@
+.sidebar {
+}
+.sidebar ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  /* gap: 2.4rem; */
+}
+.sidebar ul li {
+  padding: 2.4rem 0.8rem;
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  border-bottom: 1px solid #e8e8e8;
+}
+.sidebar ul li:last-child {
+  border-bottom: none;
+}
+.sidebar ul li:hover {
+  background-color: #ecf8f8;
+  transition: all 0.3s;
+  transform: scaleX(1.05);
+}
+.active {
+  background-color: #c6e9ea;
+}

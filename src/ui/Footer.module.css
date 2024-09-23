@@ -1,0 +1,43 @@
+.footer {
+  margin-top: 9.6rem;
+  border-top: 1px solid #d3dfc7;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background-color: #222429;
+  padding: 6.4rem 3.6rem 3.6rem 3.6rem;
+}
+.footerColumn img {
+  max-width: 50%;
+}
+
+.footerColumn {
+  font-size: 1.2rem;
+}
+.footerColumn p {
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+  color: #fff;
+}
+.footerColumn h3 {
+  color: #fff; /* Secondary color for section headings */
+  margin-bottom: 1.5rem;
+}
+
+.footerColumn ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footerColumn ul li {
+  margin-bottom: 1rem;
+}
+
+.footerColumn ul li a {
+  color: #999b9f;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footerColumn ul li a:hover {
+  color: #fff;
+}
