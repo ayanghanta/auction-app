@@ -8,6 +8,7 @@ import AboutUs from "./staticPages/AboutUs";
 import Auctions, {
   loader as auctionsLoader,
 } from "./features/auction/Auctions";
+import Product, { loader as productLoader } from "./features/auction/Product";
 
 const router = createBrowserRouter([
   {
@@ -17,7 +18,13 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Auctions />,
+        errorElement: <ErrorPage />,
         loader: auctionsLoader,
+      },
+      {
+        path: "/product/:productId",
+        element: <Product />,
+        loader: productLoader,
       },
     ],
   },

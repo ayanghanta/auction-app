@@ -132,93 +132,93 @@
   "auctions": [
     {
       "id": 1,
-      "image": "https://example.com/images/vintage-book.jpg",
-      "title": "Vintage First Edition Book",
-      "description": "A rare first edition of a classic novel, beautifully preserved with minimal wear.",
-      "status": "Live",
-      "basePrice": "$200",
-      "latestBid": "$250"
+      "image": "/images/sand-watch.jpg",
+      "title": "Vintage Sand Watch",
+      "description": "A classic glass sand watch from the 19th century, used to measure time with sand particles. An elegant piece with a wooden base and intricate brass detailing.",
+      "status": "Happening Soon",
+      "basePrice": "₹1,000",
+      "latestBid": null
     },
     {
       "id": 2,
-      "image": "https://example.com/images/antique-clock.jpg",
-      "title": "Antique Grandfather Clock",
-      "description": "An 18th-century wooden clock with intricate carvings, still in working condition.",
-      "status": "Happening Soon",
-      "basePrice": "$500",
-      "latestBid": null
+      "image": "/images/pocket-watch.jpg",
+      "title": "Antique Pocket Watch",
+      "description": "A 19th-century golden pocket watch, featuring Roman numerals and a stunning mechanical movement. This piece has intricate engravings and comes with its original chain.",
+      "status": "Bidding Open",
+      "basePrice": "₹2,500",
+      "latestBid": "₹250"
     },
     {
       "id": 3,
-      "image": "https://example.com/images/vintage-camera.jpg",
-      "title": "Vintage Film Camera",
-      "description": "A classic film camera from the 1960s, perfect for collectors or photography enthusiasts.",
-      "status": "Live",
-      "basePrice": "$300",
-      "latestBid": "$320"
-    },
-    {
-      "id": 4,
-      "image": "https://example.com/images/antique-coin.jpg",
-      "title": "Antique Silver Coin",
-      "description": "A silver coin from the 19th century, well-preserved and rare.",
+      "image": "/images/vintage-camera.jpg",
+      "title": "Vintage Box Camera",
+      "description": "A classic early 20th-century box camera, once used to capture the essence of history. This item is in good condition with minor signs of wear on the exterior.",
       "status": "Happening Soon",
-      "basePrice": "$100",
+      "basePrice": "₹3,000",
       "latestBid": null
     },
     {
+      "id": 4,
+      "image": "/images/vintage-wall-clock.jpg",
+      "title": "Vintage Wall Clock",
+      "description": "A mid-century wall clock made from solid oak with brass details. Its pendulum still swings, keeping perfect time, adding character to any room.",
+      "status": "Bidding Open",
+      "basePrice": "₹1,500",
+      "latestBid": "₹250"
+    },
+    {
       "id": 5,
-      "image": "https://example.com/images/vintage-painting.jpg",
-      "title": "Vintage Oil Painting",
-      "description": "An oil painting from the 1920s, featuring a serene landscape scene.",
-      "status": "Live",
-      "basePrice": "$700",
-      "latestBid": "$750"
+      "image": "/images/antique-camera.jpg",
+      "title": "Antique Camera",
+      "description": "This antique camera dates back to the 1920s, once used by professional photographers. The wooden body and leather bellows are still in excellent condition.",
+      "status": "Happening Soon",
+      "basePrice": "₹5,000",
+      "latestBid": null
     },
     {
       "id": 6,
-      "image": "https://example.com/images/antique-furniture.jpg",
-      "title": "Antique Oak Chair",
-      "description": "A solid oak chair from the early 1900s, in excellent condition with original upholstery.",
-      "status": "Live",
-      "basePrice": "$150",
-      "latestBid": "$180"
+      "image": "/images/vintage-momento.jpg",
+      "title": "Vintage Momento",
+      "description": "A unique vintage momento from the 1800s. Its historical significance adds a touch of elegance and grandeur, making it a must-have for antique collectors.",
+      "status": "Bidding Open",
+      "basePrice": "₹2,000",
+      "latestBid": "₹250"
     },
     {
       "id": 7,
-      "image": "https://example.com/images/vintage-watch.jpg",
-      "title": "Vintage Pocket Watch",
-      "description": "A classic pocket watch with a gold chain, dating back to the 1900s.",
+      "image": "/images/vintage-stac.jpg",
+      "title": "Vintage Buddha Statue",
+      "description": "A very old and rare Buddha statue, made from bronze. This item is an exquisite representation of ancient craftsmanship, believed to be over a century old.",
       "status": "Happening Soon",
-      "basePrice": "$250",
+      "basePrice": "₹10,000",
       "latestBid": null
     },
     {
       "id": 8,
-      "image": "https://example.com/images/antique-vase.jpg",
-      "title": "Antique Chinese Vase",
-      "description": "A delicate porcelain vase with hand-painted designs from the Qing dynasty.",
-      "status": "Live",
-      "basePrice": "$1,000",
-      "latestBid": "$1,200"
+      "image": "/images/vintage-mask.jpg",
+      "title": "Vintage Mask",
+      "description": "A vintage tribal mask, hand-carved from wood. This piece, originating from Southeast Asia, is rich in cultural history and symbolism, showcasing masterful craftsmanship.",
+      "status": "Bidding Open",
+      "basePrice": "₹1,200",
+      "latestBid": "₹250"
     },
     {
       "id": 9,
-      "image": "https://example.com/images/antique-map.jpg",
-      "title": "18th Century World Map",
-      "description": "An original hand-drawn world map from the 1700s, framed and preserved.",
+      "image": "/images/gold-old-compas.jpg",
+      "title": "Gold Antique Compass",
+      "description": "An antique brass and gold-plated compass used by sailors in the early 19th century. This beautifully crafted instrument still works and is well-preserved.",
       "status": "Happening Soon",
-      "basePrice": "$600",
+      "basePrice": "₹3,500",
       "latestBid": null
     },
     {
       "id": 10,
-      "image": "https://example.com/images/vintage-typewriter.jpg",
-      "title": "Vintage Typewriter",
-      "description": "A well-preserved typewriter from the early 20th century, fully functional.",
-      "status": "Live",
-      "basePrice": "$400",
-      "latestBid": "$450"
+      "image": "/images/vintage-writer.jpg",
+      "title": "Antique Porcelain Vase",
+      "description": "A 19th-century porcelain vase with delicate floral patterns. Its craftsmanship reflects the elegance of the era, and it remains in near-perfect condition despite its age.",
+      "status": "Bidding Open",
+      "basePrice": "₹4,000",
+      "latestBid": "₹250"
     }
   ]
 }

@@ -5,7 +5,7 @@ function Footer() {
     <footer className={styles.footer}>
       <div className={styles.footerColumn}>
         <Link to="/">
-          <img src="footer-logo.png" alt="Vintage Vault Logo" />
+          <img src="/footer-logo.png" alt="Vintage Vault Logo" />
         </Link>
         <p>
           &copy; {new Date().getFullYear()} Vintage Vault. All rights reserved.

@@ -1,0 +1,29 @@
+.auctionCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #000;
+  padding: 1.2rem 2.4rem;
+  gap: 1.2rem;
+}
+.auctionCard img {
+  width: 80%;
+}
+.auctionCard .details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.details h2 {
+  text-align: center;
+  font-size: 2.4rem;
+}
+.details p {
+  font-size: 1.4rem;
+  line-height: 1.5;
+}
+.details div {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}

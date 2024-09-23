@@ -5,7 +5,7 @@ function Logo() {
     <div className={styles.logoContainer}>
       <Link to="/">
         <img
-          src="logo.png"
+          src="/logo.png"
           alt="logo of vintage vault"
           className={styles.logo}
         />
