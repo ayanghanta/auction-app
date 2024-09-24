@@ -9,7 +9,7 @@ function ErrorPage() {
       <p className={styles.message}>
         {error.data || error.message || error.statusText}
       </p>
-      <Button type="primary">
+      <Button type="error">
         <Link to="/">&larr; Back To Home</Link>
       </Button>
     </div>

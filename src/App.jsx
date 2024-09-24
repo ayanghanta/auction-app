@@ -9,6 +9,8 @@ import Auctions, {
   loader as auctionsLoader,
 } from "./features/auction/Auctions";
 import Product, { loader as productLoader } from "./features/auction/Product";
+import Login from "./features/user/Login";
+import Singup, { action as singupAction } from "./features/user/Singup";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +29,16 @@ const router = createBrowserRouter([
         loader: productLoader,
       },
     ],
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/singup",
+    element: <Singup />,
+    action: singupAction,
+    errorElement: <ErrorPage />,
   },
   {
     path: "/privacy",

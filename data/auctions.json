@@ -1,7 +1,25 @@
 {
+  "users": [
+    {
+      "id": "1",
+      "name": "Aarav Sharma",
+      "email": "aaravsharma@example.com",
+      "password": "password123",
+      "address": "123 Main St, Mumbai, Maharashtra, India",
+      "walletBalance": 5000
+    },
+    {
+      "id": "2",
+      "name": "Priya Verma",
+      "email": "priyaverma@example.com",
+      "password": "securepass456",
+      "address": "",
+      "walletBalance": 0
+    }
+  ],
   "product": [
     {
-      "id": 1,
+      "id": "1",
       "image": "/images/sand-watch.jpg",
       "title": "Vintage Sand Watch",
       "description": "A classic glass sand watch from the 19th century, used to measure time with sand particles. An elegant piece with a wooden base and intricate brass detailing.",
@@ -20,7 +38,7 @@
       "timePeriod": "19th Century"
     },
     {
-      "id": 2,
+      "id": "2",
       "image": "/images/pocket-watch.jpg",
       "title": "Antique Pocket Watch",
       "description": "A 19th-century golden pocket watch, featuring Roman numerals and a stunning mechanical movement. This piece has intricate engravings and comes with its original chain.",
@@ -42,7 +60,7 @@
       "timePeriod": "Late 19th Century"
     },
     {
-      "id": 3,
+      "id": "3",
       "image": "/images/vintage-camera.jpg",
       "title": "Vintage Box Camera",
       "description": "A classic early 20th-century box camera, once used to capture the essence of history. This item is in good condition with minor signs of wear on the exterior.",
@@ -61,7 +79,7 @@
       "timePeriod": "Early 20th Century"
     },
     {
-      "id": 4,
+      "id": "4",
       "image": "/images/vintage-wall-clock.jpg",
       "title": "Vintage Wall Clock",
       "description": "A mid-century wall clock made from solid oak with brass details. Its pendulum still swings, keeping perfect time, adding character to any room.",
@@ -83,7 +101,7 @@
       "timePeriod": "Mid 20th Century"
     },
     {
-      "id": 5,
+      "id": "5",
       "image": "/images/antique-camera.jpg",
       "title": "Antique Camera",
       "description": "This antique camera dates back to the 1920s, once used by professional photographers. The wooden body and leather bellows are still in excellent condition.",
@@ -102,7 +120,7 @@
       "timePeriod": "1920s"
     },
     {
-      "id": 6,
+      "id": "6",
       "image": "/images/vintage-momento.jpg",
       "title": "Vintage Momento",
       "description": "A unique vintage momento from the 1800s. Its historical significance adds a touch of elegance and grandeur, making it a must-have for antique collectors.",
@@ -124,7 +142,7 @@
       "timePeriod": "1800s"
     },
     {
-      "id": 7,
+      "id": "7",
       "image": "/images/vintage-stac.jpg",
       "title": "Vintage Buddha Statue",
       "description": "A very old and rare Buddha statue, made from bronze. This item is an exquisite representation of ancient craftsmanship, believed to be over a century old.",
@@ -143,7 +161,7 @@
       "timePeriod": "Early 20th Century"
     },
     {
-      "id": 8,
+      "id": "8",
       "image": "/images/vintage-mask.jpg",
       "title": "Vintage Mask",
       "description": "A vintage tribal mask, hand-carved from wood. This piece, originating from Southeast Asia, is rich in cultural history and symbolism, showcasing masterful craftsmanship.",
@@ -165,7 +183,7 @@
       "timePeriod": "Mid 20th Century"
     },
     {
-      "id": 9,
+      "id": "9",
       "image": "/images/gold-old-compas.jpg",
       "title": "Gold Antique Compass",
       "description": "An antique brass and gold-plated compass used by sailors in the early 19th century. This beautifully crafted instrument still works and is well-preserved.",
@@ -184,7 +202,7 @@
       "timePeriod": "19th Century"
     },
     {
-      "id": 10,
+      "id": "10",
       "image": "/images/retro-typewriter.jpg",
       "title": "Retro Typewriter",
       "description": "A well-preserved 1940s retro typewriter, still functional. This typewriter is a great collector’s item, adding vintage charm to any workspace.",
@@ -208,7 +226,7 @@
   ],
   "auctions": [
     {
-      "id": 1,
+      "id": "1",
       "image": "/images/sand-watch.jpg",
       "title": "Vintage Sand Watch",
       "description": "A classic glass sand watch from the 19th century, used to measure time with sand particles. An elegant piece with a wooden base and intricate brass detailing.",
@@ -217,7 +235,7 @@
       "latestBid": null
     },
     {
-      "id": 2,
+      "id": "2",
       "image": "/images/pocket-watch.jpg",
       "title": "Antique Pocket Watch",
       "description": "A 19th-century golden pocket watch, featuring Roman numerals and a stunning mechanical movement. This piece has intricate engravings and comes with its original chain.",
@@ -226,7 +244,7 @@
       "latestBid": "₹250"
     },
     {
-      "id": 3,
+      "id": "3",
       "image": "/images/vintage-camera.jpg",
       "title": "Vintage Box Camera",
       "description": "A classic early 20th-century box camera, once used to capture the essence of history. This item is in good condition with minor signs of wear on the exterior.",
@@ -235,7 +253,7 @@
       "latestBid": null
     },
     {
-      "id": 4,
+      "id": "4",
       "image": "/images/vintage-wall-clock.jpg",
       "title": "Vintage Wall Clock",
       "description": "A mid-century wall clock made from solid oak with brass details. Its pendulum still swings, keeping perfect time, adding character to any room.",
@@ -244,7 +262,7 @@
       "latestBid": "₹250"
     },
     {
-      "id": 5,
+      "id": "5",
       "image": "/images/antique-camera.jpg",
       "title": "Antique Camera",
       "description": "This antique camera dates back to the 1920s, once used by professional photographers. The wooden body and leather bellows are still in excellent condition.",
@@ -253,7 +271,7 @@
       "latestBid": null
     },
     {
-      "id": 6,
+      "id": "6",
       "image": "/images/vintage-momento.jpg",
       "title": "Vintage Momento",
       "description": "A unique vintage momento from the 1800s. Its historical significance adds a touch of elegance and grandeur, making it a must-have for antique collectors.",
@@ -262,7 +280,7 @@
       "latestBid": "₹250"
     },
     {
-      "id": 7,
+      "id": "7",
       "image": "/images/vintage-stac.jpg",
       "title": "Vintage Buddha Statue",
       "description": "A very old and rare Buddha statue, made from bronze. This item is an exquisite representation of ancient craftsmanship, believed to be over a century old.",
@@ -271,7 +289,7 @@
       "latestBid": null
     },
     {
-      "id": 8,
+      "id": "8",
       "image": "/images/vintage-mask.jpg",
       "title": "Vintage Mask",
       "description": "A vintage tribal mask, hand-carved from wood. This piece, originating from Southeast Asia, is rich in cultural history and symbolism, showcasing masterful craftsmanship.",
@@ -280,7 +298,7 @@
       "latestBid": "₹250"
     },
     {
-      "id": 9,
+      "id": "9",
       "image": "/images/gold-old-compas.jpg",
       "title": "Gold Antique Compass",
       "description": "An antique brass and gold-plated compass used by sailors in the early 19th century. This beautifully crafted instrument still works and is well-preserved.",
@@ -289,7 +307,7 @@
       "latestBid": null
     },
     {
-      "id": 10,
+      "id": "10",
       "image": "/images/retro-typewriter.jpg",
       "title": "Retro Typewriter",
       "description": "A well-preserved 1940s retro typewriter, still functional. This typewriter is a great collector’s item, adding vintage charm to any workspace.",

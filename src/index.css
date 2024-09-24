@@ -34,3 +34,7 @@ main {
   grid-template-columns: 15fr 85fr;
   column-gap: 3.6rem;
 }
+.formError {
+  font-size: 1.4rem !important;
+  color: red;
+}

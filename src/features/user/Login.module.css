@@ -1,0 +1,63 @@
+.loginContainer {
+  background-color: #f4f4f4;
+  max-width: 120rem;
+  display: grid;
+  grid-template-columns: 55fr 45fr;
+  padding-right: 0 !important;
+}
+.loginContainer img {
+  width: 100%;
+}
+.loginForm {
+  padding: 3.6rem 1.2rem;
+}
+.loginForm h1 {
+  font-size: 3.2rem;
+  text-align: center;
+  color: #359094;
+  margin-bottom: 1.2rem;
+}
+.loginForm p {
+  text-align: center;
+  font-size: 1.8rem;
+  line-height: 1.5;
+  margin-bottom: 3.6rem;
+}
+.loginForm form {
+  margin-top: 6.4rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.loginForm form div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.loginForm form label {
+  font-size: 2rem;
+}
+.loginForm form input {
+  border-radius: none;
+  font-family: inherit;
+  font-size: 2rem;
+  padding: 0.8rem 1.6rem;
+  color: #1c1c1c;
+}
+.forgotText a {
+  font-size: 1.4rem;
+  color: #606060;
+}
+.loginContainer .singUpText {
+  margin-top: 3.2rem;
+  text-align: center;
+  font-size: 1.6rem;
+}
+.loginContainer .singUpText a {
+  color: #42b4b9;
+  font-weight: 500;
+  margin-left: 1.2rem;
+}
