@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from "./AuctionCard.module.css";
 import CollapsText from "../../utils/CollapsText";
+import Button from "../../ui/buttons/Button";
 
 function AuctionCard({ product }) {
   return (
@@ -17,9 +18,9 @@ function AuctionCard({ product }) {
           {product.latestBid && <p>LatestBid: {product.latestBid}</p>}
         </div>
 
-        <button>
-          <Link to={`/product/${product.id}`}>Place a Bid</Link>
-        </button>
+        <Link to={`/product/${product.id}`}>
+          <Button type="primary"> Place a Bid</Button>
+        </Link>
       </div>
     </div>
   );

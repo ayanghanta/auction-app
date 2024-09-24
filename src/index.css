@@ -32,5 +32,5 @@ main {
 .grid-col-sidebar-main {
   display: grid;
   grid-template-columns: 15fr 85fr;
-  column-gap: 2.4rem;
+  column-gap: 3.6rem;
 }

@@ -16,7 +16,6 @@ export async function getProduct(id) {
     const res = await fetch(`${BASE_URL}/product/${id}`);
 
     const data = await res.json();
-    console.log(data);
     return data;
   } catch (err) {
     throw new Error(`Can't fetch Product details`);

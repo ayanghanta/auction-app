@@ -2,131 +2,208 @@
   "product": [
     {
       "id": 1,
-      "image": "https://example.com/images/vintage-book.jpg",
-      "title": "Vintage First Edition Book",
-      "description": "A rare first edition of a classic novel, beautifully preserved with minimal wear.",
-      "status": "Live",
-      "basePrice": "$200",
-      "latestBid": "$250",
-      "latestBidder": {
-        "name": "John Doe",
-        "image": "https://example.com/images/john-doe.jpg"
-      },
-      "longDescription": "This is a rare first edition of a highly sought-after novel, published in 1920. It has been kept in excellent condition, making it a perfect addition to any collection."
+      "image": "/images/sand-watch.jpg",
+      "title": "Vintage Sand Watch",
+      "description": "A classic glass sand watch from the 19th century, used to measure time with sand particles. An elegant piece with a wooden base and intricate brass detailing.",
+      "status": "Happening Soon",
+      "basePrice": "₹1,000",
+      "latestBid": null,
+      "latestBidder": null,
+      "longDescription": "This vintage sand watch is a fascinating piece of history. Originating from the 19th century, it was a crucial timekeeping instrument before mechanical clocks became widespread. The hourglass features an ornate brass frame with a wooden base that holds the glass bulb filled with fine sand. It’s a beautiful decorative piece, perfect for collectors or lovers of historical artifacts. Despite its age, the craftsmanship remains impeccable, and the design is a nod to the elegance of a bygone era.",
+      "specilities": [
+        "Handcrafted brass frame with detailed engravings",
+        "Authentic wooden base made from oak",
+        "Accurate hourglass function preserved",
+        "Shows minimal signs of wear despite being over a century old"
+      ],
+      "originCountry": "England",
+      "timePeriod": "19th Century"
     },
     {
       "id": 2,
-      "image": "https://example.com/images/antique-clock.jpg",
-      "title": "Antique Grandfather Clock",
-      "description": "An 18th-century wooden clock with intricate carvings, still in working condition.",
-      "status": "Happening Soon",
-      "basePrice": "$500",
-      "latestBid": null,
-      "latestBidder": null,
-      "longDescription": "This grandfather clock features stunning craftsmanship from the 18th century and still keeps accurate time. A perfect centerpiece for any room."
+      "image": "/images/pocket-watch.jpg",
+      "title": "Antique Pocket Watch",
+      "description": "A 19th-century golden pocket watch, featuring Roman numerals and a stunning mechanical movement. This piece has intricate engravings and comes with its original chain.",
+      "status": "Bidding Open",
+      "basePrice": "₹2,500",
+      "latestBid": "₹250",
+      "latestBidder": {
+        "name": "Jane Smith",
+        "image": "/users/user-1.jpg"
+      },
+      "longDescription": "This exquisite antique pocket watch hails from the late 1800s, crafted with a golden casing and delicate Roman numerals. The watch’s mechanical movement is still functional, making it not just a decorative piece but also a working timepiece. The face of the watch is adorned with intricate engravings, a testament to the fine craftsmanship of the period. The original chain is intact, adding to the overall charm and authenticity of this historical item. It is a perfect addition for collectors of rare watches or as a unique gift for someone special.",
+      "specilities": [
+        "Engraved golden casing with intricate patterns",
+        "Functional mechanical movement despite its age",
+        "Original Roman numeral face with pristine condition",
+        "Comes with its original golden chain, enhancing its value"
+      ],
+      "originCountry": "Switzerland",
+      "timePeriod": "Late 19th Century"
     },
     {
       "id": 3,
-      "image": "https://example.com/images/vintage-camera.jpg",
-      "title": "Vintage Film Camera",
-      "description": "A classic film camera from the 1960s, perfect for collectors or photography enthusiasts.",
-      "status": "Live",
-      "basePrice": "$300",
-      "latestBid": "$320",
-      "latestBidder": {
-        "name": "Jane Smith",
-        "image": "https://example.com/images/jane-smith.jpg"
-      },
-      "longDescription": "This vintage camera is a collector's dream, featuring a classic design and functionality that appeals to both enthusiasts and professionals."
+      "image": "/images/vintage-camera.jpg",
+      "title": "Vintage Box Camera",
+      "description": "A classic early 20th-century box camera, once used to capture the essence of history. This item is in good condition with minor signs of wear on the exterior.",
+      "status": "Happening Soon",
+      "basePrice": "₹3,000",
+      "latestBid": null,
+      "latestBidder": null,
+      "longDescription": "This vintage box camera dates back to the early 20th century when photography was in its nascent stages. It features a wooden body with leather accents, retaining its original charm despite being over 100 years old. The camera was once used by professional photographers to capture black-and-white images and has a unique design that reflects the technology of the time. The lens and mechanical parts are intact, making it a great collector’s item for photography enthusiasts and antique lovers alike.",
+      "specilities": [
+        "Original leather accents on a wooden body",
+        "Classic lens mechanism used in early 20th-century photography",
+        "Minor wear on the exterior, adding to its vintage charm",
+        "Still functional and capable of producing photographs"
+      ],
+      "originCountry": "Germany",
+      "timePeriod": "Early 20th Century"
     },
     {
       "id": 4,
-      "image": "https://example.com/images/antique-coin.jpg",
-      "title": "Antique Silver Coin",
-      "description": "A silver coin from the 1800s, in excellent condition and a great addition to any collection.",
-      "status": "Live",
-      "basePrice": "$150",
-      "latestBid": "$175",
+      "image": "/images/vintage-wall-clock.jpg",
+      "title": "Vintage Wall Clock",
+      "description": "A mid-century wall clock made from solid oak with brass details. Its pendulum still swings, keeping perfect time, adding character to any room.",
+      "status": "Bidding Open",
+      "basePrice": "₹1,500",
+      "latestBid": "₹250",
       "latestBidder": {
-        "name": "Mike Johnson",
-        "image": "https://example.com/images/mike-johnson.jpg"
+        "name": "Michael Johnson",
+        "image": "/users/user-1.jpg"
       },
-      "longDescription": "This antique coin is not just a piece of history but also a valuable collectible. It showcases exquisite craftsmanship from the 1800s."
+      "longDescription": "This mid-century vintage wall clock is a functional and decorative piece that brings nostalgia to any space. Made from solid oak, the clock features brass detailing around its face and pendulum. The clock’s mechanism is well-maintained and still keeps accurate time. The pendulum swings gracefully, showcasing the elegant craftsmanship of the 1950s. This clock would be an ideal addition to a vintage-inspired living room or a collector's showcase.",
+      "specilities": [
+        "Crafted from solid oak wood with brass accents",
+        "Functional pendulum mechanism still intact",
+        "Elegant design, making it a perfect addition to any vintage décor",
+        "Keeps accurate time even after several decades"
+      ],
+      "originCountry": "USA",
+      "timePeriod": "Mid 20th Century"
     },
     {
       "id": 5,
-      "image": "https://example.com/images/vintage-jewelry.jpg",
-      "title": "Vintage Pearl Necklace",
-      "description": "A stunning vintage pearl necklace, perfect for special occasions.",
+      "image": "/images/antique-camera.jpg",
+      "title": "Antique Camera",
+      "description": "This antique camera dates back to the 1920s, once used by professional photographers. The wooden body and leather bellows are still in excellent condition.",
       "status": "Happening Soon",
-      "basePrice": "$400",
+      "basePrice": "₹5,000",
       "latestBid": null,
       "latestBidder": null,
-      "longDescription": "This elegant pearl necklace radiates sophistication and is an ideal accessory for weddings or formal events."
+      "longDescription": "An antique camera from the early 1920s, a rare find for photography and history enthusiasts. This camera was primarily used for professional portrait photography, and it features a beautifully crafted wooden body along with leather bellows. Despite its age, the camera’s condition remains excellent, with all parts functioning well. It provides a glimpse into the early days of photography, when cameras were handcrafted with precision and attention to detail.",
+      "specilities": [
+        "Wooden body paired with leather bellows for aesthetic and functional appeal",
+        "Highly sought after by vintage photography collectors",
+        "Fully functional despite being over a century old",
+        "Original glass lenses and shutter mechanism preserved"
+      ],
+      "originCountry": "France",
+      "timePeriod": "1920s"
     },
     {
       "id": 6,
-      "image": "https://example.com/images/retro-game-console.jpg",
-      "title": "Retro Game Console",
-      "description": "A classic gaming console that brings back nostalgia with its collection of retro games.",
-      "status": "Live",
-      "basePrice": "$250",
-      "latestBid": "$270",
+      "image": "/images/vintage-momento.jpg",
+      "title": "Vintage Momento",
+      "description": "A unique vintage momento from the 1800s. Its historical significance adds a touch of elegance and grandeur, making it a must-have for antique collectors.",
+      "status": "Bidding Open",
+      "basePrice": "₹2,000",
+      "latestBid": "₹250",
       "latestBidder": {
-        "name": "Emily White",
-        "image": "https://example.com/images/emily-white.jpg"
+        "name": "Emily Davis",
+        "image": "/users/user-1.jpg"
       },
-      "longDescription": "Relive the golden age of gaming with this retro console. It comes with multiple classic games that will provide hours of fun."
+      "longDescription": "This vintage momento is a rare find, dating back to the early 19th century. The item holds historical significance and was crafted with attention to detail, reflecting the craftsmanship of that era. It could have been part of a wealthy family’s collection, passed down through generations. This momento represents a rich history and brings a sense of nostalgia to any collection. Perfect for collectors who value historical artifacts with rich backstories.",
+      "specilities": [
+        "Crafted from rare materials in the early 19th century",
+        "Holds significant historical value as a family heirloom",
+        "Elegant design, reflecting the tastes of wealthy 1800s families",
+        "Minimal wear considering its age, well-preserved"
+      ],
+      "originCountry": "Italy",
+      "timePeriod": "1800s"
     },
     {
       "id": 7,
-      "image": "https://example.com/images/antique-vase.jpg",
-      "title": "Antique Ceramic Vase",
-      "description": "An exquisite ceramic vase from the Ming Dynasty, intricately designed.",
+      "image": "/images/vintage-stac.jpg",
+      "title": "Vintage Buddha Statue",
+      "description": "A very old and rare Buddha statue, made from bronze. This item is an exquisite representation of ancient craftsmanship, believed to be over a century old.",
       "status": "Happening Soon",
-      "basePrice": "$800",
+      "basePrice": "₹10,000",
       "latestBid": null,
       "latestBidder": null,
-      "longDescription": "This Ming Dynasty vase is a true work of art, showcasing detailed craftsmanship and history. A perfect addition to any fine art collection."
+      "longDescription": "This rare Buddha statue is an exceptional piece of ancient craftsmanship. Made from bronze, this statue showcases delicate details in the depiction of Buddha’s robes and serene expression. It’s believed to be over 100 years old, passed down through generations in Buddhist temples. The piece carries both spiritual and artistic value, making it a prized possession for art collectors and spiritual practitioners alike. Its age is evident in the subtle patina that has formed over time, enhancing its antique appeal.",
+      "specilities": [
+        "Crafted from bronze, with fine detailing on the statue’s robes",
+        "Passed down through generations, once housed in a Buddhist temple",
+        "Spiritual and artistic value make it a prized possession",
+        "Over 100 years old, with a natural patina that enhances its vintage look"
+      ],
+      "originCountry": "India",
+      "timePeriod": "Early 20th Century"
     },
     {
       "id": 8,
-      "image": "https://example.com/images/vintage-guitar.jpg",
-      "title": "Vintage Acoustic Guitar",
-      "description": "A beautiful vintage acoustic guitar, perfect for musicians and collectors alike.",
-      "status": "Live",
-      "basePrice": "$600",
-      "latestBid": "$650",
+      "image": "/images/vintage-mask.jpg",
+      "title": "Vintage Mask",
+      "description": "A vintage tribal mask, hand-carved from wood. This piece, originating from Southeast Asia, is rich in cultural history and symbolism, showcasing masterful craftsmanship.",
+      "status": "Bidding Open",
+      "basePrice": "₹1,200",
+      "latestBid": "₹250",
       "latestBidder": {
-        "name": "Sarah Lee",
-        "image": "https://example.com/images/sarah-lee.jpg"
+        "name": "Michael Lee",
+        "image": "/users/user-1.jpg"
       },
-      "longDescription": "This vintage guitar produces a rich sound and is crafted with high-quality materials, ideal for performances or personal use."
+      "longDescription": "This vintage tribal mask is an exquisite piece of art, hand-carved from high-quality wood. It originates from Southeast Asia, where it holds deep cultural significance. Masks like this are often used in traditional ceremonies to represent spirits or deities. The mask’s intricate carvings display the exceptional skill of the artisans who crafted it, making it not only a decorative piece but a meaningful symbol of a rich cultural heritage. Its detailed design and aged wood texture add to its uniqueness, making it a must-have for collectors of vintage or tribal art.",
+      "specilities": [
+        "Hand-carved from high-quality wood by skilled Southeast Asian artisans",
+        "Culturally significant, used in traditional ceremonies",
+        "Intricate detailing that reflects deep symbolism",
+        "In excellent condition with beautiful aged wood texture"
+      ],
+      "originCountry": "Southeast Asia",
+      "timePeriod": "Mid 20th Century"
     },
     {
       "id": 9,
-      "image": "https://example.com/images/antique-furniture.jpg",
-      "title": "Antique Wooden Furniture Set",
-      "description": "A complete set of antique wooden furniture, showcasing timeless craftsmanship.",
-      "status": "Live",
-      "basePrice": "$1,200",
-      "latestBid": "$1,250",
-      "latestBidder": {
-        "name": "Tom Green",
-        "image": "https://example.com/images/tom-green.jpg"
-      },
-      "longDescription": "This antique furniture set brings elegance to any home and features exquisite detailing that tells a story of its rich history."
+      "image": "/images/gold-old-compas.jpg",
+      "title": "Gold Antique Compass",
+      "description": "An antique brass and gold-plated compass used by sailors in the early 19th century. This beautifully crafted instrument still works and is well-preserved.",
+      "status": "Happening Soon",
+      "basePrice": "₹3,500",
+      "latestBid": null,
+      "latestBidder": null,
+      "longDescription": "This golden compass was used by early explorers during the 19th century to navigate unknown territories. The craftsmanship is impeccable, featuring intricate engravings on the compass's surface. Despite its age, it remains in excellent working condition, making it both a functional navigational tool and a decorative item. It symbolizes the adventurous spirit of explorers from centuries past, making it an ideal collector’s item for those passionate about history and travel.",
+      "specilities": [
+        "Crafted from gold, with intricate engravings across the surface",
+        "Fully functional compass, used by explorers in the 19th century",
+        "Excellent condition with minimal wear despite its age",
+        "Symbolizes the adventurous spirit of early explorers"
+      ],
+      "originCountry": "Portugal",
+      "timePeriod": "19th Century"
     },
     {
       "id": 10,
-      "image": "https://example.com/images/vintage-posters.jpg",
-      "title": "Collection of Vintage Posters",
-      "description": "A collection of rare vintage posters from the 1950s, perfect for collectors.",
-      "status": "Happening Soon",
-      "basePrice": "$100",
-      "latestBid": null,
-      "latestBidder": null,
-      "longDescription": "These vintage posters are a great addition to any collection, featuring iconic designs from the 1950s and showcasing the art of that era."
+      "image": "/images/retro-typewriter.jpg",
+      "title": "Retro Typewriter",
+      "description": "A well-preserved 1940s retro typewriter, still functional. This typewriter is a great collector’s item, adding vintage charm to any workspace.",
+      "status": "Bidding Open",
+      "basePrice": "₹4,500",
+      "latestBid": "₹450",
+      "latestBidder": {
+        "name": "Sarah Evans",
+        "image": "/users/user-1.jpg"
+      },
+      "longDescription": "This retro typewriter from the 1940s is a perfect example of mid-20th-century office equipment. It remains in working condition and has been carefully preserved over the years. The typewriter’s keys produce a satisfying click with each press, bringing a sense of nostalgia to any workspace. Whether you want to use it for typing or as a decorative piece, this typewriter is a timeless addition to any collection.",
+      "specilities": [
+        "Fully functional with all original parts intact",
+        "Authentic 1940s design with mechanical key system",
+        "Preserved in excellent condition, showing minimal signs of wear",
+        "Perfect for both functional use and as a collector’s item"
+      ],
+      "originCountry": "UK",
+      "timePeriod": "1940s"
     }
   ],
   "auctions": [
@@ -213,12 +290,12 @@
     },
     {
       "id": 10,
-      "image": "/images/vintage-writer.jpg",
-      "title": "Antique Porcelain Vase",
-      "description": "A 19th-century porcelain vase with delicate floral patterns. Its craftsmanship reflects the elegance of the era, and it remains in near-perfect condition despite its age.",
+      "image": "/images/retro-typewriter.jpg",
+      "title": "Retro Typewriter",
+      "description": "A well-preserved 1940s retro typewriter, still functional. This typewriter is a great collector’s item, adding vintage charm to any workspace.",
       "status": "Bidding Open",
-      "basePrice": "₹4,000",
-      "latestBid": "₹250"
+      "basePrice": "₹4,500",
+      "latestBid": "₹450"
     }
   ]
 }
