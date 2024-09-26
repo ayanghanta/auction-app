@@ -1,6 +1,7 @@
+import { Link, Form, useActionData } from "react-router-dom";
+
 import styles from "./Login.module.css";
 import Button from "../../ui/buttons/Button";
-import { Link } from "react-router-dom";
 import Header from "../../ui/Header";
 import Footer from "../../ui/Footer";
 
@@ -15,7 +16,7 @@ function Login() {
             Unlock the treasures of history. Log in to start bidding on
             exclusive items!
           </p>
-          <form>
+          <Form method="POST">
             <div>
               <label htmlFor="email" style={styles.label}>
                 Email Address
@@ -47,7 +48,7 @@ function Login() {
             <div className={styles.forgotText}>
               <Link to="#">Forgot Password?</Link>
             </div>
-          </form>
+          </Form>
 
           <p className={styles.singUpText}>
             Don&apos;t have an account yet?
@@ -61,6 +62,12 @@ function Login() {
       <Footer />
     </div>
   );
+}
+
+export async function action({ request }) {
+  const loginData = await request.formData();
+  const data = Object.fromEntries(loginData);
+  return null;
 }
 
 export default Login;

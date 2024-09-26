@@ -9,7 +9,7 @@ import Auctions, {
   loader as auctionsLoader,
 } from "./features/auction/Auctions";
 import Product, { loader as productLoader } from "./features/auction/Product";
-import Login from "./features/user/Login";
+import Login, { action as loginAction } from "./features/user/Login";
 import Singup, { action as singupAction } from "./features/user/Singup";
 
 const router = createBrowserRouter([
@@ -33,6 +33,7 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login />,
+    action: loginAction,
   },
   {
     path: "/singup",

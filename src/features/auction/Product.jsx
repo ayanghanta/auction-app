@@ -4,6 +4,7 @@ import styles from "./Product.module.css";
 import CollapsText from "../../utils/CollapsText";
 import Speciality from "./Speciality";
 import CurrentBider from "./CurrentBider";
+import { formatCurrency } from "../../utils/helper";
 
 function Product() {
   const product = useLoaderData();
@@ -45,7 +46,7 @@ function ProductStatus({ product }) {
       </p>
       <p>
         <strong>Base Price: </strong>
-        {product.basePrice}
+        {formatCurrency(product.basePrice)}
       </p>
     </div>
   );

@@ -15,6 +15,14 @@
       "password": "securepass456",
       "address": "",
       "walletBalance": 0
+    },
+    {
+      "id": "eb3d",
+      "name": "wrishita",
+      "email": "w@gmail.com",
+      "password": "123",
+      "address": "",
+      "walletBalance": 0
     }
   ],
   "product": [
@@ -24,7 +32,7 @@
       "title": "Vintage Sand Watch",
       "description": "A classic glass sand watch from the 19th century, used to measure time with sand particles. An elegant piece with a wooden base and intricate brass detailing.",
       "status": "Happening Soon",
-      "basePrice": "₹1,000",
+      "basePrice": 19000,
       "latestBid": null,
       "latestBidder": null,
       "longDescription": "This vintage sand watch is a fascinating piece of history. Originating from the 19th century, it was a crucial timekeeping instrument before mechanical clocks became widespread. The hourglass features an ornate brass frame with a wooden base that holds the glass bulb filled with fine sand. It’s a beautiful decorative piece, perfect for collectors or lovers of historical artifacts. Despite its age, the craftsmanship remains impeccable, and the design is a nod to the elegance of a bygone era.",
@@ -43,8 +51,8 @@
       "title": "Antique Pocket Watch",
       "description": "A 19th-century golden pocket watch, featuring Roman numerals and a stunning mechanical movement. This piece has intricate engravings and comes with its original chain.",
       "status": "Bidding Open",
-      "basePrice": "₹2,500",
-      "latestBid": "₹250",
+      "basePrice": 28500,
+      "latestBid": 29500,
       "latestBidder": {
         "name": "Jane Smith",
         "image": "/users/user-1.jpg"
@@ -65,7 +73,7 @@
       "title": "Vintage Box Camera",
       "description": "A classic early 20th-century box camera, once used to capture the essence of history. This item is in good condition with minor signs of wear on the exterior.",
       "status": "Happening Soon",
-      "basePrice": "₹3,000",
+      "basePrice": 13000,
       "latestBid": null,
       "latestBidder": null,
       "longDescription": "This vintage box camera dates back to the early 20th century when photography was in its nascent stages. It features a wooden body with leather accents, retaining its original charm despite being over 100 years old. The camera was once used by professional photographers to capture black-and-white images and has a unique design that reflects the technology of the time. The lens and mechanical parts are intact, making it a great collector’s item for photography enthusiasts and antique lovers alike.",
@@ -84,8 +92,8 @@
       "title": "Vintage Wall Clock",
       "description": "A mid-century wall clock made from solid oak with brass details. Its pendulum still swings, keeping perfect time, adding character to any room.",
       "status": "Bidding Open",
-      "basePrice": "₹1,500",
-      "latestBid": "₹250",
+      "basePrice": 17500,
+      "latestBid": 22500,
       "latestBidder": {
         "name": "Michael Johnson",
         "image": "/users/user-1.jpg"
@@ -106,7 +114,7 @@
       "title": "Antique Camera",
       "description": "This antique camera dates back to the 1920s, once used by professional photographers. The wooden body and leather bellows are still in excellent condition.",
       "status": "Happening Soon",
-      "basePrice": "₹5,000",
+      "basePrice": 15000,
       "latestBid": null,
       "latestBidder": null,
       "longDescription": "An antique camera from the early 1920s, a rare find for photography and history enthusiasts. This camera was primarily used for professional portrait photography, and it features a beautifully crafted wooden body along with leather bellows. Despite its age, the camera’s condition remains excellent, with all parts functioning well. It provides a glimpse into the early days of photography, when cameras were handcrafted with precision and attention to detail.",
@@ -125,8 +133,8 @@
       "title": "Vintage Momento",
       "description": "A unique vintage momento from the 1800s. Its historical significance adds a touch of elegance and grandeur, making it a must-have for antique collectors.",
       "status": "Bidding Open",
-      "basePrice": "₹2,000",
-      "latestBid": "₹250",
+      "basePrice": 21000,
+      "latestBid": 27050,
       "latestBidder": {
         "name": "Emily Davis",
         "image": "/users/user-1.jpg"
@@ -147,7 +155,7 @@
       "title": "Vintage Buddha Statue",
       "description": "A very old and rare Buddha statue, made from bronze. This item is an exquisite representation of ancient craftsmanship, believed to be over a century old.",
       "status": "Happening Soon",
-      "basePrice": "₹10,000",
+      "basePrice": 10000,
       "latestBid": null,
       "latestBidder": null,
       "longDescription": "This rare Buddha statue is an exceptional piece of ancient craftsmanship. Made from bronze, this statue showcases delicate details in the depiction of Buddha’s robes and serene expression. It’s believed to be over 100 years old, passed down through generations in Buddhist temples. The piece carries both spiritual and artistic value, making it a prized possession for art collectors and spiritual practitioners alike. Its age is evident in the subtle patina that has formed over time, enhancing its antique appeal.",
@@ -166,8 +174,8 @@
       "title": "Vintage Mask",
       "description": "A vintage tribal mask, hand-carved from wood. This piece, originating from Southeast Asia, is rich in cultural history and symbolism, showcasing masterful craftsmanship.",
       "status": "Bidding Open",
-      "basePrice": "₹1,200",
-      "latestBid": "₹250",
+      "basePrice": 12800,
+      "latestBid": 15000,
       "latestBidder": {
         "name": "Michael Lee",
         "image": "/users/user-1.jpg"
@@ -188,7 +196,7 @@
       "title": "Gold Antique Compass",
       "description": "An antique brass and gold-plated compass used by sailors in the early 19th century. This beautifully crafted instrument still works and is well-preserved.",
       "status": "Happening Soon",
-      "basePrice": "₹3,500",
+      "basePrice": 35000,
       "latestBid": null,
       "latestBidder": null,
       "longDescription": "This golden compass was used by early explorers during the 19th century to navigate unknown territories. The craftsmanship is impeccable, featuring intricate engravings on the compass's surface. Despite its age, it remains in excellent working condition, making it both a functional navigational tool and a decorative item. It symbolizes the adventurous spirit of explorers from centuries past, making it an ideal collector’s item for those passionate about history and travel.",
@@ -207,8 +215,8 @@
       "title": "Retro Typewriter",
       "description": "A well-preserved 1940s retro typewriter, still functional. This typewriter is a great collector’s item, adding vintage charm to any workspace.",
       "status": "Bidding Open",
-      "basePrice": "₹4,500",
-      "latestBid": "₹450",
+      "basePrice": 14500,
+      "latestBid": 14500,
       "latestBidder": {
         "name": "Sarah Evans",
         "image": "/users/user-1.jpg"
@@ -231,7 +239,7 @@
       "title": "Vintage Sand Watch",
       "description": "A classic glass sand watch from the 19th century, used to measure time with sand particles. An elegant piece with a wooden base and intricate brass detailing.",
       "status": "Happening Soon",
-      "basePrice": "₹1,000",
+      "basePrice": 19000,
       "latestBid": null
     },
     {
@@ -240,8 +248,8 @@
       "title": "Antique Pocket Watch",
       "description": "A 19th-century golden pocket watch, featuring Roman numerals and a stunning mechanical movement. This piece has intricate engravings and comes with its original chain.",
       "status": "Bidding Open",
-      "basePrice": "₹2,500",
-      "latestBid": "₹250"
+      "basePrice": 28500,
+      "latestBid": 29500
     },
     {
       "id": "3",
@@ -249,7 +257,7 @@
       "title": "Vintage Box Camera",
       "description": "A classic early 20th-century box camera, once used to capture the essence of history. This item is in good condition with minor signs of wear on the exterior.",
       "status": "Happening Soon",
-      "basePrice": "₹3,000",
+      "basePrice": 13000,
       "latestBid": null
     },
     {
@@ -258,8 +266,8 @@
       "title": "Vintage Wall Clock",
       "description": "A mid-century wall clock made from solid oak with brass details. Its pendulum still swings, keeping perfect time, adding character to any room.",
       "status": "Bidding Open",
-      "basePrice": "₹1,500",
-      "latestBid": "₹250"
+      "basePrice": 17500,
+      "latestBid": 22500
     },
     {
       "id": "5",
@@ -267,7 +275,7 @@
       "title": "Antique Camera",
       "description": "This antique camera dates back to the 1920s, once used by professional photographers. The wooden body and leather bellows are still in excellent condition.",
       "status": "Happening Soon",
-      "basePrice": "₹5,000",
+      "basePrice": 15000,
       "latestBid": null
     },
     {
@@ -276,8 +284,8 @@
       "title": "Vintage Momento",
       "description": "A unique vintage momento from the 1800s. Its historical significance adds a touch of elegance and grandeur, making it a must-have for antique collectors.",
       "status": "Bidding Open",
-      "basePrice": "₹2,000",
-      "latestBid": "₹250"
+      "basePrice": 21000,
+      "latestBid": 27050
     },
     {
       "id": "7",
@@ -285,7 +293,7 @@
       "title": "Vintage Buddha Statue",
       "description": "A very old and rare Buddha statue, made from bronze. This item is an exquisite representation of ancient craftsmanship, believed to be over a century old.",
       "status": "Happening Soon",
-      "basePrice": "₹10,000",
+      "basePrice": 10000,
       "latestBid": null
     },
     {
@@ -294,8 +302,8 @@
       "title": "Vintage Mask",
       "description": "A vintage tribal mask, hand-carved from wood. This piece, originating from Southeast Asia, is rich in cultural history and symbolism, showcasing masterful craftsmanship.",
       "status": "Bidding Open",
-      "basePrice": "₹1,200",
-      "latestBid": "₹250"
+      "basePrice": 12800,
+      "latestBid": 15000
     },
     {
       "id": "9",
@@ -303,7 +311,7 @@
       "title": "Gold Antique Compass",
       "description": "An antique brass and gold-plated compass used by sailors in the early 19th century. This beautifully crafted instrument still works and is well-preserved.",
       "status": "Happening Soon",
-      "basePrice": "₹3,500",
+      "basePrice": 35000,
       "latestBid": null
     },
     {
@@ -312,8 +320,8 @@
       "title": "Retro Typewriter",
       "description": "A well-preserved 1940s retro typewriter, still functional. This typewriter is a great collector’s item, adding vintage charm to any workspace.",
       "status": "Bidding Open",
-      "basePrice": "₹4,500",
-      "latestBid": "₹450"
+      "basePrice": 14500,
+      "latestBid": 14500
     }
   ]
 }

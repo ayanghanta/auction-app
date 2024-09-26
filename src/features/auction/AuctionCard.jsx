@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import styles from "./AuctionCard.module.css";
 import CollapsText from "../../utils/CollapsText";
 import Button from "../../ui/buttons/Button";
+import { formatCurrency } from "../../utils/helper";
 
 function AuctionCard({ product }) {
   return (
@@ -14,8 +15,10 @@ function AuctionCard({ product }) {
         </p>
         <p>Status: {product.status}</p>
         <div>
-          <p>Base Price: {product.basePrice}</p>
-          {product.latestBid && <p>LatestBid: {product.latestBid}</p>}
+          <p>Base Price: {formatCurrency(product.basePrice)}</p>
+          {product.latestBid && (
+            <p>LatestBid: {formatCurrency(product.latestBid)}</p>
+          )}
         </div>
 
         <Link to={`/product/${product.id}`}>

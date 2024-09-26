@@ -79,3 +79,16 @@
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
     rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 }
+:global(.logout) {
+  display: inline-block;
+  margin-top: 1.6rem;
+  width: 50%;
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 600;
+  background-color: #c6e9ea;
+  color: #606060;
+  font-family: "Rubik", sans-serif;
+  transition: all 0.3s;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+}
