@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./Sidebar.module.css";
 import Button from "./buttons/Button";
 import { useDispatch, useSelector } from "react-redux";
@@ -10,6 +10,7 @@ function Sidebar() {
 
   function handleLogout() {
     dispatch(logout());
+    navigate("/");
   }
 
   return (
@@ -21,7 +22,7 @@ function Sidebar() {
         <li>Catogory</li>
         <li>Live Acutions</li>
         <li>Price Range</li>
-        <li>Account</li>
+        <li onClick={() => navigate("/me")}>My Account</li>
         <li>Winings</li>
         <li>Recharge</li>
       </ul>
