@@ -9,10 +9,10 @@ const FAKE_USER = {
 };
 
 const initialState = {
-  // isLogin: false,
-  // user: {},
-  isLogin: true,
-  user: FAKE_USER,
+  isLogin: false,
+  user: {},
+  // isLogin: true,
+  // user: FAKE_USER,
 };
 
 const userSlice = createSlice({

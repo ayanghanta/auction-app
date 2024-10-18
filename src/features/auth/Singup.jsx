@@ -7,8 +7,6 @@ import Button from "../../ui/buttons/Button";
 import { createUser } from "../../services/apiAuctions";
 
 function Singup() {
-  const errorData = useActionData();
-
   return (
     <div>
       <Header />
@@ -18,7 +16,7 @@ function Singup() {
           <p>
             Create your account and start bidding on unique, historical items.
           </p>
-          <Form method="POST">
+          <form>
             <div>
               <label htmlFor="name">Full Name</label>
               <input
@@ -60,13 +58,10 @@ function Singup() {
                 placeholder="Confrim your password"
                 required
               />
-              {errorData?.password && (
-                <p className="formError">{errorData.password}</p>
-              )}
             </div>
 
             <Button type="auth">Sign Up</Button>
-          </Form>
+          </form>
 
           <p className={styles.loginText}>
             Already have an account?
@@ -80,25 +75,6 @@ function Singup() {
       <Footer />
     </div>
   );
-}
-
-export async function action({ request }) {
-  const formData = await request.formData();
-  const data = Object.fromEntries(formData);
-
-  const error = {};
-  if (data.password !== data.confirmPassword)
-    error.password = "password and confirm password must be same";
-  if (Object.keys(error).length > 0) return error;
-
-  //FIXME: should handle in backend
-  const userData = { ...data };
-  delete userData.confirmPassword;
-  userData.address = "";
-  userData.walletBalance = 0;
-
-  await createUser(userData);
-  return redirect("/");
 }
 
 export default Singup;

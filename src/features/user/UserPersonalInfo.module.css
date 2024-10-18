@@ -1,0 +1,25 @@
+.userPersonalInfos .headers {
+  font-size: 1.6rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: #e1e1e2;
+  color: #a4a6a9;
+}
+.userPersonalInfos .headers p {
+  padding: 1.2rem 1.6rem;
+  text-align: center;
+  border-right: 1.5px solid #b4b5b7;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.userPersonalInfos .headers p:hover {
+  background-color: #f0f0f1 !important;
+}
+.userPersonalInfos .headers p:last-child {
+  border-right: none;
+}
+.userPersonalInfos .headers .active {
+  font-weight: 500;
+  background-color: #f8f8f8 !important;
+  color: #343538;
+}

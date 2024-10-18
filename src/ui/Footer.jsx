@@ -56,7 +56,6 @@ function Footer() {
           </li>
         </ul>
       </div>
-      <ScrollRestoration />
     </footer>
   );
 }

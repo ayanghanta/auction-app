@@ -1,4 +1,4 @@
-import { Link, Form, useActionData } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import styles from "./Login.module.css";
 import Button from "../../ui/buttons/Button";
@@ -16,7 +16,7 @@ function Login() {
             Unlock the treasures of history. Log in to start bidding on
             exclusive items!
           </p>
-          <Form method="POST">
+          <form>
             <div>
               <label htmlFor="email" style={styles.label}>
                 Email Address
@@ -48,7 +48,7 @@ function Login() {
             <div className={styles.forgotText}>
               <Link to="#">Forgot Password?</Link>
             </div>
-          </Form>
+          </form>
 
           <p className={styles.singUpText}>
             Don&apos;t have an account yet?
@@ -62,12 +62,6 @@ function Login() {
       <Footer />
     </div>
   );
-}
-
-export async function action({ request }) {
-  const loginData = await request.formData();
-  const data = Object.fromEntries(loginData);
-  return null;
 }
 
 export default Login;

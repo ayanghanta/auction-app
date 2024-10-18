@@ -1,10 +1,10 @@
 import styles from "./Speciality.module.css";
-function Speciality({ product }) {
+function Speciality({ specilities }) {
   return (
     <div className={styles.specilitys}>
       <h2>Speciality of the Product</h2>
       <ul>
-        {product.specilities.map((point, i) => (
+        {specilities.map((point, i) => (
           <li key={i}>{point}</li>
         ))}
       </ul>
