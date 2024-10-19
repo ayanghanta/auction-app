@@ -1,0 +1,46 @@
+.addressEditBox {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.addressEditBox p {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: rgb(73, 73, 255);
+}
+.addressEditBox form {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  margin-top: 3.2rem;
+}
+.addressEditBox form label {
+  font-size: 1.4rem;
+}
+.fromCols {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 2.4rem;
+  row-gap: 2.4rem;
+}
+.fromCols div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.textareaContainer {
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+}
+.textareaContainer textarea {
+  flex-grow: 10;
+  resize: vertical;
+}
+.textareaContainer label {
+  flex-grow: 1;
+}
+.buttons {
+  display: flex;
+  gap: 1.2rem;
+}

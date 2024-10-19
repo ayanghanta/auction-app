@@ -1,7 +1,7 @@
 import Address from "../ui/Address";
 import Button from "../ui/buttons/Button";
 import styles from "./UserAccountPage.module.css";
-import UserPersonalInfo from "../features/user/UserPersonalInfo";
+import UserAccount from "../features/user/UserAccount";
 
 function UserAccountPage() {
   return (
@@ -10,7 +10,7 @@ function UserAccountPage() {
         <img src="/users/user-1.jpg" alt="image of USER" />
         <p>Ayan Ghanta</p>
       </div>
-      <UserPersonalInfo />
+      <UserAccount />
     </div>
   );
 }

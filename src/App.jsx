@@ -20,63 +20,6 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import AuctionPage from "./Pages/AuctionPage";
 import UserAccountPage from "./Pages/UserAccountPage";
 
-/*
-const router = createBrowserRouter([
-  {
-    element: <AppLayout />,
-    errorElement: <ErrorPage />,
-    children: [
-      {
-        path: "/",
-        element: <Auctions />,
-        errorElement: <ErrorPage />,
-        loader: auctionsLoader,
-      },
-      {
-        path: "/product/:productId",
-        element: <Product />,
-        loader: productLoader,
-      },
-      {
-        path: "/me",
-        element: <UserAccount />,
-      },
-    ],
-  },
-
-  {
-    path: "/login",
-    element: <Login />,
-    action: loginAction,
-  },
-  {
-    path: "/singup",
-    element: <Singup />,
-    action: singupAction,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "/privacy",
-    element: <PrivacyPolicy />,
-  },
-  {
-    path: "/terms",
-    element: <TermsPage />,
-  },
-  {
-    path: "/faq",
-    element: <Faq />,
-  },
-  {
-    path: "/aboutus",
-    element: <AboutUs />,
-  },
-]);
-
-// function App() {
-//   return <RouterProvider router={router}></RouterProvider>;
-// }
-*/
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {

@@ -1,6 +1,7 @@
 import Button from "./buttons/Button";
-import styles from "./PasswordData.module.css";
-function PasswordData() {
+import styles from "./UserPasswordInfo.module.css";
+
+function UserPasswordInfo() {
   return (
     <form className={styles.passwordInfo}>
       <div>
@@ -40,4 +41,4 @@ function PasswordData() {
   );
 }
 
-export default PasswordData;
+export default UserPasswordInfo;

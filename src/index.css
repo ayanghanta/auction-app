@@ -28,8 +28,13 @@ main {
   margin-top: 3.2rem;
   max-width: 135rem;
   padding: 0 1.2rem;
-  min-height: 65vh;
+  /* min-height: 65vh; */
 }
+/* .outlet {
+  height: 90vh;
+  overflow-y: scroll;
+  padding-bottom: 3.2rem;
+} */
 .grid-col-sidebar-main {
   display: grid;
   grid-template-columns: 15fr 85fr;
@@ -39,7 +44,8 @@ main {
   font-size: 1.4rem !important;
   color: red;
 }
-input {
+input,
+textarea {
   background-color: #fff;
   padding: 0.8rem 1.6rem;
   font-family: inherit;
@@ -48,10 +54,24 @@ input {
   border: 1px solid #c3c3c5;
   transition: all 0.3s;
 }
-input::placeholder {
+input::placeholder,
+textarea::placeholder {
   color: #b4b5b7;
 }
-input:focus {
+input:focus,
+textarea:focus {
   border: 1px solid #3e4043;
   outline: 1.5px solid #3e4043;
 }
+
+/* Scroll Bar */
+/*
+.outlet {
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
+  overflow-y: scroll;
+}
+.outlet::-webkit-scrollbar {
+  display: none; 
+}
+*/

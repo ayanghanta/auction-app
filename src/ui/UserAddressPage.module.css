@@ -1,0 +1,7 @@
+.addressInfo {
+  background-color: #f8f8f8;
+  padding: 6.4rem 4.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}

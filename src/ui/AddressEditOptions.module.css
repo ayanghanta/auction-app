@@ -1,0 +1,36 @@
+.options {
+  /* background-color: red; */
+  position: absolute;
+  top: 0.8rem;
+  right: 0.4rem;
+}
+.options .optionIcon {
+  font-size: 2rem;
+  color: #777777;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.options .optionIcon:hover {
+  color: #494949;
+  transition: all 0.3s;
+}
+.options div {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  /* top: 0;
+  right: 0; */
+  transform: translate(-100%, -40%);
+  font-size: 1.2rem;
+  background-color: #e8e8e8;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+.options div p {
+  padding: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.options div p:hover {
+  background-color: #bbbbbb;
+}

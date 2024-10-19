@@ -1,7 +1,7 @@
-import styles from "./PersonalData.module.css";
+import styles from "./UserPersonalInfo.module.css";
 import Button from "./buttons/Button";
 
-function PersonalData() {
+function UserPersonalInfo() {
   return (
     <div className={styles.infoContainer}>
       <div className={styles.imageContainer}>
@@ -42,4 +42,4 @@ function PersonalData() {
   );
 }
 
-export default PersonalData;
+export default UserPersonalInfo;
