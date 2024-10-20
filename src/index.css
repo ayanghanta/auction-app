@@ -75,3 +75,11 @@ textarea:focus {
   display: none; 
 }
 */
+
+/*  */
+.text-right {
+  text-align: right;
+}
+.mr-sm {
+  margin-right: 1.2rem;
+}

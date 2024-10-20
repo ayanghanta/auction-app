@@ -19,6 +19,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import AuctionPage from "./Pages/AuctionPage";
 import UserAccountPage from "./Pages/UserAccountPage";
+import AddNewProduct from "./features/product/AddNewProduct";
+import { Toaster } from "react-hot-toast";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -38,6 +40,7 @@ function App() {
             <Route index element={<Auctions />} />
             <Route path="auctions/:id" element={<AuctionPage />} />
             <Route path="me" element={<UserAccountPage />} />
+            <Route path="addProduct" element={<AddNewProduct />} />
           </Route>
 
           <Route path="login" element={<Login />} />
@@ -49,6 +52,29 @@ function App() {
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </BrowserRouter>
+
+      <Toaster
+        gutter={12}
+        position="top-center"
+        containerStyle={{
+          margin: "8px",
+        }}
+        toastOptions={{
+          success: {
+            duration: 3000,
+          },
+          error: {
+            duration: 4000,
+          },
+          style: {
+            fontSize: "16px",
+            maxWidth: "500px",
+            padding: "16px 24px",
+            color: "#494949",
+            borderRadius: "4px",
+          },
+        }}
+      />
     </QueryClientProvider>
   );
 }

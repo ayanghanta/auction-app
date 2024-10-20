@@ -4,6 +4,7 @@
   /* padding: 0.8rem 1.6rem; */
   text-align: center;
   cursor: pointer;
+  display: inline-block;
 }
 .btn a {
   text-decoration: none;

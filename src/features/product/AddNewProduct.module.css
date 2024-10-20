@@ -1,0 +1,11 @@
+.addProductContainer {
+}
+.addProductContainer h1 {
+  text-align: center;
+}
+.addProductContainer .notice {
+  text-align: center;
+  font-style: italic;
+  font-size: 1.4rem;
+  color: #606060;
+}

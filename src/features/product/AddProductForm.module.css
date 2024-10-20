@@ -1,0 +1,27 @@
+.addProductForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  width: 80%;
+  margin: 4.2rem auto 6.4rem;
+}
+.addProductForm div {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 30fr 70fr;
+}
+.addProductForm div label {
+  font-size: 1.6rem;
+}
+.addProductForm div textarea {
+  resize: vertical;
+}
+.addProductForm div textarea::placeholder {
+  font-size: 1.4rem;
+  font-style: italic;
+}
+.buttons {
+  margin-top: 3.2rem;
+  display: flex;
+  gap: 1.2rem;
+}
