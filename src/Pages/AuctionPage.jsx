@@ -1,16 +1,17 @@
 import { useQuery } from "@tanstack/react-query";
+import { useParams } from "react-router-dom";
+
 import styles from "./AuctionPage.module.css";
 import { getAuctionProduct } from "../services/apiAuctions";
-import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
 import Spinner from "../ui/Spinner";
 import CollapsText from "../utils/CollapsText";
 import AuctionStatus from "../features/auction/AuctionStatus";
 import Speciality from "../features/auction/Speciality";
 import CurrentBider from "../features/auction/CurrentBider";
 import CreateBid from "../features/bid/CreateBid";
+import { BASE_URL } from "../constant";
 
-const IMAGE_URL = `http://localhost:3000/images/products`;
+const IMAGE_URL = `${BASE_URL}/images/products`;
 
 function AuctionPage() {
   const { id: productId } = useParams();
@@ -19,7 +20,7 @@ function AuctionPage() {
     isLoading,
     status,
   } = useQuery({
-    queryKey: ["auctionProduct"],
+    queryKey: ["auctionProduct", productId],
     queryFn: () => getAuctionProduct(productId),
   });
 
@@ -32,6 +33,8 @@ function AuctionPage() {
     basePrice,
     status: auctionStatus,
     specilities,
+    timePeriod,
+    originCountry,
   } = auctionProduct;
 
   return (
@@ -46,7 +49,11 @@ function AuctionPage() {
         <CurrentBider />
       </div>
       <div className={styles.ortherDtails}>
-        <Speciality specilities={specilities} />
+        <Speciality
+          specilities={specilities}
+          timePeriod={timePeriod}
+          originCountry={originCountry}
+        />
       </div>
       <div className="bidAction">
         <CreateBid />

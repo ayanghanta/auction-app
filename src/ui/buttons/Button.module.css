@@ -47,6 +47,8 @@
 }
 
 :global(.small) {
+  padding: 0.4rem 0.8rem;
+  font-size: 1.4rem;
 }
 :global(.mid) {
   padding: 0.8rem 1.6rem;

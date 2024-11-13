@@ -1,8 +1,10 @@
-const BASE_URL = "http://localhost:3000/api/v1";
+import { BASE_URL } from "../constant";
+
+const API_URL = `${BASE_URL}/api/v1`;
 
 export async function createNewProduct(product) {
   try {
-    const res = await fetch(`${BASE_URL}/products`, {
+    const res = await fetch(`${API_URL}/products`, {
       method: "POST",
       body: product,
     });

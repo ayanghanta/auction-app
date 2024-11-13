@@ -18,3 +18,11 @@
   font-weight: 500;
   margin-bottom: 1.6rem;
 }
+.flagContainer {
+  align-items: center;
+  display: flex;
+  gap: 2.4rem;
+}
+.flagContainer img {
+  width: 32px !important;
+}

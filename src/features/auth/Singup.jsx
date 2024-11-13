@@ -1,31 +1,56 @@
-import { Form, Link, redirect, useActionData } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import Footer from "../../ui/Footer";
 import Header from "../../ui/Header";
 import styles from "./Singup.module.css";
 import Button from "../../ui/buttons/Button";
-import { createUser } from "../../services/apiAuctions";
+import { useForm } from "react-hook-form";
+import InputError from "../../ui/InputError";
+import { useSignup } from "./useSignup";
+import SmallSpinner from "../../ui/SmallSpinner";
 
 function Singup() {
+  const navigate = useNavigate();
+  const { register, reset, formState, getValues, handleSubmit } = useForm();
+  const { errors } = formState;
+  const { signup, isLoading } = useSignup();
+
+  function handleSignup(data) {
+    // console.log(data);
+    signup(
+      { ...data },
+      {
+        onSuccess: () => {
+          navigate("/");
+        },
+        onSettled: () => {
+          reset();
+        },
+      }
+    );
+  }
+
   return (
     <div>
       <Header />
       <main className={styles.singupContainer}>
         <div className={styles.singupForm}>
           <h1>Join Vintage Vault</h1>
-          <p>
+          <p className={styles.tagline}>
             Create your account and start bidding on unique, historical items.
           </p>
-          <form>
+          <form onSubmit={handleSubmit(handleSignup)}>
             <div>
               <label htmlFor="name">Full Name</label>
               <input
                 type="text"
                 id="name"
-                name="name"
                 placeholder="Enter your full name"
-                required
+                {...register("fullName", {
+                  required: "This field is required",
+                })}
               />
+              <InputError error={errors.fullName?.message} />
             </div>
 
             <div>
@@ -33,10 +58,16 @@ function Singup() {
               <input
                 type="email"
                 id="email"
-                name="email"
                 placeholder="Enter your email"
-                required
+                {...register("email", {
+                  required: "This field is required",
+                  pattern: {
+                    value: /\S+@\S+\.\S+/,
+                    message: "Please provide a valid email",
+                  },
+                })}
               />
+              <InputError error={errors.email?.message} />
             </div>
 
             <div>
@@ -44,23 +75,36 @@ function Singup() {
               <input
                 type="password"
                 id="password"
-                name="password"
                 placeholder="Create a password"
-                required
+                {...register("password", {
+                  required: "This field is required",
+                  minLength: {
+                    value: 8,
+                    message: "Password must be atlest 8 charcter long",
+                  },
+                })}
               />
+              <InputError error={errors.password?.message} />
             </div>
             <div>
               <label htmlFor="cPassword">Confrim Password</label>
               <input
                 type="password"
                 id="cPassword"
-                name="confirmPassword"
                 placeholder="Confrim your password"
-                required
+                {...register("confirmPassword", {
+                  required: "This field is required",
+                  validate: (cPassword) =>
+                    cPassword === getValues().password ||
+                    "Password and password confirm must be same",
+                })}
               />
+              <InputError error={errors.confirmPassword?.message} />
             </div>
 
-            <Button type="auth">Sign Up</Button>
+            <Button type="auth" role="submit" disabled={isLoading}>
+              {isLoading ? <SmallSpinner /> : "Sign Up"}
+            </Button>
           </form>
 
           <p className={styles.loginText}>

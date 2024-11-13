@@ -1,36 +1,67 @@
-import { Link, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import styles from "./Sidebar.module.css";
-import Button from "./buttons/Button";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../features/user/userSlice";
+import {
+  IoCardOutline,
+  IoFlameOutline,
+  IoGridOutline,
+  IoHomeOutline,
+  IoPersonOutline,
+  IoTrophyOutline,
+} from "react-icons/io5";
 function Sidebar() {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const isLogin = useSelector((store) => store.user.isLogin);
-
-  function handleLogout() {
-    dispatch(logout());
-    navigate("/");
-  }
+  // const dispatch = useDispatch();
+  // const isLogin = useSelector((store) => store.user.isLogin);
 
   return (
     <div className={styles.sidebar}>
       <ul>
         <li className={styles.active} onClick={() => navigate("/")}>
-          Home
+          <NavLink to="/">
+            <IoHomeOutline />
+            <span>Home</span>
+          </NavLink>
         </li>
-        <li>Catogory</li>
-        <li>Live Acutions</li>
-        <li>Price Range</li>
-        <li onClick={() => navigate("/me")}>My Account</li>
-        <li>Winings</li>
-        <li>Recharge</li>
+        <li>
+          <NavLink to="/category">
+            <IoGridOutline />
+            <span>Category</span>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/lives">
+            <IoFlameOutline />
+            <span>Live auction</span>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/me">
+            <IoPersonOutline />
+
+            <span>My account</span>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/me-">
+            <span>My account</span>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/me-">
+            <IoTrophyOutline />
+            <span>Winings</span>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/me--">
+            <IoCardOutline />
+
+            <span>Recharge</span>
+          </NavLink>
+        </li>
       </ul>
-      {isLogin && (
-        <Button type="logout" onClick={handleLogout}>
-          Logout
-        </Button>
-      )}
     </div>
   );
 }

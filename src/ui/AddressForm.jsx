@@ -1,7 +1,7 @@
 import styles from "./AddressForm.module.css";
 import Button from "./buttons/Button";
 
-function AddressForm({ address, onCalcelEdit }) {
+function AddressForm({ address, onCancelEdit }) {
   const {
     phoneNumber,
     pinCode,
@@ -111,12 +111,12 @@ function AddressForm({ address, onCalcelEdit }) {
           <Button type="update" size="big">
             Save
           </Button>
-          {onCalcelEdit && (
+          {onCancelEdit && (
             <Button
               type="secondary"
               role="reset"
               size="big"
-              onClick={() => onCalcelEdit(false)}
+              onClick={() => onCancelEdit(false)}
             >
               Cancel
             </Button>

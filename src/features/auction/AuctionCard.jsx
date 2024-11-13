@@ -3,8 +3,9 @@ import styles from "./AuctionCard.module.css";
 import CollapsText from "../../utils/CollapsText";
 import Button from "../../ui/buttons/Button";
 import { formatCurrency } from "../../utils/helper";
+import { BASE_URL } from "../../constant";
 
-const IMAGE_URL = "http://localhost:3000/images/products";
+const IMAGE_URL = `${BASE_URL}/images/products`;
 
 function AuctionCard({ product }) {
   const {

@@ -9,6 +9,9 @@
   flex-direction: column;
   align-items: center;
 }
+.imageContainer img {
+  width: 18rem;
+}
 .infoContainer .infoData {
   display: flex;
   flex-direction: column;
@@ -18,7 +21,7 @@
 .infoData div {
   display: flex;
   flex-direction: column;
-  margin-bottom: 1.2rem;
+  gap: 1.2rem;
 }
 .infoData div label {
   color: #86888c;

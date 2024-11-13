@@ -1,4 +1,4 @@
-.sidebar {
+:global(.sidebar) {
 }
 .sidebar ul {
   display: flex;
@@ -6,12 +6,19 @@
   list-style: none;
   /* gap: 2.4rem; */
 }
-.sidebar ul li {
-  padding: 2.4rem 0.8rem;
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  padding: 1.8rem 0.8rem;
   font-size: 1.6rem;
   cursor: pointer;
   transition: all 0.3s;
   border-bottom: 1px solid #e8e8e8;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
 }
 .sidebar ul li:last-child {
   border-bottom: none;
@@ -21,6 +28,9 @@
   transition: all 0.3s;
   transform: scaleX(1.05);
 }
-.active {
+/* .sidebar ul li a.active {
   background-color: #c6e9ea;
+} */
+.sidebar ul li a:global(.active) {
+  background-color: #c6e9ea !important;
 }

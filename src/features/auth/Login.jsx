@@ -1,11 +1,35 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import styles from "./Login.module.css";
 import Button from "../../ui/buttons/Button";
 import Header from "../../ui/Header";
 import Footer from "../../ui/Footer";
+import { useState } from "react";
+import { useLogin } from "./useLogin";
+import SmallSpinner from "../../ui/SmallSpinner";
 
 function Login() {
+  const [email, setEmail] = useState("test7@gmail.com");
+  const [password, setPassword] = useState("test1234");
+  const { login, isLoading } = useLogin();
+  const navigate = useNavigate();
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    if (!email || !password) return;
+
+    login(
+      { email, password },
+      {
+        onSettled: () => {
+          setEmail("");
+          setPassword("");
+        },
+        onSuccess: () => navigate("/"),
+      }
+    );
+  }
+
   return (
     <div>
       <Header />
@@ -16,7 +40,7 @@ function Login() {
             Unlock the treasures of history. Log in to start bidding on
             exclusive items!
           </p>
-          <form>
+          <form onSubmit={handleSubmit}>
             <div>
               <label htmlFor="email" style={styles.label}>
                 Email Address
@@ -25,8 +49,11 @@ function Login() {
                 type="email"
                 id="email"
                 name="email"
+                required
                 placeholder="Enter your email"
                 style={styles.input}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
 
@@ -38,12 +65,17 @@ function Login() {
                 type="password"
                 id="password"
                 name="password"
+                required
                 placeholder="Enter your password"
                 style={styles.input}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
             </div>
 
-            <Button type="auth">Login</Button>
+            <Button type="auth" role="submit">
+              {isLoading ? <SmallSpinner /> : "Login"}
+            </Button>
 
             <div className={styles.forgotText}>
               <Link to="#">Forgot Password?</Link>

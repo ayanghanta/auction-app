@@ -1,6 +1,7 @@
-/* .userOverview {
-  background-color: #e8e8e8;
-} */
+.userOverview {
+  position: relative;
+  /* background-color: #e8e8e8; */
+}
 .userOverview img {
   border-radius: 50%;
   cursor: pointer;

@@ -7,6 +7,7 @@ function Button({
   onClick,
   role = "button",
   to,
+  disabled = false,
 }) {
   if (onClick)
     return (
@@ -14,6 +15,7 @@ function Button({
         className={`${styles.btn} ${type} ${size}`}
         onClick={onClick}
         type={role}
+        disabled={disabled}
       >
         {children}
       </button>
@@ -26,7 +28,11 @@ function Button({
     );
 
   return (
-    <button className={`${styles.btn} ${type} ${size}`} type={role}>
+    <button
+      className={`${styles.btn} ${type} ${size}`}
+      type={role}
+      disabled={disabled}
+    >
       {children}
     </button>
   );

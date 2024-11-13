@@ -21,6 +21,7 @@ import AuctionPage from "./Pages/AuctionPage";
 import UserAccountPage from "./Pages/UserAccountPage";
 import AddNewProduct from "./features/product/AddNewProduct";
 import { Toaster } from "react-hot-toast";
+import ScrolltoTop from "./ui/SrolltoTop";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -51,6 +52,7 @@ function App() {
           <Route path="aboutus" element={<AboutUs />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
+        <ScrolltoTop />
       </BrowserRouter>
 
       <Toaster
