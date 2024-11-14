@@ -1,0 +1,4 @@
+product status== 'Bidding Open' auction is live
+product status == 'Happening Soon' && verified == true ==> action is verified but not live
+product status == 'Happening Soon' && verified == false ==> action is not verified and not live
+pruduct published == true && verified== true ==> peroduct is verified by admin and seller publish the product

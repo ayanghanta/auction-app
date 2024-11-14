@@ -1,4 +1,3 @@
-import { getCode } from "country-list";
 import lookup from "country-code-lookup";
 
 export function formatCurrency(amount) {

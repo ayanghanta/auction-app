@@ -2,11 +2,11 @@ import AuctionCard from "./AuctionCard";
 import styles from "./Auctions.module.css";
 import Spinner from "../../ui/Spinner";
 import PaginationBox from "../../ui/PaginationBox";
-import { useAuctions } from "./useAuctions";
 import { RES_PER_PAGE_HOME } from "../../constant";
+import { useLiveAuctions } from "./useLiveAunctions";
 
 function Auctions() {
-  const { auctions, isLoading, totalSize } = useAuctions();
+  const { auctions, isLoading, totalSize } = useLiveAuctions();
 
   if (isLoading) return <Spinner />;
 

@@ -22,6 +22,7 @@ import UserAccountPage from "./Pages/UserAccountPage";
 import AddNewProduct from "./features/product/AddNewProduct";
 import { Toaster } from "react-hot-toast";
 import ScrolltoTop from "./ui/SrolltoTop";
+import LiveAuctions from "./features/auction/LiveAuctions";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -40,6 +41,7 @@ function App() {
           <Route element={<AppLayout />}>
             <Route index element={<Auctions />} />
             <Route path="auctions/:id" element={<AuctionPage />} />
+            <Route path="live-auctions" element={<LiveAuctions />} />
             <Route path="me" element={<UserAccountPage />} />
             <Route path="addProduct" element={<AddNewProduct />} />
           </Route>

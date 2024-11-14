@@ -1,19 +1,17 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import styles from "./Sidebar.module.css";
-import { useDispatch, useSelector } from "react-redux";
-import { logout } from "../features/user/userSlice";
+
 import {
   IoCardOutline,
   IoFlameOutline,
   IoGridOutline,
+  IoHammerOutline,
   IoHomeOutline,
   IoPersonOutline,
   IoTrophyOutline,
 } from "react-icons/io5";
 function Sidebar() {
   const navigate = useNavigate();
-  // const dispatch = useDispatch();
-  // const isLogin = useSelector((store) => store.user.isLogin);
 
   return (
     <div className={styles.sidebar}>
@@ -31,7 +29,7 @@ function Sidebar() {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/lives">
+          <NavLink to="/live-auctions">
             <IoFlameOutline />
             <span>Live auction</span>
           </NavLink>
@@ -45,7 +43,8 @@ function Sidebar() {
         </li>
         <li>
           <NavLink to="/me-">
-            <span>My account</span>
+            <IoHammerOutline />
+            <span>My Bids</span>
           </NavLink>
         </li>
         <li>
