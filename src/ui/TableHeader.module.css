@@ -1,0 +1,11 @@
+.tableHeader {
+  display: grid;
+  background-color: #fafafa;
+  padding: 1.6rem;
+}
+.tableHeader p {
+  justify-self: center;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #1c1c1c;
+}

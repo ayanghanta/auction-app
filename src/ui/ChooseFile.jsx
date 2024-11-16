@@ -1,5 +1,6 @@
 import { IoCloseOutline } from "react-icons/io5";
 import styles from "./ChooseFile.module.css";
+import InputError from "./InputError";
 
 function ChooseFile({
   children,
@@ -8,6 +9,7 @@ function ChooseFile({
   multiple = true,
   id,
   accept = "image/*",
+  error,
 }) {
   const handleFileChange = (e) => {
     const newFile = Array.from(e.target.files);
@@ -47,6 +49,7 @@ function ChooseFile({
             accept={accept}
           />
         )}
+        <InputError error={error} />
         <div className={styles.muliImages}>
           <ul>
             {selectedFiles.map((file, i) => (

@@ -1,0 +1,36 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  padding: 1.2rem 0;
+}
+.container img {
+  width: 60%;
+}
+.title,
+.price,
+.date,
+.status {
+  justify-self: center;
+  align-self: center;
+}
+.title a {
+  text-decoration: none;
+  color: inherit;
+}
+.title {
+  font-size: 1.6rem;
+  color: #333333;
+}
+.price {
+  font-size: 1.6rem;
+  color: rgb(0, 190, 0);
+}
+.date {
+  font-size: 1.4rem;
+  color: #3ba2a7;
+}
+.status {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+}

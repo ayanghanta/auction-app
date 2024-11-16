@@ -1,10 +1,4 @@
-import {
-  BrowserRouter,
-  createBrowserRouter,
-  Route,
-  RouterProvider,
-  Routes,
-} from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AppLayout from "./ui/AppLayout";
 import ErrorPage from "./staticPages/ErrorPage";
 import PrivacyPolicy from "./staticPages/PrivacyPolicy";
@@ -12,7 +6,6 @@ import TermsPage from "./staticPages/TermsPage";
 import Faq from "./staticPages/Faq";
 import AboutUs from "./staticPages/AboutUs";
 import Auctions from "./features/auction/Auctions";
-import Product from "./features/auction/Product";
 import Login from "./features/auth/Login";
 import Singup from "./features/auth/Singup";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -23,6 +16,7 @@ import AddNewProduct from "./features/product/AddNewProduct";
 import { Toaster } from "react-hot-toast";
 import ScrolltoTop from "./ui/SrolltoTop";
 import LiveAuctions from "./features/auction/LiveAuctions";
+import MyProducts from "./Pages/MyProducts";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -43,6 +37,7 @@ function App() {
             <Route path="auctions/:id" element={<AuctionPage />} />
             <Route path="live-auctions" element={<LiveAuctions />} />
             <Route path="me" element={<UserAccountPage />} />
+            <Route path="myProducts" element={<MyProducts />} />
             <Route path="addProduct" element={<AddNewProduct />} />
           </Route>
 

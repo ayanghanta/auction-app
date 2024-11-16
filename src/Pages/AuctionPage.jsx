@@ -10,6 +10,7 @@ import Speciality from "../features/auction/Speciality";
 import CurrentBider from "../features/auction/CurrentBider";
 import CreateBid from "../features/bid/CreateBid";
 import { BASE_URL } from "../constant";
+import Slider from "../ui/Slider";
 
 const IMAGE_URL = `${BASE_URL}/images/products`;
 
@@ -39,7 +40,8 @@ function AuctionPage() {
 
   return (
     <div className={styles.productContainer}>
-      <img src={`${IMAGE_URL}/${coverImage}`} alt={`image of ${title}`} />
+      {/* <img src={`${IMAGE_URL}/${coverImage}`} alt={`image of ${title}`} /> */}
+      <Slider />
       <div className={styles.productHader}>
         <h1>{title}</h1>
         <p>

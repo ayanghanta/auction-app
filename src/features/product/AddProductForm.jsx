@@ -5,13 +5,15 @@ import { useState } from "react";
 import { useCreateNewProduct } from "./useCreateNewProduct";
 import ChooseFile from "../../ui/ChooseFile";
 import SmallSpinner from "../../ui/SmallSpinner";
+import InputError from "../../ui/InputError";
 
 function AddProductForm() {
-  const { register, handleSubmit, reset } = useForm();
+  const { register, handleSubmit, reset, formState } = useForm();
   const [selectedCoverImage, setSelectedCoverImage] = useState([]);
   const [selectedOtherImages, setSelectedOtherImages] = useState([]);
   const [selectedLegalDoc, setSelectedLegalDoc] = useState([]);
   const { isLoading, createNewProduct } = useCreateNewProduct();
+  const { errors } = formState;
 
   function handleReserForm() {
     reset();
@@ -28,6 +30,7 @@ function AddProductForm() {
     });
 
     if (selectedCoverImage.length === 0) return;
+    if (selectedLegalDoc.length === 0) return;
 
     // append coverimage
     formData.append("coverImage", selectedCoverImage[0]);
@@ -50,7 +53,14 @@ function AddProductForm() {
       <form className={styles.addProductForm} onSubmit={handleSubmit(onSubmit)}>
         <div>
           <label htmlFor="title">Product Title</label>
-          <input type="text" id="title" {...register("title")} />
+          <input
+            type="text"
+            id="title"
+            {...register("title", {
+              required: "This field required",
+            })}
+          />
+          <InputError error={errors.title?.message} />
         </div>
 
         <div>
@@ -58,8 +68,11 @@ function AddProductForm() {
           <textarea
             id="summary"
             placeholder="short product summary 30-40 words..."
-            {...register("summary")}
+            {...register("summary", {
+              required: "This field required",
+            })}
           ></textarea>
+          <InputError error={errors.summary?.message} />
         </div>
 
         <div>
@@ -69,8 +82,11 @@ function AddProductForm() {
             rows="5"
             disabled={isLoading}
             placeholder="details descrption of the product ..."
-            {...register("description")}
+            {...register("description", {
+              required: "This field required",
+            })}
           ></textarea>
+          <InputError error={errors.description?.message} />
         </div>
 
         <div>
@@ -79,8 +95,11 @@ function AddProductForm() {
             type="number"
             id="basePrice"
             disabled={isLoading}
-            {...register("basePrice")}
+            {...register("basePrice", {
+              required: "This field required",
+            })}
           />
+          <InputError error={errors.basePrice?.message} />
         </div>
 
         <div>
@@ -89,8 +108,11 @@ function AddProductForm() {
             type="text"
             id="originCountry"
             disabled={isLoading}
-            {...register("originCountry")}
+            {...register("originCountry", {
+              required: "This field required",
+            })}
           />
+          <InputError error={errors.originCountry?.message} />
         </div>
 
         <div>
@@ -99,8 +121,11 @@ function AddProductForm() {
             type="text"
             id="timePeriod"
             disabled={isLoading}
-            {...register("timePeriod")}
+            {...register("timePeriod", {
+              required: "This field required",
+            })}
           />
+          <InputError error={errors.timePeriod?.message} />
         </div>
 
         <ChooseFile

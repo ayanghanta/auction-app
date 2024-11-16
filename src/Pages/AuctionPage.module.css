@@ -2,13 +2,14 @@
   padding-left: 3.2rem;
   padding-right: 2.4rem;
   display: grid;
+  column-gap: 3.2rem;
   grid-template-columns: 50fr 50fr;
   row-gap: 4.2rem;
 }
 .productContainer img {
   /* margin-left: auto;
   margin-right: auto; */
-  width: 90%;
+  width: 100%;
 }
 .productContainer .productHader {
   display: flex;

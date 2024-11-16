@@ -12,11 +12,13 @@ function Speciality({ specilities, timePeriod, originCountry }) {
       <p className={styles.flagContainer}>
         <strong>Origin County: </strong>
         {originCountry}
-        <img
-          className=""
-          src={getCountryFlag(originCountry)}
-          alt={`country falg of ${"INDIA"}`}
-        />
+        {getCountryFlag(originCountry) && (
+          <img
+            className=""
+            src={getCountryFlag(originCountry)}
+            alt={`country falg of ${"INDIA"}`}
+          />
+        )}
       </p>
       <p>
         <strong>Time Period: </strong> {timePeriod}

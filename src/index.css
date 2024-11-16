@@ -13,6 +13,7 @@ body {
   background-color: #fff;
   color: #444;
   font-family: "Rubik", sans-serif;
+  overflow-x: hidden;
   /* font-family: "Asap", sans-serif; */
 }
 html {
@@ -91,3 +92,15 @@ textarea :disabled {
 }
 
 /*  */
+.verifiedTick {
+  fill: #29bf12;
+  color: #29bf12;
+}
+.rejected {
+  fill: #ef233c;
+  color: #ef233c;
+}
+.pending {
+  fill: #788585;
+  color: #788585;
+}
