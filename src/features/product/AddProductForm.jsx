@@ -1,38 +1,48 @@
 import styles from "./AddProductForm.module.css";
 import Button from "../../ui/buttons/Button";
 import { useForm } from "react-hook-form";
-import { useMutation } from "@tanstack/react-query";
-import { createNewProduct } from "../../services/apiProduct";
-import toast from "react-hot-toast";
+import { useState } from "react";
+import { useCreateNewProduct } from "./useCreateNewProduct";
+import ChooseFile from "../../ui/ChooseFile";
+import SmallSpinner from "../../ui/SmallSpinner";
 
 function AddProductForm() {
   const { register, handleSubmit, reset } = useForm();
-  const { isLoading: isProductAdding, mutate } = useMutation({
-    mutationFn: (newProduct) => createNewProduct(newProduct),
+  const [selectedCoverImage, setSelectedCoverImage] = useState([]);
+  const [selectedOtherImages, setSelectedOtherImages] = useState([]);
+  const [selectedLegalDoc, setSelectedLegalDoc] = useState([]);
+  const { isLoading, createNewProduct } = useCreateNewProduct();
 
-    onSuccess: () => {
-      toast.success("Your product is successfully created");
-      reset();
-    },
-    onError: (err) => {
-      toast.error(err.message);
-    },
-  });
+  function handleReserForm() {
+    reset();
+    setSelectedCoverImage([]);
+    setSelectedOtherImages([]);
+  }
 
   function onSubmit(data) {
     const formData = new FormData();
 
     // Append form data to FormData object
-    formData.append("title", data.title);
-    formData.append("summary", data.summary);
-    formData.append("description", data.description);
-    formData.append("basePrice", data.basePrice);
-    formData.append("originCountry", data.originCountry);
-    formData.append("timePeriod", data.timePeriod);
-    formData.append("coverImage", data.coverImage[0]); // Append the file
+    Object.keys(data).forEach((field) => {
+      if (field !== "coverImage") formData.append(field, data[field]);
+    });
 
-    // console.log(formData);
-    mutate(formData);
+    if (selectedCoverImage.length === 0) return;
+
+    // append coverimage
+    formData.append("coverImage", selectedCoverImage[0]);
+    // append other images
+    selectedOtherImages.forEach((img) => formData.append("otherImages", img));
+    // append lenal pdg
+    formData.append("legalDocument", selectedLegalDoc[0]);
+
+    createNewProduct(formData, {
+      onSuccess: () => {
+        reset();
+        setSelectedCoverImage([]);
+        setSelectedOtherImages([]);
+      },
+    });
   }
 
   return (
@@ -40,13 +50,12 @@ function AddProductForm() {
       <form className={styles.addProductForm} onSubmit={handleSubmit(onSubmit)}>
         <div>
           <label htmlFor="title">Product Title</label>
-          <input type="text" name="title" id="title" {...register("title")} />
+          <input type="text" id="title" {...register("title")} />
         </div>
 
         <div>
           <label htmlFor="summary">Product Summary</label>
           <textarea
-            name="summary"
             id="summary"
             placeholder="short product summary 30-40 words..."
             {...register("summary")}
@@ -56,9 +65,9 @@ function AddProductForm() {
         <div>
           <label htmlFor="description">Product Desciption</label>
           <textarea
-            name="description"
             id="description"
             rows="5"
+            disabled={isLoading}
             placeholder="details descrption of the product ..."
             {...register("description")}
           ></textarea>
@@ -68,8 +77,8 @@ function AddProductForm() {
           <label htmlFor="basePrice">Base Price</label>
           <input
             type="number"
-            name="basePrice"
             id="basePrice"
+            disabled={isLoading}
             {...register("basePrice")}
           />
         </div>
@@ -78,8 +87,8 @@ function AddProductForm() {
           <label htmlFor="originCountry">Product origin country</label>
           <input
             type="text"
-            name="originCountry"
             id="originCountry"
+            disabled={isLoading}
             {...register("originCountry")}
           />
         </div>
@@ -88,27 +97,45 @@ function AddProductForm() {
           <label htmlFor="timePeriod">Product Time Period</label>
           <input
             type="text"
-            name="timePeriod"
             id="timePeriod"
+            disabled={isLoading}
             {...register("timePeriod")}
           />
         </div>
 
-        <div>
-          <label htmlFor="coverImage">Product Cover Image</label>
-          <input
-            type="file"
-            name="coverImage"
-            id="coverImage"
-            {...register("coverImage")}
-          />
-        </div>
+        <ChooseFile
+          multiple={false}
+          selectedFiles={selectedCoverImage}
+          onSelectFiles={setSelectedCoverImage}
+          id="coverImage"
+        >
+          Select Cover Image
+        </ChooseFile>
+
+        <ChooseFile
+          selectedFiles={selectedOtherImages}
+          onSelectFiles={setSelectedOtherImages}
+          id="otherImages"
+        >
+          Select Other Images
+        </ChooseFile>
+
+        <ChooseFile
+          selectedFiles={selectedLegalDoc}
+          onSelectFiles={setSelectedLegalDoc}
+          id="legalDoc"
+          multiple={false}
+          accept="application/pdf"
+        >
+          Upload Legal Document
+        </ChooseFile>
+
         <div className={styles.buttons}>
-          <Button type="secondary" role="reset">
+          <Button type="secondary" onClick={handleReserForm}>
             cancel
           </Button>
-          <Button type="primary" role="submit">
-            Add Product
+          <Button type="primary" role="submit" disabled={isLoading}>
+            {isLoading ? <SmallSpinner /> : "Add Product"}
           </Button>
         </div>
       </form>

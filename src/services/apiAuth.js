@@ -64,11 +64,8 @@ export async function getUser() {
 export async function updateMe(userData) {
   const res = await fetch(`${API_URL}/updateMe`, {
     method: "PATCH",
-    body: JSON.stringify(userData),
+    body: userData,
     credentials: "include",
-    headers: {
-      "Content-Type": "application/json",
-    },
   });
 
   const data = await res.json();

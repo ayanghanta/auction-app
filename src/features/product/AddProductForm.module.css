@@ -8,6 +8,7 @@
 .addProductForm div {
   display: grid;
   align-items: center;
+  column-gap: 2.4rem;
   grid-template-columns: 30fr 70fr;
 }
 .addProductForm div label {

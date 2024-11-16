@@ -7,6 +7,7 @@ export async function createNewProduct(product) {
     const res = await fetch(`${API_URL}/products`, {
       method: "POST",
       body: product,
+      credentials: "include",
     });
     const dataObj = await res.json();
     if (!dataObj.ok) throw new Error(`Product could not be created`);

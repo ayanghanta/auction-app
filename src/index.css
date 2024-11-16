@@ -63,6 +63,12 @@ textarea:focus {
   border: 1px solid #3e4043;
   outline: 1.5px solid #3e4043;
 }
+input:disabled,
+textarea :disabled {
+  cursor: not-allowed;
+  color: #949697;
+  background-color: #e6e7eb;
+}
 
 /* Scroll Bar */
 /*

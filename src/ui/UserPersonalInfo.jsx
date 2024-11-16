@@ -4,75 +4,106 @@ import Button from "./buttons/Button";
 import { useState } from "react";
 import { useUpdateUser } from "../features/user/useUpdateUser";
 import SmallSpinner from "./SmallSpinner";
+import { useForm } from "react-hook-form";
 
 function UserPersonalInfo({ user }) {
-  // const { fullName:, email, photo } = user;
-  const [fullName, setFullname] = useState(user.fullName);
-  const [email, setEmail] = useState(user.email);
-  const [phoneNumber, setPhoneNumber] = useState(user.phoneNumber);
+  const [isChangeProfileData, setIsChangeProfileData] = useState(false);
   const { updateUser, isLoading } = useUpdateUser();
+  const { reset, register, handleSubmit } = useForm({
+    defaultValues: user,
+  });
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    if (!fullName || !email) return;
+  function handleChange() {
+    reset(user);
+    setIsChangeProfileData((c) => !c);
+  }
 
-    updateUser({ fullName, email, phoneNumber });
+  function onSubmit(data) {
+    // console.log(data);
+    const formData = new FormData();
+
+    Object.keys(data).forEach((filed) => {
+      if (filed !== "photo") return formData.append(filed, data[filed]);
+      if (filed === "photo" && data.photo[0]) {
+        formData.append("photo", data.photo[0]);
+      }
+    });
+
+    updateUser(formData, {
+      onSettled: () => {
+        handleChange();
+      },
+    });
   }
 
   return (
-    <div className={styles.infoContainer}>
+    <form className={styles.infoContainer} onSubmit={handleSubmit(onSubmit)}>
       <div className={styles.imageContainer}>
         <img
           src={`${BASE_URL}/images/users/${user.photo}`}
           alt="image of USER"
         />
 
-        <Button type="update">Upadte Photo</Button>
+        {isChangeProfileData && <input type="file" {...register("photo")} />}
       </div>
-      <form className={styles.infoData} onSubmit={handleSubmit}>
+      <div className={styles.infoData}>
         <div>
-          <label htmlFor="userName">Full Name</label>
+          <label htmlFor="fullName">Full Name</label>
           <input
             type="text"
-            name="fullName"
-            id="userName"
-            value={fullName}
-            onChange={(e) => setFullname(e.target.value)}
-            disabled={isLoading}
+            id="fullName"
+            disabled={isLoading || !isChangeProfileData}
+            {...register("fullName", {
+              required: "This filed is required",
+            })}
           />
         </div>
+
         <div>
-          <label htmlFor="phoneNo">Phone No</label>
+          <label htmlFor="phoneNumber">Phone No</label>
           <input
             type="text"
-            name="phoneNumber"
-            id="phoneNo"
-            disabled={isLoading}
-            value={phoneNumber}
-            onChange={(e) => setPhoneNumber(e.target.value)}
+            id="phoneNumber"
+            disabled={isLoading || !isChangeProfileData}
+            {...register("phoneNumber", {
+              required: "This filed is required",
+            })}
           />
         </div>
+
         <div>
           <label htmlFor="email">Email</label>
           <input
             type="email"
-            name="email"
             id="email"
-            disabled={isLoading}
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            disabled={isLoading || !isChangeProfileData}
+            {...register("email", {
+              required: "This filed is required",
+              pattern: {
+                value: /\S+@\S+\.\S+/,
+                message: "Please provide a valid email",
+              },
+            })}
           />
         </div>
-        <div className={styles.buttns}>
-          <Button type="secondary" role="reset">
-            Cancel
+      </div>
+      <div className={styles.buttns}>
+        {isChangeProfileData ? (
+          <>
+            <Button type="secondary" onClick={handleChange}>
+              Cancel
+            </Button>
+            <Button type="update" role="submit" disabled={isLoading}>
+              {isLoading ? <SmallSpinner /> : " Update"}
+            </Button>
+          </>
+        ) : (
+          <Button type="primary" size="mid" onClick={handleChange}>
+            Update profile
           </Button>
-          <Button type="update" role="submit" disabled={isLoading}>
-            {isLoading ? <SmallSpinner /> : " Update"}
-          </Button>
-        </div>
-      </form>
-    </div>
+        )}
+      </div>
+    </form>
   );
 }
 
