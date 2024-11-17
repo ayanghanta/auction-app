@@ -4,9 +4,16 @@ import styles from "./UserProductTableItem.module.css";
 import {
   IoCheckmarkCircle,
   IoCloseCircle,
+  IoCopyOutline,
+  IoCreateOutline,
+  IoHourglassOutline,
+  IoPencil,
   IoRemoveCircle,
+  IoTrash,
 } from "react-icons/io5";
-function UserProductTableItem() {
+import Menus from "../../ui/Menu";
+
+function UserProductTableItem({ id }) {
   return (
     <div className={styles.container}>
       <img src="images/pocket-watch.jpg" alt="image of a PROPDUCT" />
@@ -20,9 +27,27 @@ function UserProductTableItem() {
         <span className="verifiedTick">Verify</span> */}
         {/* <IoCloseCircle className="rejected" />
         <span className="rejected">Rejected</span> */}
-        <IoRemoveCircle className="pending" />
+        <IoHourglassOutline className="pending" />
         <span className="pending">Pending</span>
       </p>
+
+      <Menus.Menu id={id}>
+        <Menus.MenusToggle id={id} />
+        <Menus.List id={id}>
+          <Menus.Button>
+            <IoTrash />
+            <span>Deelet</span>
+          </Menus.Button>
+          <Menus.Button>
+            <IoCreateOutline />
+            <span>Edit</span>
+          </Menus.Button>
+          <Menus.Button>
+            <IoCopyOutline />
+            <span>Coppy</span>
+          </Menus.Button>
+        </Menus.List>
+      </Menus.Menu>
     </div>
   );
 }

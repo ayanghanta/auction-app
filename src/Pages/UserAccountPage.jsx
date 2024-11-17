@@ -18,14 +18,6 @@ function UserAccountPage() {
       </div>
 
       <UserAccount />
-      {/* <div className={styles.buttons}>
-        <Button type="primary" to="/addProduct">
-          See your product details
-        </Button>
-        <Button type="primary" to="/addProduct">
-          Sell your product &rarr;
-        </Button>
-      </div> */}
     </div>
   );
 }

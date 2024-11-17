@@ -14,12 +14,11 @@ function UserPersonalInfo({ user }) {
   });
 
   function handleChange() {
-    reset(user);
+    reset({ ...user, photo: "" });
     setIsChangeProfileData((c) => !c);
   }
 
   function onSubmit(data) {
-    // console.log(data);
     const formData = new FormData();
 
     Object.keys(data).forEach((filed) => {
