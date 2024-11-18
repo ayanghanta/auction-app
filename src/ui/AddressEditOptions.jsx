@@ -1,55 +1,38 @@
-import styles from "./AddressEditOptions.module.css";
+import { IoCreateOutline, IoTrash } from "react-icons/io5";
+import Menus from "./Menu";
 import Modal from "./Modal";
 import ConfirmDelete from "./confirmDelete";
+import { useDeleteAddress } from "../features/user/useDeleteAddress";
 
-function AddressEditOptions({ onEdit }) {
+function AddressEditOptions({ addressId, onEdit }) {
+  const { isLoading, deleteAddress } = useDeleteAddress();
   return (
-    <div className={styles.options}>
-      <p className={styles.button} onClick={() => onEdit((edit) => !edit)}>
-        Edit{" "}
-      </p>
-      <Modal>
-        <Modal.Button id="delete">
-          <p className={styles.button}>Delete </p>
-        </Modal.Button>
+    <Modal>
+      <Menus.Menu>
+        <Menus.MenusToggle id={addressId} />
+        <Menus.List id={addressId}>
+          <Modal.Button id="delete">
+            <Menus.Button>
+              <IoTrash />
+              <span>Delete</span>
+            </Menus.Button>
+          </Modal.Button>
+          <Menus.Button onClick={() => onEdit((edit) => !edit)}>
+            <IoCreateOutline />
+            <span>Edit</span>
+          </Menus.Button>
+        </Menus.List>
+
         <Modal.Window id="delete">
-          <ConfirmDelete resourceName="Address" />
+          <ConfirmDelete
+            resourceName="Address"
+            onDelete={() => deleteAddress(addressId)}
+            disabled={isLoading}
+          />
         </Modal.Window>
-      </Modal>
-    </div>
+      </Menus.Menu>
+    </Modal>
   );
 }
 
 export default AddressEditOptions;
-
-/*
-function AddressEditOptions({ onEdit }) {
-  const [showOptions, setShowOptions] = useState(false);
-
-  const toggleOptions = (event) => {
-    event.stopPropagation(); // Prevents click event from closing the menu
-    setShowOptions((show) => !show);
-  };
-
-  return (
-    <div className={styles.options} onClick={toggleOptions}>
-      <IoEllipsisVertical className={styles.optionIcon} />
-      {showOptions && (
-        <div>
-          <p onClick={() => onEdit((edit) => !edit)}>Edit </p>
-          <Modal>
-            <Modal.Button id="delete">
-              <p>Delete </p>
-            </Modal.Button>
-            <Modal.Window id="delete">
-              <ConfirmDelete resourceName="Address" />
-            </Modal.Window>
-          </Modal>
-        </div>
-      )}
-    </div>
-  );
-}
-
-export default AddressEditOptions;
-*/

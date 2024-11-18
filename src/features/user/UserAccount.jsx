@@ -40,7 +40,7 @@ function UserAccount() {
       </div>
       {userInfoTab === "personalInfo" && <UserPersonalInfo user={user} />}
       {userInfoTab === "passwordInfo" && <UserPasswordInfo />}
-      {userInfoTab === "addressInfo" && <UserAddressPage />}
+      {userInfoTab === "addressInfo" && <UserAddressPage user={user} />}
     </div>
   );
 }

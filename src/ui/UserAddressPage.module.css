@@ -5,3 +5,14 @@
   flex-direction: column;
   gap: 2.4rem;
 }
+.empty {
+  font-size: 1.8rem;
+  text-align: center;
+  margin: 3.2rem 0;
+  color: #aaa;
+}
+.addButton {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3.2rem;
+}

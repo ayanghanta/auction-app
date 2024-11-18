@@ -3,6 +3,12 @@
   margin-left: auto;
   margin-right: auto;
 }
+.addressEditBox button {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  gap: 1rem;
+}
 .addressEditBox p {
   font-size: 1.6rem;
   font-weight: 500;

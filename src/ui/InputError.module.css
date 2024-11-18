@@ -1,5 +1,6 @@
 .error {
-  font-size: 1.4rem;
-  color: red;
-  margin-bottom: 0;
+  font-size: 1.4rem !important;
+  color: red !important;
+  margin-bottom: 0 !important;
+  font-weight: 400 !important;
 }

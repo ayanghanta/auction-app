@@ -1,10 +1,10 @@
 import { BASE_URL } from "../constant";
 
-const API_URL = `${BASE_URL}/api/v1`;
+const API_URL = `${BASE_URL}/api/v1/products`;
 
 export async function createNewProduct(product) {
   try {
-    const res = await fetch(`${API_URL}/products`, {
+    const res = await fetch(`${API_URL}`, {
       method: "POST",
       body: product,
       credentials: "include",

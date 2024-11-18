@@ -1,43 +1,39 @@
+import { useState } from "react";
 import AddressCard from "./AddressCard";
+import AddressForm from "./AddressForm";
+import Menus from "./Menu";
 import styles from "./UserAddressPage.module.css";
 import Button from "./buttons/Button";
+import { useCreateAddress } from "../features/user/useCreateAddress";
 
-// DUMMY ADRESS
-const ADDRESS = [
-  {
-    id: "1",
-    phoneNumber: "9832838188",
-    pinCode: "721166",
-    locality: "Lutunia",
-    address: "Sabang, temathani",
-    city: "Medinipur",
-    state: "West bengal",
-    landMark: "near barik nursing home",
-    alternativeNumber: "8116733102",
-    tag: "Home",
-  },
-  {
-    id: "2",
-    phoneNumber: "7685748744",
-    pinCode: "883366",
-    locality: "Lutunia",
-    address: "Sabang, temathani",
-    city: "Medinipur",
-    state: "West bengal",
-    landMark: "near barik nursing home",
-    alternativeNumber: "7484648484",
-    tag: "Home",
-  },
-];
+function UserAddressPage({ user }) {
+  const [addAddress, setAddAddress] = useState(false);
+  const { createAddress, isLoading } = useCreateAddress();
 
-function UserAddressPage() {
   return (
-    <div className={styles.addressInfo}>
-      {ADDRESS.map((address) => (
-        <AddressCard address={address} key={address.id} />
-      ))}
-      <Button type="primary">+ Add Address</Button>
-    </div>
+    <Menus>
+      {user.addresses?.length > 0 ? (
+        <div className={styles.addressInfo}>
+          {user.addresses.map((address) => (
+            <AddressCard address={address} key={address._id} />
+          ))}
+        </div>
+      ) : (
+        <p className={styles.empty}>No Address found add a new address</p>
+      )}
+      <div className={styles.addButton}>
+        <Button type="primary" onClick={() => setAddAddress((ad) => !ad)}>
+          {addAddress ? "Cancel" : "+ Add new Address"}
+        </Button>
+      </div>
+      {addAddress && (
+        <AddressForm
+          onCancel={() => setAddAddress(false)}
+          isLoading={isLoading}
+          submitHandler={createAddress}
+        />
+      )}
+    </Menus>
   );
 }
 

@@ -17,15 +17,12 @@ function Menus({ children }) {
   );
 }
 
-function Menu({ children, id }) {
-  const { open, close, openMenu } = useContext(MenuContext);
-  function handleClick() {
-    if (openMenu === "" || openMenu !== id) open(id);
-    else close();
-  }
+function Menu({ children }) {
+  const { close } = useContext(MenuContext);
+
   const { refEl } = useOutsideClick(close, false);
   return (
-    <div className={styles.container} ref={refEl} onClick={handleClick}>
+    <div className={styles.container} ref={refEl}>
       {children}
     </div>
   );

@@ -9,12 +9,11 @@ import { useForm } from "react-hook-form";
 function UserPersonalInfo({ user }) {
   const [isChangeProfileData, setIsChangeProfileData] = useState(false);
   const { updateUser, isLoading } = useUpdateUser();
-  const { reset, register, handleSubmit } = useForm({
-    defaultValues: user,
+  const { register, handleSubmit } = useForm({
+    defaultValues: { ...user, photo: "" },
   });
 
   function handleChange() {
-    reset({ ...user, photo: "" });
     setIsChangeProfileData((c) => !c);
   }
 
@@ -30,11 +29,10 @@ function UserPersonalInfo({ user }) {
 
     updateUser(formData, {
       onSettled: () => {
-        handleChange();
+        setIsChangeProfileData((c) => !c);
       },
     });
   }
-
   return (
     <form className={styles.infoContainer} onSubmit={handleSubmit(onSubmit)}>
       <div className={styles.imageContainer}>

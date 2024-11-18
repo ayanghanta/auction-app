@@ -1,71 +1,137 @@
+import { useForm } from "react-hook-form";
 import styles from "./AddressForm.module.css";
 import Button from "./buttons/Button";
+import SmallSpinner from "./SmallSpinner";
+import InputError from "./InputError";
+import { IoLocationOutline } from "react-icons/io5";
+import { getPosition } from "../utils/getCurretGeoPosition";
+import { useState } from "react";
+import toast from "react-hot-toast";
+import { getGeoPositionAddress } from "../services/apiGeoLocation";
 
-function AddressForm({ address, onCancelEdit }) {
-  const {
-    phoneNumber,
-    pinCode,
-    locality,
-    address: addressText,
-    city,
-    state: addressState,
-    tag,
-    landMark,
-    alternativeNumber,
-  } = address;
+/*
+phone number validtor regular expresssion :/^\d{10}$/
+Indian pincode validtor regular expresssion :/^[1-9][0-9]{5}$/
+*/
+
+function AddressForm({
+  address = {},
+  onCancel,
+  submitHandler,
+  isLoading,
+  isEdit = false,
+}) {
+  const { reset, register, formState, handleSubmit } = useForm({
+    defaultValues: address,
+  });
+  const { errors } = formState;
+  const [isGettingPosition, setIsGettingPosition] = useState(false);
+
+  function onSubmit(data) {
+    const addresData = isEdit
+      ? { id: address._id, addressObj: { ...data } }
+      : { ...data };
+
+    submitHandler(addresData, {
+      onSettled: (data) => {
+        reset(data?.address);
+        onCancel?.();
+      },
+    });
+  }
+
+  const getCurrentPosition = async () => {
+    try {
+      setIsGettingPosition(true);
+      const coords = await getPosition();
+      const currentAddress = await getGeoPositionAddress({ ...coords });
+      reset(currentAddress);
+    } catch (err) {
+      toast.error(err.message);
+    } finally {
+      setIsGettingPosition(false);
+    }
+  };
+
   return (
     <div className={styles.addressEditBox}>
       <p>Edit Address</p>
-      <Button type="primary">Use my Cerruent location</Button>
-      <form>
+      <Button type="primary" onClick={getCurrentPosition}>
+        <IoLocationOutline />
+        {isGettingPosition ? (
+          <SmallSpinner />
+        ) : (
+          <span>Use My Current Location</span>
+        )}
+      </Button>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <div className={styles.fromCols}>
           <div>
             <label htmlFor="fullName">Full name</label>
             <input
               type="text"
-              name="fullName"
               id="fullName"
-              defaultValue={"username" || ""}
+              {...register("fullName", {
+                required: "This field is required",
+              })}
             />
+            <InputError error={errors.fullName?.message} />
           </div>
 
           <div>
-            <label htmlFor="phoneNo">Phone Number</label>
+            <label htmlFor="phoneNumber">Phone Number</label>
             <input
               type="text"
-              name="phoneNo"
-              id="phoneNo"
-              defaultValue={phoneNumber || ""}
+              id="phoneNumber"
+              {...register("phoneNumber", {
+                required: "This field is required",
+                pattern: {
+                  value: /^\d{10}$/,
+                  message: "Please provide a valid phone number",
+                },
+              })}
             />
+            <InputError error={errors.phoneNumber?.message} />
           </div>
           <div>
             <label htmlFor="pinCode">Pin Code</label>
             <input
               type="text"
-              name="pinCode"
               id="pinCode"
-              defaultValue={pinCode || ""}
+              {...register("pinCode", {
+                required: "This field is required",
+                pattern: {
+                  value: /^[1-9][0-9]{5}$/,
+                  message: "Please provide a valid pincode",
+                },
+              })}
             />
+            <InputError error={errors.pinCode?.message} />
           </div>
+
           <div>
             <label htmlFor="locality">Locality</label>
             <input
               type="text"
-              name="locality"
               id="locality"
-              defaultValue={locality || ""}
+              {...register("locality", {
+                required: "This field is required",
+              })}
             />
+            <InputError error={errors.locality?.message} />
           </div>
         </div>
 
         <div className={styles.textareaContainer}>
           <label htmlFor="address">Address(Area and street)</label>
           <textarea
-            name="address"
-            id="address"
             rows="4"
-            defaultValue={addressText || ""}
+            id="address"
+            {...register("address", {
+              required: "This field is required",
+            })}
           ></textarea>
+          <InputError error={errors.address?.message} />
         </div>
 
         <div className={styles.fromCols}>
@@ -73,54 +139,55 @@ function AddressForm({ address, onCancelEdit }) {
             <label htmlFor="city">City/Town</label>
             <input
               type="text"
-              name="city"
               id="city"
-              defaultValue={city || ""}
+              {...register("city", {
+                required: "This field is required",
+              })}
             />
+            <InputError error={errors.city?.message} />
           </div>
 
           <div>
             <label htmlFor="state">State</label>
             <input
               type="text"
-              name="state"
               id="state"
-              defaultValue={addressState || ""}
+              {...register("state", {
+                required: "This field is required",
+              })}
             />
+            <InputError error={errors.state?.message} />
           </div>
+
           <div>
             <label htmlFor="landMark">Land mark(optional)</label>
-            <input
-              type="text"
-              name="landMark"
-              id="landMark"
-              defaultValue={landMark || ""}
-            />
+            <input type="text" id="landMark" {...register("landMark")} />
+            <InputError error={errors.landMark?.message} />
           </div>
+
           <div>
-            <label htmlFor="alternativePhoneNo">Alternametive phone no</label>
+            <label htmlFor="alternativeNumber">Alternametive phone no</label>
             <input
               type="text"
-              name="alternativePhoneNo"
-              id="alternativePhoneNo"
-              defaultValue={alternativeNumber || ""}
+              id="alternativeNumber"
+              {...register("alternativeNumber", {
+                pattern: {
+                  value: /^\d{10}$/,
+                  message: "Please provide a valid phone number",
+                },
+              })}
             />
+            <InputError error={errors.alternativeNumber?.message} />
           </div>
         </div>
         <div className={styles.buttons}>
-          <Button type="update" size="big">
-            Save
+          <Button type="update" size="big" role="submit">
+            {isLoading ? <SmallSpinner /> : "Save"}
           </Button>
-          {onCancelEdit && (
-            <Button
-              type="secondary"
-              role="reset"
-              size="big"
-              onClick={() => onCancelEdit(false)}
-            >
-              Cancel
-            </Button>
-          )}
+
+          <Button type="secondary" size="big" onClick={onCancel}>
+            Cancel
+          </Button>
         </div>
       </form>
     </div>

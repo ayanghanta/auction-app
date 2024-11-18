@@ -1,4 +1,5 @@
 import { cloneElement, createContext, useContext, useState } from "react";
+import { useOutsideClick } from "../utils/useOutsideClick";
 
 const ModalContext = createContext();
 
@@ -30,6 +31,7 @@ function Button({ children, id }) {
 
 function Window({ children, id }) {
   const { windowId, closeModal } = useContext(ModalContext);
+  // const { refEl } = useOutsideClick(closeModal);
 
   if (id !== windowId) return null;
   return cloneElement(children, { onCancel: closeModal });

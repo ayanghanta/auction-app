@@ -1,7 +1,7 @@
 import { IoClose } from "react-icons/io5";
 import styles from "./ConfirmDelete.module.css";
 
-function ConfirmDelete({ resourceName, onDelete, onCancel }) {
+function ConfirmDelete({ resourceName, onDelete, onCancel, disabled = false }) {
   return (
     <div className={styles.overlay}>
       <div className={styles.modal}>
@@ -14,10 +14,18 @@ function ConfirmDelete({ resourceName, onDelete, onCancel }) {
           cannot be undone.
         </p>
         <div className={styles.buttonContainer}>
-          <button className={styles.deleteButton} onClick={onDelete}>
+          <button
+            className={styles.deleteButton}
+            onClick={onDelete}
+            disabled={disabled}
+          >
             Delete
           </button>
-          <button className={styles.cancelButton} onClick={onCancel}>
+          <button
+            className={styles.cancelButton}
+            onClick={onCancel}
+            disabled={disabled}
+          >
             Cancel
           </button>
         </div>

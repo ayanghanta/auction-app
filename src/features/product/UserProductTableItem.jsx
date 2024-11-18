@@ -36,7 +36,7 @@ function UserProductTableItem({ id }) {
         <Menus.List id={id}>
           <Menus.Button>
             <IoTrash />
-            <span>Deelet</span>
+            <span>Delete</span>
           </Menus.Button>
           <Menus.Button>
             <IoCreateOutline />
