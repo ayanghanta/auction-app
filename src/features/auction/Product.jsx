@@ -34,19 +34,19 @@ function Product() {
   // );
 }
 
-function ProductStatus({ product }) {
-  return (
-    <div className={styles.statusConatiner}>
-      <p>
-        <strong>Status: </strong>
-        {product.status}
-      </p>
-      <p>
-        <strong>Base Price: </strong>
-        {formatCurrency(product.basePrice)}
-      </p>
-    </div>
-  );
-}
+// function ProductStatus({ product }) {
+//   return (
+//     <div className={styles.statusConatiner}>
+//       <p>
+//         <strong>Status: </strong>
+//         {product.status}
+//       </p>
+//       <p>
+//         <strong>Base Price: </strong>
+//         {formatCurrency(product.basePrice)}
+//       </p>
+//     </div>
+//   );
+// }
 
 export default Product;

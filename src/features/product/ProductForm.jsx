@@ -1,18 +1,48 @@
-import styles from "./AddProductForm.module.css";
+import styles from "./ProductForm.module.css";
 import Button from "../../ui/buttons/Button";
 import { useForm } from "react-hook-form";
-import { useState } from "react";
-import { useCreateNewProduct } from "./useCreateNewProduct";
+import { useEffect, useState } from "react";
 import ChooseFile from "../../ui/ChooseFile";
 import SmallSpinner from "../../ui/SmallSpinner";
 import InputError from "../../ui/InputError";
+import { useNavigate } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
+import { getProduct } from "../../services/apiProduct";
+import Spinner from "../../ui/Spinner";
 
-function AddProductForm() {
-  const { register, handleSubmit, reset, formState } = useForm();
+function ProductForm({
+  productToEditId,
+  submitHandler,
+  isCreate = true,
+  isLoading,
+  handelCloseModal,
+  formHeader,
+}) {
   const [selectedCoverImage, setSelectedCoverImage] = useState([]);
   const [selectedOtherImages, setSelectedOtherImages] = useState([]);
   const [selectedLegalDoc, setSelectedLegalDoc] = useState([]);
-  const { isLoading, createNewProduct } = useCreateNewProduct();
+  const navigate = useNavigate();
+
+  const buttonText = isCreate ? "Add Product" : "Update Product";
+
+  const { data: editProductData, isLoading: isGeteeingProductDetails } =
+    useQuery({
+      queryFn: () => (isCreate ? {} : getProduct(productToEditId)),
+      queryKey: ["product", productToEditId],
+    });
+
+  const { register, handleSubmit, reset, formState } = useForm({
+    defaultValues: {},
+  });
+
+  // SYNC WITH THE INFORMMATION OF THE PRODUCT
+  useEffect(
+    function () {
+      if (!isCreate) reset(editProductData);
+    },
+    [editProductData, reset, isCreate]
+  );
+
   const { errors } = formState;
 
   function handleReserForm() {
@@ -29,28 +59,44 @@ function AddProductForm() {
       if (field !== "coverImage") formData.append(field, data[field]);
     });
 
-    if (selectedCoverImage.length === 0) return;
-    if (selectedLegalDoc.length === 0) return;
+    if (isCreate && selectedCoverImage.length === 0) return;
+    if (isCreate && selectedLegalDoc.length === 0) return;
 
     // append coverimage
-    formData.append("coverImage", selectedCoverImage[0]);
+    if (selectedCoverImage[0])
+      formData.append("coverImage", selectedCoverImage[0]);
     // append other images
     selectedOtherImages.forEach((img) => formData.append("otherImages", img));
-    // append lenal pdg
-    formData.append("legalDocument", selectedLegalDoc[0]);
+    // append legal pdf
+    if (selectedLegalDoc[0])
+      formData.append("legalDocument", selectedLegalDoc[0]);
 
-    createNewProduct(formData, {
+    const productData = isCreate
+      ? formData
+      : { id: productToEditId, productObj: formData };
+
+    submitHandler(productData, {
       onSuccess: () => {
-        reset();
-        setSelectedCoverImage([]);
-        setSelectedOtherImages([]);
+        navigate("/myProducts");
+        handelCloseModal?.();
       },
     });
   }
 
+  if (isGeteeingProductDetails && !isCreate)
+    return (
+      <div className={styles.spinnerContiner}>
+        <Spinner />
+      </div>
+    );
+
   return (
-    <div>
-      <form className={styles.addProductForm} onSubmit={handleSubmit(onSubmit)}>
+    <>
+      {!isCreate && formHeader}
+      <form
+        className={isCreate ? styles.ProductForm : styles.ProductFormModal}
+        onSubmit={handleSubmit(onSubmit)}
+      >
         <div>
           <label htmlFor="title">Product Title</label>
           <input
@@ -156,16 +202,19 @@ function AddProductForm() {
         </ChooseFile>
 
         <div className={styles.buttons}>
-          <Button type="secondary" onClick={handleReserForm}>
+          <Button
+            type="secondary"
+            onClick={isCreate ? handleReserForm : handelCloseModal}
+          >
             cancel
           </Button>
           <Button type="primary" role="submit" disabled={isLoading}>
-            {isLoading ? <SmallSpinner /> : "Add Product"}
+            {isLoading ? <SmallSpinner /> : buttonText}
           </Button>
         </div>
       </form>
-    </div>
+    </>
   );
 }
 
-export default AddProductForm;
+export default ProductForm;

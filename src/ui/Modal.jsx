@@ -1,5 +1,7 @@
 import { cloneElement, createContext, useContext, useState } from "react";
 import { useOutsideClick } from "../utils/useOutsideClick";
+import styles from "./Modal.module.css";
+import { IoClose } from "react-icons/io5";
 
 const ModalContext = createContext();
 
@@ -34,7 +36,19 @@ function Window({ children, id }) {
   // const { refEl } = useOutsideClick(closeModal);
 
   if (id !== windowId) return null;
-  return cloneElement(children, { onCancel: closeModal });
+
+  return (
+    <div className={styles.overlay}>
+      <div className={styles.modalContainer}>
+        <div className={styles.window}>
+          <IoClose className={styles.modalCloses} onClick={closeModal} />
+          {cloneElement(children, { handelCloseModal: closeModal })}
+        </div>
+      </div>
+    </div>
+  );
+
+  // return cloneElement(children, { onCancel: closeModal });
 }
 
 Modal.Button = Button;

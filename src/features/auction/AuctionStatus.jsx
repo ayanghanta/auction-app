@@ -4,10 +4,10 @@ import { formatCurrency } from "../../utils/helper";
 function AuctionStatus({ status, basePrice }) {
   return (
     <div className={styles.statusConatiner}>
-      <p>
+      {/* <p>
         <strong>Status: </strong>
         {status}
-      </p>
+      </p> */}
       <p>
         <strong>Base Price: </strong>
         {formatCurrency(basePrice)}

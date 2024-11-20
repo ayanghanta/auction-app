@@ -8,7 +8,7 @@ export function useCreateAddress() {
   const { mutate: createAddress, isLoading } = useMutation({
     mutationFn: createAddressApi,
     onSuccess: () => {
-      queryClinet.fetchInfiniteQuery(["user"]);
+      queryClinet.invalidateQueries(["user"]);
       toast.success(`Your address sucessfully Created`);
     },
     onError: (err) => toast.error(err.message),

@@ -35,3 +35,10 @@
   align-items: center;
   gap: 0.8rem;
 }
+.updateHeading {
+  text-align: center;
+  margin-top: 2.4rem;
+}
+.updateHeading span {
+  color: #42b4b9;
+}

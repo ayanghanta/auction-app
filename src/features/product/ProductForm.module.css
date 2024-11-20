@@ -1,0 +1,44 @@
+.ProductForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  width: 80%;
+  margin: 4.2rem auto 6.4rem;
+  background-color: #fff;
+}
+.ProductFormModal {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  width: 70vw;
+  background-color: #fff;
+  padding: 4.8rem;
+}
+.ProductFormModal div,
+.ProductForm div {
+  display: grid;
+  align-items: center;
+  column-gap: 2.4rem;
+  grid-template-columns: 30fr 70fr;
+}
+.ProductFormModal div label,
+.ProductForm div label {
+  font-size: 1.6rem;
+}
+.ProductFormModal div textarea,
+.ProductForm div textarea {
+  resize: vertical;
+}
+.ProductFormModal div textarea::placeholder,
+.ProductForm div textarea::placeholder {
+  font-size: 1.4rem;
+  font-style: italic;
+}
+.buttons {
+  margin-top: 3.2rem;
+  display: flex;
+  gap: 1.2rem;
+}
+.spinnerContiner {
+  min-width: 70vw;
+}

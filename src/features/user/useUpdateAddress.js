@@ -7,7 +7,7 @@ export function useUpdateAddress() {
   const { mutate: updateAddress, isLoading } = useMutation({
     mutationFn: ({ id, addressObj }) => updateAddressApi({ id, addressObj }),
     onSuccess: () => {
-      queryClinet.fetchInfiniteQuery(["user"]);
+      queryClinet.invalidateQueries(["user"]);
       toast.success(`Your address sucessfully updated`);
     },
     onError: (err) => toast.error(err.message),

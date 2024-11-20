@@ -8,7 +8,7 @@ export function useDeleteAddress() {
   const { mutate: deleteAddress, isLoading } = useMutation({
     mutationFn: deleteAddressApi,
     onSuccess: () => {
-      queryClinet.fetchInfiniteQuery(["user"]);
+      queryClinet.invalidateQueries(["user"]);
       toast.success(`Your address sucessfully Deleted`);
     },
     onError: (err) => toast.error(err.message),

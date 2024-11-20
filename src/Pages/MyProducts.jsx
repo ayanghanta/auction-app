@@ -1,9 +1,12 @@
+import { useQuery } from "@tanstack/react-query";
 import UserProductTableItem from "../features/product/UserProductTableItem";
 import Back from "../ui/Back";
 import Menus from "../ui/Menu";
 import TableHeader from "../ui/TableHeader";
 
 import styles from "./MyProducts.module.css";
+import { getMyProducts } from "../services/apiProduct";
+import Spinner from "../ui/Spinner";
 
 function MyProducts() {
   const tableHeaders = [
@@ -14,6 +17,12 @@ function MyProducts() {
     "Status",
     "Actions",
   ];
+
+  const { isLoading, data: products } = useQuery({
+    queryFn: getMyProducts,
+    queryKey: ["myProducts"],
+  });
+
   return (
     <Menus>
       <div>
@@ -25,11 +34,19 @@ function MyProducts() {
           {/* <div>Filter</div> */}
           <div>
             <TableHeader headers={tableHeaders} />
-            <div className={styles.tableItems}>
-              <UserProductTableItem id="1" />
-              <UserProductTableItem id="2" />
-              <UserProductTableItem id="3" />
-            </div>
+            {isLoading ? (
+              <Spinner />
+            ) : (
+              <div className={styles.tableItems}>
+                {products.map((product) => (
+                  <UserProductTableItem
+                    id={product._id}
+                    key={product._id}
+                    product={product}
+                  />
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </div>

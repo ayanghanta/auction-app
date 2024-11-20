@@ -8,13 +8,7 @@ import { BASE_URL } from "../../constant";
 const IMAGE_URL = `${BASE_URL}/images/products`;
 
 function AuctionCard({ product }) {
-  const {
-    basePrice,
-    coverImage,
-    summary,
-    status: auctionStatus,
-    title,
-  } = product;
+  const { basePrice, coverImage, summary, title } = product;
   return (
     <div className={styles.auctionCard}>
       <img src={`${IMAGE_URL}/${coverImage}`} alt={`image of ${title}`} />
@@ -23,7 +17,7 @@ function AuctionCard({ product }) {
         <p>
           <CollapsText>{summary}</CollapsText>
         </p>
-        <p>Status: {auctionStatus}</p>
+        <p>%Happening soon%</p>
         <div>
           <p>Base Price: {formatCurrency(basePrice)}</p>
           {product.latestBid && <p>LatestBid: {formatCurrency(0)}</p>}
