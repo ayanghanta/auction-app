@@ -1,5 +1,9 @@
 import lookup from "country-code-lookup";
 
+export const inchToCm = (inch) => (+inch * 2.54).toFixed(2);
+
+export const poundToKg = (lb) => (+lb * 0.453592).toFixed(2);
+
 export function formatCurrency(amount) {
   const options = {
     style: "currency",
@@ -10,6 +14,17 @@ export function formatCurrency(amount) {
   );
 
   return formatedCurrency;
+}
+
+export function formatDate(date) {
+  const dateStr = new Date(date);
+  const options = {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  };
+
+  return new Intl.DateTimeFormat("en-IN", options).format(dateStr);
 }
 
 const regionToCountryCodeMap = {

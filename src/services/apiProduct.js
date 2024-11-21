@@ -10,7 +10,6 @@ export async function createNewProduct(product) {
       credentials: "include",
     });
     const dataObj = await res.json();
-    console.log(dataObj);
     if (!res.ok || !dataObj.ok) throw new Error(`Product could not be created`);
 
     return dataObj.data;
@@ -61,13 +60,32 @@ export async function updateProduct({ id, productObj }) {
     });
 
     const dataObj = await res.json();
-    console.log(dataObj);
-    if (!res.ok || dataObj.obj) throw new Error(`Product could not be updates`);
 
+    if (!res.ok || !dataObj.ok)
+      throw new Error(dataObj.message || `Product could not be updates`);
     return dataObj.data;
   } catch (err) {
-    console.log(err);
-    throw new Error(err.message || `Can't create product`);
+    throw new Error(err.message);
+  }
+}
+export async function publishProduct({ id, data }) {
+  try {
+    const res = await fetch(`${API_URL}/publishProduct/${id}`, {
+      method: "PATCH",
+      credentials: "include",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    const dataObj = await res.json();
+
+    if (!res.ok || !dataObj.ok)
+      throw new Error(dataObj.message || `Product could not be publish`);
+    return dataObj.data;
+  } catch (err) {
+    throw new Error(err.message);
   }
 }
 export async function deleteProduct(id) {

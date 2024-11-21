@@ -3,6 +3,7 @@ import styles from "./CollapsText.module.css";
 
 function CollapsText({ children, wordShown = 10, colaps = true }) {
   const [isColaps, setIsColaps] = useState(colaps);
+  if (children.split(" ").length <= wordShown) return children;
   return (
     <>
       {isColaps

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { formatCurrency } from "../../utils/helper";
+import { formatCurrency, formatDate } from "../../utils/helper";
 import styles from "./UserProductTableItem.module.css";
 import {
   IoCheckmarkCircle,
@@ -7,6 +7,7 @@ import {
   IoCopyOutline,
   IoCreateOutline,
   IoHourglassOutline,
+  IoRocketOutline,
   IoTrash,
 } from "react-icons/io5";
 import Menus from "../../ui/Menu";
@@ -16,13 +17,28 @@ import ConfirmDelete from "../../ui/confirmDelete";
 import { useDeleteProduct } from "./useDeleteProduct";
 import ProductForm from "./ProductForm";
 import { useUpdateProduct } from "./useUpdateProduct";
+import ConfirmPublish from "../../ui/ConfirmPublish";
+import { usePublishProduct } from "./usePublishProduct";
 
 const IMAGE_URL = `${BASE_URL}/images/products`;
 
 function UserProductTableItem({ id, product }) {
   const { deleteProduct, isLoading } = useDeleteProduct();
   const { updateProduct, isLoading: isUpdating } = useUpdateProduct();
-  const { title, coverImage, basePrice, status } = product;
+  const { publishProduct, isLoading: isPublishing } = usePublishProduct();
+  const { title, coverImage, basePrice, status, published, auctionsStartsAt } =
+    product;
+
+  const isVerified = status === "verified";
+  const isPending = status === "pending";
+  const isRejected = status === "rejected";
+
+  const publishButton = (
+    <>
+      <IoRocketOutline />
+      <span>Publish</span>
+    </>
+  );
 
   return (
     <div className={styles.container}>
@@ -31,21 +47,23 @@ function UserProductTableItem({ id, product }) {
         <Link to="/">{title}</Link>
       </p>
       <p className={styles.price}> {formatCurrency(basePrice)}</p>
-      <p className={styles.date}>March 31 2025</p>
+      <p className={styles.date}>
+        {published ? formatDate(auctionsStartsAt) : "---"}
+      </p>
       <p className={styles.status}>
-        {status === "verified" && (
+        {isVerified && (
           <>
             <IoCheckmarkCircle className="verifiedTick" />
-            <span className="verifiedTick">Verify</span>
+            <span className="verifiedTick">Verified</span>
           </>
         )}
-        {status === "rejected" && (
+        {isRejected && (
           <>
             <IoCloseCircle className="rejected" />
             <span className="rejected">Rejected</span>
           </>
         )}
-        {status === "pending" && (
+        {isPending && (
           <>
             <IoHourglassOutline className="pending" />
             <span className="pending">Pending</span>
@@ -71,10 +89,11 @@ function UserProductTableItem({ id, product }) {
               </Menus.Button>
             </Modal.Button>
 
-            <Menus.Button>
-              <IoCopyOutline />
-              <span>Coppy</span>
-            </Menus.Button>
+            {isVerified && !published && (
+              <Modal.Button id="publish">
+                <Menus.Button> {publishButton}</Menus.Button>
+              </Modal.Button>
+            )}
           </Menus.List>
 
           <Modal.Window id="delete">
@@ -96,6 +115,14 @@ function UserProductTableItem({ id, product }) {
                   Edit Product : <span>{title}</span>
                 </h1>
               }
+            />
+          </Modal.Window>
+
+          <Modal.Window id="publish">
+            <ConfirmPublish
+              product={product}
+              publishHandler={publishProduct}
+              isLoading={isPublishing}
             />
           </Modal.Window>
         </Menus.Menu>

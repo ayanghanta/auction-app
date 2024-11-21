@@ -1,0 +1,159 @@
+/* Modal content */
+.modalContent {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0.8rem;
+  max-width: 60rem;
+  text-align: center;
+  box-shadow: 0rem 0.4rem 2rem rgba(0, 0, 0, 0.1);
+}
+
+/* Heading */
+.heading {
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+/* Product Preview Section */
+.productPreview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  gap: 2.4rem;
+}
+
+.productImage {
+  width: 30% !important;
+  object-fit: cover;
+  border-radius: 0.8rem;
+}
+
+.productDetails {
+  text-align: left;
+  margin-left: 2rem;
+}
+
+.productTitle {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.productSummary {
+  font-size: 1.6rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.productBasePrice {
+  font-size: 1.8rem;
+  color: #333;
+}
+
+/* Auction Rules Section */
+.rules {
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.rulesHeading {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.rulesList {
+  list-style-type: disc;
+  padding-left: 2rem;
+  font-size: 1.6rem;
+  color: #444;
+}
+
+.rulesList li {
+  margin-bottom: 0.8rem;
+}
+
+/* Date Input Section */
+.dateInputs {
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.dateInputContainer {
+  margin-bottom: 1.5rem;
+}
+
+.dateLabel {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  color: #333;
+}
+
+.dateInput {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.6rem;
+  border: 0.1rem solid #ccc;
+  border-radius: 0.8rem;
+  outline: none;
+}
+
+.dateInput:focus {
+  border-color: #007bff;
+}
+
+/* Checkbox Container */
+.termsContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  font-size: 1.6rem;
+}
+
+.checkbox {
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.termsLabel {
+  color: #333;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+/* Button Container */
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+/* Buttons */
+.publishButton,
+.cancelButton {
+  padding: 1rem 2rem;
+  font-size: 1.6rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.8rem;
+}
+
+.publishButton {
+  background-color: #28a745;
+  color: white;
+}
+
+.cancelButton {
+  background-color: #dc3545;
+  color: white;
+}
+
+.publishButton:disabled,
+.cancelButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}

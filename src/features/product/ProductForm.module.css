@@ -42,3 +42,18 @@
 .spinnerContiner {
   min-width: 70vw;
 }
+.productDimentions {
+  grid-template-columns: repeat(2, 1fr) !important;
+  row-gap: 2.4rem;
+}
+.productDimentions div {
+  column-gap: 1.2rem;
+  grid-template-columns: 20fr 70fr 10fr;
+}
+.tagTitle {
+  font-size: 1.6rem;
+  margin: 1.2rem 0;
+}
+.unit {
+  font-size: 1.6rem;
+}

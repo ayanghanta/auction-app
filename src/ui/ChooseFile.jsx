@@ -14,8 +14,6 @@ function ChooseFile({
   const handleFileChange = (e) => {
     const newFile = Array.from(e.target.files);
 
-    console.log(newFile);
-
     if (newFile && !multiple) return onSelectFiles([...newFile]);
     if (newFile) {
       onSelectFiles((prevFiles) => [...prevFiles, ...newFile]);

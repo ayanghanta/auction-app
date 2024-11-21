@@ -46,6 +46,7 @@ main {
   color: red;
 }
 input,
+select,
 textarea {
   background-color: #fff;
   padding: 0.8rem 1.6rem;
@@ -54,6 +55,9 @@ textarea {
   outline: none;
   border: 1px solid #c3c3c5;
   transition: all 0.3s;
+}
+select {
+  padding: 0.4rem 0.8rem;
 }
 input::placeholder,
 textarea::placeholder {

@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { getProduct } from "../../services/apiProduct";
 import Spinner from "../../ui/Spinner";
+import { inchToCm, poundToKg } from "../../utils/helper";
 
 function ProductForm({
   productToEditId,
@@ -21,6 +22,7 @@ function ProductForm({
   const [selectedCoverImage, setSelectedCoverImage] = useState([]);
   const [selectedOtherImages, setSelectedOtherImages] = useState([]);
   const [selectedLegalDoc, setSelectedLegalDoc] = useState([]);
+  const [unit, setUnit] = useState("Cm");
   const navigate = useNavigate();
 
   const buttonText = isCreate ? "Add Product" : "Update Product";
@@ -51,12 +53,21 @@ function ProductForm({
     setSelectedOtherImages([]);
   }
 
+  // handle the unit chnage
+
+  // handle the form submition
   function onSubmit(data) {
     const formData = new FormData();
 
     // Append form data to FormData object
     Object.keys(data).forEach((field) => {
       if (field !== "coverImage") formData.append(field, data[field]);
+      // Convert dimensions (inches to cm)
+      if (["height", "width", "depth"].includes(field))
+        formData.set(field, inchToCm(data[field]));
+
+      // Convert weight (pounds to kg)
+      if (field === "weight") formData.set(field, poundToKg(data[field]));
     });
 
     if (isCreate && selectedCoverImage.length === 0) return;
@@ -143,6 +154,10 @@ function ProductForm({
             disabled={isLoading}
             {...register("basePrice", {
               required: "This field required",
+              min: {
+                value: 5000,
+                message: "Base price must be at leat ₹5000.00",
+              },
             })}
           />
           <InputError error={errors.basePrice?.message} />
@@ -190,6 +205,152 @@ function ProductForm({
         >
           Select Other Images
         </ChooseFile>
+
+        <p className={styles.tagTitle}>Product Dimetions</p>
+        <div className={styles.productDimentions}>
+          <div>
+            <label htmlFor="height">Height</label>
+            <input
+              type="number"
+              id="height"
+              step="0.01"
+              disabled={isLoading}
+              {...register("height", {
+                required: "This field required",
+                min: {
+                  value: 0,
+                  message: "height can not be 0",
+                },
+              })}
+            />
+            <select value={unit} onChange={(e) => setUnit(e.target.value)}>
+              <option value="Cm">Cm</option>
+              <option value="Inch">Inch</option>
+            </select>
+            <InputError error={errors.height?.message} />
+          </div>
+          <div>
+            <label htmlFor="width">Width</label>
+            <input
+              type="number"
+              id="width"
+              step="0.01"
+              disabled={isLoading}
+              {...register("width", {
+                required: "This field required",
+                min: {
+                  value: 0,
+                  message: "width can not be 0",
+                },
+              })}
+            />
+            <p className={styles.unit}>{unit}</p>
+            <InputError error={errors.width?.message} />
+          </div>
+          <div>
+            <label htmlFor="depth">Depth</label>
+            <input
+              type="number"
+              id="depth"
+              step="0.01"
+              disabled={isLoading}
+              {...register("depth", {
+                required: "This field required",
+              })}
+            />
+            <p className={styles.unit}>{unit}</p>
+            <InputError error={errors.depth?.message} />
+          </div>
+          <div>
+            <label htmlFor="weight">Weight</label>
+            <input
+              type="number"
+              id="weight"
+              step="0.01"
+              disabled={isLoading}
+              {...register("weight", {
+                required: "This field required",
+                min: {
+                  value: 0,
+                  message: "weight can not be 0",
+                },
+              })}
+            />
+            <p className={styles.unit}>{unit === "Cm" ? "Kg" : "Pound"}</p>
+            <InputError error={errors.weight?.message} />
+          </div>
+        </div>
+
+        <div>
+          <label htmlFor="material">Material</label>
+          <input
+            type="text"
+            id="material"
+            disabled={isLoading}
+            {...register("material", {
+              required: "This field required",
+            })}
+          />
+          <InputError error={errors.material?.message} />
+        </div>
+
+        <div>
+          <label htmlFor="overallCondition">
+            Product&apos;s overall condition
+          </label>
+          <input
+            type="text"
+            id="overallCondition"
+            disabled={isLoading}
+            {...register("overallCondition", {
+              required: "This field required",
+            })}
+          />
+          <InputError error={errors.overallCondition?.message} />
+        </div>
+
+        <div>
+          <label htmlFor="historicalSignificance">
+            Product&apos;s historical significance
+          </label>
+          <input
+            type="text"
+            id="historicalSignificance"
+            disabled={isLoading}
+            {...register("historicalSignificance", {
+              required: "This field required",
+            })}
+          />
+          <InputError error={errors.historicalSignificance?.message} />
+        </div>
+
+        <div>
+          <label htmlFor="certificateNumber">
+            Product&apos;s certificate number
+          </label>
+          <input
+            type="text"
+            id="certificateNumber"
+            disabled={isLoading}
+            {...register("certificateNumber", {
+              required: "This field required",
+            })}
+          />
+          <InputError error={errors.certificateNumber?.message} />
+        </div>
+
+        <div>
+          <label htmlFor="verifiedBy">Product is verified by</label>
+          <input
+            type="text"
+            id="verifiedBy"
+            disabled={isLoading}
+            {...register("verifiedBy", {
+              required: "This field required",
+            })}
+          />
+          <InputError error={errors.verifiedBy?.message} />
+        </div>
 
         <ChooseFile
           selectedFiles={selectedLegalDoc}

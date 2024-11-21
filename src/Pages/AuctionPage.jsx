@@ -6,21 +6,17 @@ import { getAuctionProduct } from "../services/apiAuctions";
 import Spinner from "../ui/Spinner";
 import CollapsText from "../utils/CollapsText";
 import AuctionStatus from "../features/auction/AuctionStatus";
-import Speciality from "../features/auction/Speciality";
 import CurrentBider from "../features/auction/CurrentBider";
-import CreateBid from "../features/bid/CreateBid";
 import { BASE_URL } from "../constant";
 import Slider from "../ui/Slider";
+import ProductSpecifications from "../ui/ProductSpecifications";
+import ProductAuthDetails from "../ui/ProductAuthDetails";
 
 const IMAGE_URL = `${BASE_URL}/images/products`;
 
 function AuctionPage() {
   const { id: productId } = useParams();
-  const {
-    data: auctionProduct,
-    isLoading,
-    status,
-  } = useQuery({
+  const { data: auctionProduct, isLoading } = useQuery({
     queryKey: ["auctionProduct", productId],
     queryFn: () => getAuctionProduct(productId),
   });
@@ -32,10 +28,21 @@ function AuctionPage() {
     title,
     description,
     basePrice,
-    status: auctionStatus,
-    specilities,
     timePeriod,
     originCountry,
+    shippingTime,
+    auctionsEndsAt,
+    summary,
+    historicalSignificance,
+    height,
+    width,
+    depth,
+    weight,
+    material,
+    overallCondition,
+    certificateNumber,
+    verifiedBy,
+    legalDocument,
   } = auctionProduct;
 
   return (
@@ -45,20 +52,51 @@ function AuctionPage() {
       <div className={styles.productHader}>
         <h1>{title}</h1>
         <p>
-          <CollapsText wordShown={30}>{description}</CollapsText>
+          <CollapsText wordShown={30}>{summary}</CollapsText>
         </p>
-        <AuctionStatus basePrice={basePrice} status={auctionStatus} />
+        <AuctionStatus
+          basePrice={basePrice}
+          shippingTime={shippingTime}
+          auctionsEndsAt={auctionsEndsAt}
+        />
         <CurrentBider />
       </div>
       <div className={styles.ortherDtails}>
-        <Speciality
-          specilities={specilities}
-          timePeriod={timePeriod}
-          originCountry={originCountry}
-        />
-      </div>
-      <div className="bidAction">
-        <CreateBid />
+        <div>
+          <p className={styles.title}>Description:</p>
+          <p className={styles.descriptionText}>
+            <CollapsText wordShown={30}>{description}</CollapsText>
+          </p>
+        </div>
+        <div className={styles.sideCondiner}>
+          <div>
+            <p className={styles.title}>Specifications:</p>
+            <ProductSpecifications
+              originCountry={originCountry}
+              timePeriod={timePeriod}
+              condition={overallCondition}
+              meterial={material}
+              dimentions={{ height, weight, depth, width }}
+            />
+          </div>
+          <div>
+            <p className={styles.title}>Historical Significance:</p>
+            <p className={styles.descriptionText}>{historicalSignificance}</p>
+          </div>
+        </div>
+        <div>
+          <p className={styles.title}>Authentication</p>
+          <ProductAuthDetails
+            certificateNo={certificateNumber}
+            verifiedBy={verifiedBy}
+            legalDocument={legalDocument}
+          />
+        </div>
+
+        <div>
+          <p className={styles.title}>Engagement</p>
+          <p>ENGAGEMENT STATS</p>
+        </div>
       </div>
     </div>
   );

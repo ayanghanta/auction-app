@@ -1,0 +1,41 @@
+.authDetailsContainer {
+  margin-top: 2rem;
+  border: 0.1rem solid #ddd;
+  border-radius: 0.8rem;
+  padding: 1rem;
+  background-color: #f9f9f9;
+}
+
+.sectionTitle {
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  color: #333;
+}
+
+.authTable {
+  font-size: 1.2rem;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.authTable td {
+  font-size: 1.4rem;
+  padding: 0.8rem;
+  border: 0.1rem solid #ddd;
+}
+
+.tableLabel {
+  font-weight: 500;
+  color: #555;
+  width: 40%;
+}
+
+.downloadLink {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.downloadLink:hover {
+  text-decoration: underline;
+  color: #0056b3;
+}

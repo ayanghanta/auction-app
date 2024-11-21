@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  /* margin-left: 2.4rem; */
+  /* list-style: disc !important; */
+}
+.container li {
+  font-size: 1.6em;
+  display: flex;
+}
+.tagTitle {
+  font-weight: 500;
+  margin-right: 0.6rem;
+}
+.flagContainer {
+  align-items: center;
+  display: flex;
+  gap: 2.4rem;
+}
+.flagContainer img {
+  width: 32px !important;
+}

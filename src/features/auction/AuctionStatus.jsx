@@ -1,16 +1,20 @@
 import styles from "./AuctionStatus.module.css";
-import { formatCurrency } from "../../utils/helper";
+import { formatCurrency, formatDate } from "../../utils/helper";
 
-function AuctionStatus({ status, basePrice }) {
+function AuctionStatus({ basePrice, shippingTime, auctionsEndsAt }) {
   return (
     <div className={styles.statusConatiner}>
-      {/* <p>
-        <strong>Status: </strong>
-        {status}
-      </p> */}
       <p>
         <strong>Base Price: </strong>
         {formatCurrency(basePrice)}
+      </p>
+      <p>
+        <strong> Auction Ends: </strong>
+        {formatDate(auctionsEndsAt)}
+      </p>
+      <p>
+        <strong>Shipping Time: </strong>
+        {shippingTime}
       </p>
     </div>
   );
