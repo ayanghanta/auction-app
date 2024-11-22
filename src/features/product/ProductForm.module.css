@@ -10,7 +10,7 @@
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
-  width: 70vw;
+  /* width: 70vw; */
   background-color: #fff;
   padding: 4.8rem;
 }
@@ -35,6 +35,8 @@
   font-style: italic;
 }
 .buttons {
+  justify-content: end;
+  display: flex !important;
   margin-top: 3.2rem;
   display: flex;
   gap: 1.2rem;

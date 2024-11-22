@@ -3,6 +3,7 @@ import styles from "./PaginationBox.module.css";
 import { IoChevronBack, IoChevronForward } from "react-icons/io5";
 
 function PaginationBox({ totalSize, resPerPage }) {
+  const [searchParams, setSearchParams] = useSearchParams();
   /*
   const totalsSize=27
   const resPerPage=5
@@ -13,14 +14,12 @@ function PaginationBox({ totalSize, resPerPage }) {
 
 
   */
-  const [searchParams, setSearchParams] = useSearchParams();
-
   const totalPages = Math.ceil(totalSize / resPerPage);
   const buttonsArray = Array.from({ length: totalPages }, (_, i) => i + 1);
 
   const currentPage = +searchParams.get("page") || 1;
 
-  function hanldeClick(page) {
+  function handleClick(page) {
     searchParams.set("page", page);
     setSearchParams(searchParams);
   }
@@ -38,7 +37,13 @@ function PaginationBox({ totalSize, resPerPage }) {
 
   return (
     <div className={styles.paginationBox}>
-      <button onClick={handlePrev}>
+      <button
+        onClick={handlePrev}
+        className={`${styles.navButton} ${
+          currentPage === 1 ? styles.disabled : ""
+        }`}
+        disabled={currentPage === 1}
+      >
         <IoChevronBack />
         <span>Prev</span>
       </button>
@@ -46,14 +51,22 @@ function PaginationBox({ totalSize, resPerPage }) {
         {buttonsArray.map((value) => (
           <button
             key={value}
-            onClick={() => hanldeClick(value)}
-            className={value === currentPage ? styles.active : ""}
+            onClick={() => handleClick(value)}
+            className={`${styles.pageButton} ${
+              value === currentPage ? styles.active : ""
+            }`}
           >
             {value}
           </button>
         ))}
       </div>
-      <button onClick={handeNext}>
+      <button
+        onClick={handeNext}
+        className={`${styles.navButton} ${
+          currentPage === totalPages ? styles.disabled : ""
+        }`}
+        disabled={currentPage === totalPages}
+      >
         <span>Next</span>
         <IoChevronForward />
       </button>

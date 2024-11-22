@@ -1,36 +1,69 @@
-:global(.sidebar) {
-}
-.sidebar ul {
+.sidebar {
+  height: 100vh;
+  background-color: #f9f9f9;
+  border-right: 0.1rem solid #e8e8e8;
   display: flex;
   flex-direction: column;
-  list-style: none;
-  /* gap: 2.4rem; */
+  padding: 1.5rem;
 }
 
-.sidebar ul li a {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-  padding: 1.8rem 0.8rem;
-  font-size: 1.6rem;
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 2rem;
+  text-align: center;
   cursor: pointer;
-  transition: all 0.3s;
-  border-bottom: 1px solid #e8e8e8;
+}
+
+.navList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.navList li {
+  font-size: 1.4rem;
+}
+
+.navList li a {
+  text-decoration: none;
+  color: #333;
   display: flex;
   align-items: center;
-  gap: 0.8rem;
+  gap: 1rem;
+  padding: 0.8rem 1rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s, transform 0.2s;
 }
-.sidebar ul li:last-child {
-  border-bottom: none;
+
+.navList li a:hover {
+  background-color: #dff3f3;
+  transform: translateX(0.5rem);
 }
-.sidebar ul li:hover {
-  background-color: #ecf8f8;
-  transition: all 0.3s;
-  transform: scaleX(1.05);
-}
-/* .sidebar ul li a.active {
+
+.activeLink {
   background-color: #c6e9ea;
-} */
-.sidebar ul li a:global(.active) {
-  background-color: #c6e9ea !important;
+  color: #007b7f;
+  font-weight: bold;
+  box-shadow: inset 0rem 0rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 76.8rem) {
+  .sidebar {
+    width: 20rem;
+    padding: 1rem;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .navList li a {
+    font-size: 1.2rem;
+    padding: 0.6rem 0.8rem;
+  }
 }

@@ -4,59 +4,83 @@ import styles from "./Sidebar.module.css";
 import {
   IoCardOutline,
   IoFlameOutline,
-  IoGridOutline,
   IoHammerOutline,
   IoHomeOutline,
   IoPersonOutline,
   IoTrophyOutline,
 } from "react-icons/io5";
-function Sidebar() {
-  const navigate = useNavigate();
+import ProductCategory from "./ProductCategory";
 
+function Sidebar() {
   return (
     <div className={styles.sidebar}>
-      <ul>
-        <li className={styles.active} onClick={() => navigate("/")}>
-          <NavLink to="/">
+      <ul className={styles.navList}>
+        <li>
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive ? styles.activeLink : undefined
+            }
+          >
             <IoHomeOutline />
             <span>Home</span>
           </NavLink>
         </li>
         <li>
-          <NavLink to="/category">
-            <IoGridOutline />
-            <span>Category</span>
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/live-auctions">
+          <NavLink
+            to="/live-auctions"
+            className={({ isActive }) =>
+              isActive ? styles.activeLink : undefined
+            }
+          >
             <IoFlameOutline />
-            <span>Live auction</span>
+            <span>Live Auction</span>
           </NavLink>
         </li>
         <li>
-          <NavLink to="/me">
+          <ProductCategory />
+        </li>
+        <li>
+          <NavLink
+            to="/me"
+            className={({ isActive }) =>
+              isActive ? styles.activeLink : undefined
+            }
+          >
             <IoPersonOutline />
-
-            <span>My account</span>
+            <span>My Account</span>
           </NavLink>
         </li>
         <li>
-          <NavLink to="/me-">
+          <NavLink
+            to="/me-bids"
+            className={({ isActive }) =>
+              isActive ? styles.activeLink : undefined
+            }
+          >
             <IoHammerOutline />
             <span>My Bids</span>
           </NavLink>
         </li>
         <li>
-          <NavLink to="/me-">
+          <NavLink
+            to="/me-winnings"
+            className={({ isActive }) =>
+              isActive ? styles.activeLink : undefined
+            }
+          >
             <IoTrophyOutline />
-            <span>Winings</span>
+            <span>Winnings</span>
           </NavLink>
         </li>
         <li>
-          <NavLink to="/me--">
+          <NavLink
+            to="/recharge"
+            className={({ isActive }) =>
+              isActive ? styles.activeLink : undefined
+            }
+          >
             <IoCardOutline />
-
             <span>Recharge</span>
           </NavLink>
         </li>

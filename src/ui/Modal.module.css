@@ -29,6 +29,7 @@
   overflow-y: auto;
   background-color: #fff;
   border-radius: 0.8rem;
+  max-width: 70vw;
 }
 
 .modalCloses {

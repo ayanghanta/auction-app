@@ -181,12 +181,12 @@ function AddressForm({
           </div>
         </div>
         <div className={styles.buttons}>
-          <Button type="update" size="big" role="submit">
-            {isLoading ? <SmallSpinner /> : "Save"}
-          </Button>
-
           <Button type="secondary" size="big" onClick={onCancel}>
             Cancel
+          </Button>
+
+          <Button type="update" size="big" role="submit">
+            {isLoading ? <SmallSpinner /> : "Save"}
           </Button>
         </div>
       </form>

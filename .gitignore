@@ -10,6 +10,9 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
+data/rought.html
+data/styles.css
+data/todo.txt
 *.local
 
 # Editor directories and files

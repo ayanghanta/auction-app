@@ -1,8 +1,0 @@
-3.fix the product page with some new data and refactor the form add/update
-____
-1. todo: user only can change the baseprice or the description after the prodict is verified , if user chnage orther fileds then the product become 'pending' -- and the product should be again go throught the verification process
----
-2. if auctions strats days passed the user can not chnage anything
-4. display seller 's profile in the product page
-5. create a seller public profile(can be seen by every one) and all verifed product of the seller listed their
-6. try to implement a basic Q&A in the product auction Page

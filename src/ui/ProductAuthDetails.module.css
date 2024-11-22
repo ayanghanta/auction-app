@@ -7,8 +7,9 @@
 }
 
 .sectionTitle {
+  font-size: 2rem;
+  font-weight: 600;
   margin-bottom: 1rem;
-  font-size: 1.6rem;
   color: #333;
 }
 

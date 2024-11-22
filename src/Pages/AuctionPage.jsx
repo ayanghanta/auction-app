@@ -11,6 +11,7 @@ import { BASE_URL } from "../constant";
 import Slider from "../ui/Slider";
 import ProductSpecifications from "../ui/ProductSpecifications";
 import ProductAuthDetails from "../ui/ProductAuthDetails";
+import SellerOverview from "../ui/SellerOverview";
 
 const IMAGE_URL = `${BASE_URL}/images/products`;
 
@@ -79,9 +80,16 @@ function AuctionPage() {
               dimentions={{ height, weight, depth, width }}
             />
           </div>
-          <div>
-            <p className={styles.title}>Historical Significance:</p>
-            <p className={styles.descriptionText}>{historicalSignificance}</p>
+          <div className={styles.sellerContainer}>
+            <div>
+              <p className={styles.title}>Historical Significance:</p>
+              <p className={styles.descriptionText}>{historicalSignificance}</p>
+            </div>
+            <SellerOverview
+              sellerImage={"/users/default-user.jpg"}
+              sellerName="Ayan ghanta"
+              productsSold={7}
+            />
           </div>
         </div>
         <div>
@@ -93,10 +101,7 @@ function AuctionPage() {
           />
         </div>
 
-        <div>
-          <p className={styles.title}>Engagement</p>
-          <p>ENGAGEMENT STATS</p>
-        </div>
+        <div>ORTHER DETAILS</div>
       </div>
     </div>
   );

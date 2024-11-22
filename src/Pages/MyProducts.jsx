@@ -14,7 +14,7 @@ function MyProducts() {
     "Title",
     "Base Price",
     "Published date",
-    "Status",
+    "Product status",
     "Actions",
   ];
 

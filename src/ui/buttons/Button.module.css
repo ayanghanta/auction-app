@@ -1,134 +1,159 @@
 .btn {
   all: unset;
   font-family: inherit;
-  /* padding: 0.8rem 1.6rem; */
   text-align: center;
   cursor: pointer;
   display: inline-block;
 }
+
+/* Link Style for Buttons */
 .btn a {
   text-decoration: none;
   color: inherit;
 }
+
+/* Error Button */
 :global(.error) {
   align-self: center;
-  font-size: 1.8rem;
-  background-color: #42b4b9;
-  color: #fff;
-  font-family: "Rubik", sans-serif;
-}
-:global(.primary) {
-  margin-top: 1.6rem;
+  font-size: 1.6rem;
+  background-color: #e53e3e;
+  color: #ffffff;
   font-weight: 600;
-  background-color: #42b4b9;
-  color: #fff;
-  font-family: "Rubik", sans-serif;
-  transition: all 0.3s;
-  /* width: 50%; */
+  padding: 0.8rem 1.6rem;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+:global(.error):hover {
+  background-color: #c53030;
+}
 
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+/* Primary Button */
+:global(.primary) {
+  font-weight: 600;
+  background-color: #42b4b9; /* Brand color */
+  color: #ffffff;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  transition: background-color 0.3s;
 }
 :global(.primary):hover {
-  background-color: #359094;
-  transition: all 0.3s;
-}
-:global(.secondary) {
-  margin-top: 1.6rem;
-  font-weight: 600;
-  background-color: #f0f0f1;
-  color: #535559;
-  font-family: "Rubik", sans-serif;
-  transition: all 0.3s;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
-}
-:global(.secondary):hover {
-  background-color: #e1e1e2;
-  transition: all 0.3s;
+  background-color: #359094; /* Darker shade of the brand color */
 }
 
-:global(.small) {
-  padding: 0.4rem 0.8rem;
-  font-size: 1.4rem;
+/* Secondary Button */
+:global(.secondary) {
+  font-weight: 600;
+  background-color: #edf2f7;
+  color: #2d3748;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  transition: background-color 0.3s;
 }
+:global(.secondary):hover {
+  background-color: #e2e8f0;
+}
+
+/* Small Button */
+:global(.small) {
+  padding: 0.4rem 1rem;
+  font-size: 1.2rem;
+  border-radius: 3px;
+}
+
+/* Medium Button */
 :global(.mid) {
   padding: 0.8rem 1.6rem;
   font-size: 1.4rem;
+  border-radius: 4px;
 }
+
+/* Large Button */
 :global(.big) {
   padding: 1.6rem 3.2rem;
   font-size: 1.6rem;
+  border-radius: 5px;
 }
 
+/* Bid Button */
 :global(.bid) {
-  margin-top: 1.6rem;
   font-size: 1.6rem;
-  background-color: #536640;
-  color: #fff;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-  transition: all 0.3s;
+  background-color: #48bb78;
+  color: #ffffff;
+  padding: 0.8rem 1.6rem;
+  border-radius: 4px;
+  transition: background-color 0.3s;
 }
 :global(.bid):hover {
-  transition: all 0.3s;
-  background-color: #3e5328;
+  background-color: #38a169;
 }
+
+/* CTA Button */
 :global(.cta) {
   background-color: #42b4b9;
-  color: #fff;
+  color: #ffffff;
   font-weight: 600;
   letter-spacing: 0.5px;
-  transition: all 0.3s;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  transition: background-color 0.3s;
 }
 :global(.cta):hover {
-  transition: all 0.3s;
   background-color: #359094;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
-    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
 }
+
+/* Authentication Button */
 :global(.auth) {
   text-align: center;
-  margin-top: 2.4rem;
   background-color: #42b4b9;
-  font-size: 1.8rem;
-  font-weight: 500;
-  color: #fff;
-  transition: all 0.3s;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
-    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #ffffff;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
 }
 :global(.auth):hover {
-  background-color: #c6e9ea;
-  color: #333333;
-  transition: all 0.3s;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
-    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  background-color: #359094;
+  color: #ffffff;
 }
+
+/* Logout Button */
 :global(.logout) {
-  display: inline-block;
-  margin-top: 1.6rem;
-  width: 50%;
-  text-align: center;
   font-size: 1.4rem;
   font-weight: 600;
-  background-color: #c6e9ea;
-  color: #606060;
-  font-family: "Rubik", sans-serif;
-  transition: all 0.3s;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+  background-color: #e2e8f0;
+  color: #4a5568;
+  padding: 0.8rem 1.6rem;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
 }
+:global(.logout):hover {
+  background-color: #cbd5e0;
+  color: #2d3748;
+}
+
+/* Update Button */
 :global(.update) {
-  margin-top: 1.6rem;
-  text-align: center;
   font-weight: 600;
-  background-color: #fbb02d;
-  color: #fff;
-  font-family: "Rubik", sans-serif;
-  transition: all 0.3s;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+  background-color: #ecc94b;
+  color: #1a202c;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  transition: background-color 0.3s;
 }
 :global(.update):hover {
-  transition: all 0.3s;
-  background-color: #c98d24;
+  background-color: #d69e2e;
+}
+
+/* Warning Button */
+:global(.warn) {
+  font-weight: 600;
+  background-color: #ed8936;
+  color: #ffffff;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+:global(.warn):hover {
+  background-color: #dd6b20;
 }

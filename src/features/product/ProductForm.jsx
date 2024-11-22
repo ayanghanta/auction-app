@@ -22,6 +22,8 @@ function ProductForm({
   const [selectedCoverImage, setSelectedCoverImage] = useState([]);
   const [selectedOtherImages, setSelectedOtherImages] = useState([]);
   const [selectedLegalDoc, setSelectedLegalDoc] = useState([]);
+  const [isVerified, setIsVerified] = useState(false);
+  const [editAllfields, setEditAllFileds] = useState(false);
   const [unit, setUnit] = useState("Cm");
   const navigate = useNavigate();
 
@@ -41,8 +43,10 @@ function ProductForm({
   useEffect(
     function () {
       if (!isCreate) reset(editProductData);
+      setIsVerified(editProductData?.verified);
+      if (editAllfields) setIsVerified(false);
     },
-    [editProductData, reset, isCreate]
+    [editProductData, reset, isCreate, editAllfields]
   );
 
   const { errors } = formState;
@@ -113,6 +117,7 @@ function ProductForm({
           <input
             type="text"
             id="title"
+            disabled={isLoading || isVerified}
             {...register("title", {
               required: "This field required",
             })}
@@ -124,6 +129,7 @@ function ProductForm({
           <label htmlFor="summary">Product Summary</label>
           <textarea
             id="summary"
+            disabled={isLoading || isVerified}
             placeholder="short product summary 30-40 words..."
             {...register("summary", {
               required: "This field required",
@@ -137,7 +143,7 @@ function ProductForm({
           <textarea
             id="description"
             rows="5"
-            disabled={isLoading}
+            disabled={isLoading || isVerified}
             placeholder="details descrption of the product ..."
             {...register("description", {
               required: "This field required",
@@ -151,7 +157,7 @@ function ProductForm({
           <input
             type="number"
             id="basePrice"
-            disabled={isLoading}
+            disabled={isLoading || isVerified}
             {...register("basePrice", {
               required: "This field required",
               min: {
@@ -168,7 +174,7 @@ function ProductForm({
           <input
             type="text"
             id="originCountry"
-            disabled={isLoading}
+            disabled={isLoading || isVerified}
             {...register("originCountry", {
               required: "This field required",
             })}
@@ -181,7 +187,7 @@ function ProductForm({
           <input
             type="text"
             id="timePeriod"
-            disabled={isLoading}
+            disabled={isLoading || isVerified}
             {...register("timePeriod", {
               required: "This field required",
             })}
@@ -190,6 +196,7 @@ function ProductForm({
         </div>
 
         <ChooseFile
+          disabled={isLoading || isVerified}
           multiple={false}
           selectedFiles={selectedCoverImage}
           onSelectFiles={setSelectedCoverImage}
@@ -199,6 +206,7 @@ function ProductForm({
         </ChooseFile>
 
         <ChooseFile
+          disabled={isLoading || isVerified}
           selectedFiles={selectedOtherImages}
           onSelectFiles={setSelectedOtherImages}
           id="otherImages"
@@ -214,7 +222,7 @@ function ProductForm({
               type="number"
               id="height"
               step="0.01"
-              disabled={isLoading}
+              disabled={isLoading || isVerified}
               {...register("height", {
                 required: "This field required",
                 min: {
@@ -223,7 +231,11 @@ function ProductForm({
                 },
               })}
             />
-            <select value={unit} onChange={(e) => setUnit(e.target.value)}>
+            <select
+              value={unit}
+              onChange={(e) => setUnit(e.target.value)}
+              disabled={isLoading || isVerified}
+            >
               <option value="Cm">Cm</option>
               <option value="Inch">Inch</option>
             </select>
@@ -235,7 +247,7 @@ function ProductForm({
               type="number"
               id="width"
               step="0.01"
-              disabled={isLoading}
+              disabled={isLoading || isVerified}
               {...register("width", {
                 required: "This field required",
                 min: {
@@ -253,7 +265,7 @@ function ProductForm({
               type="number"
               id="depth"
               step="0.01"
-              disabled={isLoading}
+              disabled={isLoading || isVerified}
               {...register("depth", {
                 required: "This field required",
               })}
@@ -267,7 +279,7 @@ function ProductForm({
               type="number"
               id="weight"
               step="0.01"
-              disabled={isLoading}
+              disabled={isLoading || isVerified}
               {...register("weight", {
                 required: "This field required",
                 min: {
@@ -286,7 +298,7 @@ function ProductForm({
           <input
             type="text"
             id="material"
-            disabled={isLoading}
+            disabled={isLoading || isVerified}
             {...register("material", {
               required: "This field required",
             })}
@@ -301,7 +313,7 @@ function ProductForm({
           <input
             type="text"
             id="overallCondition"
-            disabled={isLoading}
+            disabled={isLoading || isVerified}
             {...register("overallCondition", {
               required: "This field required",
             })}
@@ -316,7 +328,7 @@ function ProductForm({
           <input
             type="text"
             id="historicalSignificance"
-            disabled={isLoading}
+            disabled={isLoading || isVerified}
             {...register("historicalSignificance", {
               required: "This field required",
             })}
@@ -331,7 +343,7 @@ function ProductForm({
           <input
             type="text"
             id="certificateNumber"
-            disabled={isLoading}
+            disabled={isLoading || isVerified}
             {...register("certificateNumber", {
               required: "This field required",
             })}
@@ -344,7 +356,7 @@ function ProductForm({
           <input
             type="text"
             id="verifiedBy"
-            disabled={isLoading}
+            disabled={isLoading || isVerified}
             {...register("verifiedBy", {
               required: "This field required",
             })}
@@ -358,6 +370,7 @@ function ProductForm({
           id="legalDoc"
           multiple={false}
           accept="application/pdf"
+          disabled={isLoading || isVerified}
         >
           Upload Legal Document
         </ChooseFile>
@@ -372,6 +385,15 @@ function ProductForm({
           <Button type="primary" role="submit" disabled={isLoading}>
             {isLoading ? <SmallSpinner /> : buttonText}
           </Button>
+          {isVerified && (
+            <Button
+              type="warn"
+              onClick={() => setEditAllFileds(true)}
+              disabled={isLoading}
+            >
+              Update Product
+            </Button>
+          )}
         </div>
       </form>
     </>

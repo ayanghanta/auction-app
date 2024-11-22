@@ -1,5 +1,4 @@
 import { Outlet } from "react-router-dom";
-
 import Header from "./Header";
 import Footer from "./Footer";
 import Sidebar from "./Sidebar";
@@ -9,9 +8,10 @@ function AppLayout() {
       <Header />
       <main className="grid-col-sidebar-main">
         <Sidebar />
-        <Outlet />
+        <div className="outlet">
+          <Outlet />
+        </div>
       </main>
-
       <Footer />
     </div>
   );

@@ -10,6 +10,7 @@ function ChooseFile({
   id,
   accept = "image/*",
   error,
+  disabled,
 }) {
   const handleFileChange = (e) => {
     const newFile = Array.from(e.target.files);
@@ -38,6 +39,7 @@ function ChooseFile({
             multiple
             onChange={handleFileChange}
             accept={accept}
+            disabled={disabled}
           />
         ) : (
           <input
@@ -45,6 +47,7 @@ function ChooseFile({
             id={id}
             onChange={handleFileChange}
             accept={accept}
+            disabled={disabled}
           />
         )}
         <InputError error={error} />

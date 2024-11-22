@@ -8,24 +8,35 @@ import { BASE_URL } from "../../constant";
 const IMAGE_URL = `${BASE_URL}/images/products`;
 
 function AuctionCard({ product }) {
-  const { basePrice, coverImage, summary, title } = product;
+  const { basePrice, coverImage, summary, title, _id, latestBid } = product;
+
   return (
     <div className={styles.auctionCard}>
-      <img src={`${IMAGE_URL}/${coverImage}`} alt={`image of ${title}`} />
+      <img
+        src={`${IMAGE_URL}/${coverImage}`}
+        alt={`image of ${title}`}
+        className={styles.image}
+      />
       <div className={styles.details}>
-        <h2>{title}</h2>
-        <p>
+        <h2 className={styles.title}>{title}</h2>
+        <p className={styles.summary}>
           <CollapsText>{summary}</CollapsText>
         </p>
-        <p>%Happening soon%</p>
-        <div>
-          <p>Base Price: {formatCurrency(basePrice)}</p>
-          {product.latestBid && <p>LatestBid: {formatCurrency(0)}</p>}
+        <div className={styles.pricing}>
+          <p>
+            <strong>Base Price:</strong> {formatCurrency(basePrice)}
+          </p>
+          {latestBid && (
+            <p>
+              <strong>Latest Bid:</strong> {formatCurrency(latestBid)}
+            </p>
+          )}
         </div>
-
-        <Link to={`/auctions/${product._id}`}>
-          <Button type="primary"> Place a Bid</Button>
-        </Link>
+        <div className={styles.cta}>
+          <Link to={`/auctions/${_id}`}>
+            <Button type="primary">Place a Bid</Button>
+          </Link>
+        </div>
       </div>
     </div>
   );
