@@ -13,3 +13,25 @@
   background-color: #dff3f3;
   transform: translateX(0.5rem);
 }
+.categories {
+  padding: 0.4rem;
+  border-radius: 0.5rem;
+  background-color: #f1f1f1;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 0.6rem;
+  column-gap: 0.6rem;
+  margin-bottom: 2.4rem;
+}
+.categories li {
+  border: 1px solid #e8e8e8;
+  border-radius: 0.4rem;
+  background-color: #fff;
+  padding: 0.6rem 0.8rem;
+  cursor: pointer;
+}
+.categories li:hover {
+  transition: all 0.3s;
+  background-color: #efefef;
+}

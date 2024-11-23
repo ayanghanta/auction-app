@@ -3,12 +3,15 @@ import styles from "./Auctions.module.css";
 import Spinner from "../../ui/Spinner";
 import PaginationBox from "../../ui/PaginationBox";
 import { RES_PER_PAGE_HOME } from "../../constant";
-import { useLiveAuctions } from "./useLiveAunctions";
+import { useAuctions } from "./useAuctions";
+import EmptyPage from "../../ui/EmptyPage";
 
 function Auctions() {
-  const { auctions, isLoading, totalSize } = useLiveAuctions();
+  const { auctions, isLoading, totalSize } = useAuctions(true);
 
   if (isLoading) return <Spinner />;
+
+  if (auctions.length === 0 || !auctions) return <EmptyPage />;
 
   return (
     <div>
