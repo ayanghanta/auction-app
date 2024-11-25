@@ -62,9 +62,7 @@ function UserPersonalInfo({ user }) {
             type="text"
             id="phoneNumber"
             disabled={isLoading || !isChangeProfileData}
-            {...register("phoneNumber", {
-              required: "This filed is required",
-            })}
+            {...register("phoneNumber")}
           />
         </div>
 

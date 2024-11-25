@@ -17,6 +17,8 @@ import { Toaster } from "react-hot-toast";
 import ScrolltoTop from "./ui/SrolltoTop";
 import LiveAuctions from "./features/auction/LiveAuctions";
 import MyProducts from "./Pages/MyProducts";
+import ManageProducts from "./Pages/ManageProducts";
+import AdminProductReview from "./features/admin/AdminProductReview";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -39,6 +41,8 @@ function App() {
             <Route path="me" element={<UserAccountPage />} />
             <Route path="myProducts" element={<MyProducts />} />
             <Route path="addProduct" element={<AddNewProduct />} />
+            <Route path="manageProducts" element={<ManageProducts />} />
+            <Route path="review/:productId" element={<AdminProductReview />} />
           </Route>
 
           <Route path="login" element={<Login />} />

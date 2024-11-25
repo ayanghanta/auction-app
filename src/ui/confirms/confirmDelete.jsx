@@ -15,18 +15,18 @@ function ConfirmDelete({
       </p>
       <div className={styles.buttonContainer}>
         <button
-          className={styles.deleteButton}
-          onClick={onDelete}
-          disabled={disabled}
-        >
-          Delete
-        </button>
-        <button
           className={styles.cancelButton}
           onClick={handelCloseModal}
           disabled={disabled}
         >
           Cancel
+        </button>
+        <button
+          className={styles.deleteButton}
+          onClick={onDelete}
+          disabled={disabled}
+        >
+          Delete
         </button>
       </div>
     </div>

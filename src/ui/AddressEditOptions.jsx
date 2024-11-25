@@ -1,8 +1,8 @@
 import { IoCreateOutline, IoTrash } from "react-icons/io5";
 import Menus from "./Menu";
 import Modal from "./Modal";
-import ConfirmDelete from "./confirmDelete";
 import { useDeleteAddress } from "../features/user/useDeleteAddress";
+import ConfirmDelete from "./confirms/confirmDelete";
 
 function AddressEditOptions({ addressId, onEdit }) {
   const { isLoading, deleteAddress } = useDeleteAddress();

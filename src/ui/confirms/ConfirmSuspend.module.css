@@ -1,0 +1,58 @@
+.deleteContiner {
+  width: 100%;
+  max-width: 50rem;
+  /* text-align: center; */
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 0.8rem;
+  box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.heading {
+  margin-left: 2.4rem;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.warningText {
+  font-size: 1.6rem;
+  padding: 2.4rem;
+  color: #666;
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: end;
+  gap: 1rem;
+}
+
+.deleteButton {
+  padding: 0.8rem 1.6rem;
+  background-color: #ed8936;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.deleteButton:hover {
+  background-color: #dd6b20;
+}
+
+.cancelButton {
+  padding: 0.8rem 1.6rem;
+  background-color: #edf2f7;
+  color: #2d3748;
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cancelButton:hover {
+  background-color: #e2e8f0;
+}

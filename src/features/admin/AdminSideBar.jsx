@@ -1,21 +1,17 @@
 import { NavLink } from "react-router-dom";
-import styles from "./Sidebar.module.css";
-
+import styles from "./AdminSideBar.module.css";
 import {
-  IoCardOutline,
+  IoFileTrayFullOutline,
   IoFlameOutline,
-  IoHammerOutline,
   IoHomeOutline,
+  IoPeopleOutline,
   IoPersonOutline,
-  IoTrophyOutline,
 } from "react-icons/io5";
-import ProductCategory from "./ProductCategory";
-import { useUser } from "../features/auth/useUser";
-import AdminSideBar from "../features/admin/AdminSideBar";
+import ProductCategory from "../../ui/ProductCategory";
+import { useUser } from "../auth/useUser";
 
-function Sidebar() {
+function AdminSideBar() {
   const { user } = useUser();
-  if (user?.role === "admin") return <AdminSideBar />;
   return (
     <div className={styles.sidebar}>
       <ul className={styles.navList}>
@@ -51,29 +47,20 @@ function Sidebar() {
         </li>
         <li>
           <NavLink
+            to="/manageProducts"
+            className={({ isActive }) => (isActive ? styles.activeLink : "")}
+          >
+            <IoFileTrayFullOutline />
+            <span>Manage Products</span>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
             to="/me-bids"
             className={({ isActive }) => (isActive ? styles.activeLink : "")}
           >
-            <IoHammerOutline />
-            <span>My Bids</span>
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/me-winnings"
-            className={({ isActive }) => (isActive ? styles.activeLink : "")}
-          >
-            <IoTrophyOutline />
-            <span>Winnings</span>
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/recharge"
-            className={({ isActive }) => (isActive ? styles.activeLink : "")}
-          >
-            <IoCardOutline />
-            <span>Recharge</span>
+            <IoPeopleOutline />
+            <span>Manage Users</span>
           </NavLink>
         </li>
       </ul>
@@ -81,4 +68,4 @@ function Sidebar() {
   );
 }
 
-export default Sidebar;
+export default AdminSideBar;

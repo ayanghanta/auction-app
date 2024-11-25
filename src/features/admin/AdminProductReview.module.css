@@ -1,0 +1,136 @@
+.container {
+  display: flex;
+  align-items: self-start;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border: 0.1rem solid #e0e0e0;
+  border-radius: 0.8rem;
+  margin-top: 1.6rem;
+}
+
+.imageSection {
+  margin-top: 3.6rem;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.coverImage {
+  width: 100%;
+  max-width: 30rem;
+  border-radius: 0.8rem;
+}
+
+.detailsSection {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.detailsTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.detailsTable td {
+  padding: 0.8rem;
+  font-size: 1.4rem;
+  color: #4a5568;
+  vertical-align: top;
+}
+
+.label {
+  font-weight: 600;
+  color: #2d3748;
+  width: 30%;
+}
+
+.documentButton {
+  background-color: #42b4b9;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.6rem 1.2rem;
+  font-size: 1.4rem;
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.documentButton:hover {
+  background-color: #359094;
+}
+.label {
+  font-weight: 600;
+  color: #2d3748;
+  width: 30%;
+}
+
+.declaration {
+  margin-top: 2rem;
+}
+
+.checkboxContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.checkbox {
+  width: 1.6rem;
+  height: 1.6rem;
+  cursor: pointer;
+}
+
+.checkboxText {
+  font-size: 1.4rem;
+  color: #4a5568;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.button {
+  padding: 0.8rem 1.6rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border: none;
+}
+
+.verifyButton {
+  background-color: #42b4b9;
+  color: #ffffff;
+}
+
+.verifyButton:disabled {
+  background-color: #a0aec0;
+  cursor: not-allowed;
+}
+
+.rejectButton {
+  background-color: #e53e3e;
+  color: #ffffff;
+}
+
+.rejectButton:hover {
+  background-color: #c53030;
+}

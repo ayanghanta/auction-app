@@ -2,6 +2,7 @@ import { BASE_URL } from "../constant";
 
 const API_URL = `${BASE_URL}/api/v1/products`;
 
+// 1. FOR CREATETING NEW PRODUCT
 export async function createNewProduct(product) {
   try {
     const res = await fetch(API_URL, {
@@ -18,6 +19,23 @@ export async function createNewProduct(product) {
   }
 }
 
+export async function getAllProducts() {
+  try {
+    const res = await fetch(API_URL, {
+      method: "GET",
+      credentials: "include",
+    });
+    const data = await res.json();
+    if (!res.ok || !data.ok)
+      throw new Error(data.message || `Product could not found`);
+
+    return data;
+  } catch (err) {
+    throw new Error(err.message);
+  }
+}
+
+// 2. FOR GET PRODUCT
 export async function getProduct(id) {
   try {
     const res = await fetch(`${API_URL}/${id}`, {
@@ -34,6 +52,8 @@ export async function getProduct(id) {
     throw new Error(err.message || `Can't get products`);
   }
 }
+
+// 3. TO GET ALL PRODCUT OF A SPECIFIC(logged in) USER
 export async function getMyProducts() {
   try {
     const res = await fetch(`${API_URL}/getMyProducts`, {
@@ -51,6 +71,8 @@ export async function getMyProducts() {
     throw new Error(err.message || `Can't get products`);
   }
 }
+
+// 4. TO UPDATE PRODUCT INFORMATION
 export async function updateProduct({ id, productObj }) {
   try {
     const res = await fetch(`${API_URL}/${id}`, {
@@ -68,6 +90,8 @@ export async function updateProduct({ id, productObj }) {
     throw new Error(err.message);
   }
 }
+
+// 5. TO PUBLISH ALREADY VERIFIED PRODUCT
 export async function publishProduct({ id, data }) {
   try {
     const res = await fetch(`${API_URL}/publishProduct/${id}`, {
@@ -88,6 +112,48 @@ export async function publishProduct({ id, data }) {
     throw new Error(err.message);
   }
 }
+
+// 6. TO VERIFY A PRODUCT (CAN OLY USED BU ADMIN)
+export async function verifyProduct(id) {
+  try {
+    const res = await fetch(`${API_URL}/verify/${id}`, {
+      method: "PATCH",
+      credentials: "include",
+    });
+
+    const dataObj = await res.json();
+
+    if (!res.ok || !dataObj.ok)
+      throw new Error(dataObj.message || `Product could not be publish`);
+    return dataObj.data;
+  } catch (err) {
+    throw new Error(err.message);
+  }
+}
+
+// 7. REHECT A PRODUCT VERIFICATION (ONLY USED BY ADMIN)
+export async function rejectProduct({ id, couse }) {
+  try {
+    const res = await fetch(`${API_URL}/reject/${id}`, {
+      method: "PATCH",
+      credentials: "include",
+      body: JSON.stringify({ couse }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    const dataObj = await res.json();
+
+    if (!res.ok || !dataObj.ok)
+      throw new Error(dataObj.message || `Product could not be publish`);
+    return dataObj.data;
+  } catch (err) {
+    throw new Error(err.message);
+  }
+}
+
+// 8. USED FOR DELETING A PRODUCT
 export async function deleteProduct(id) {
   try {
     const res = await fetch(`${API_URL}/${id}`, {

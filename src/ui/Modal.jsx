@@ -33,22 +33,20 @@ function Button({ children, id }) {
 
 function Window({ children, id }) {
   const { windowId, closeModal } = useContext(ModalContext);
-  // const { refEl } = useOutsideClick(closeModal);
+  const { refEl } = useOutsideClick(closeModal);
 
   if (id !== windowId) return null;
 
   return (
     <div className={styles.overlay}>
       <div className={styles.modalContainer}>
-        <div className={styles.window}>
+        <div className={styles.window} ref={refEl}>
           <IoClose className={styles.modalCloses} onClick={closeModal} />
           {cloneElement(children, { handelCloseModal: closeModal })}
         </div>
       </div>
     </div>
   );
-
-  // return cloneElement(children, { onCancel: closeModal });
 }
 
 Modal.Button = Button;

@@ -1,0 +1,22 @@
+.container {
+  padding: 1.6rem;
+  border-radius: 8px;
+  max-width: 50vw;
+  padding: 3.6rem;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #dc2626;
+  margin-bottom: 1rem;
+}
+
+.reason {
+  font-size: 1.6rem;
+  color: #444141;
+  line-height: 1.6;
+}

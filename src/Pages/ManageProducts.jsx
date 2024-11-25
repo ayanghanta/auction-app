@@ -5,11 +5,12 @@ import Menus from "../ui/Menu";
 import TableHeader from "../ui/TableHeader";
 
 import styles from "./MyProducts.module.css";
-import { getMyProducts } from "../services/apiProduct";
+import { getAllProducts } from "../services/apiProduct";
 import Spinner from "../ui/Spinner";
 import EmptyPage from "../ui/EmptyPage";
+import ProductTableItem from "../features/admin/ProductTableItem";
 
-function MyProducts() {
+function ManageProducts() {
   const tableHeaders = [
     "Cover Image",
     "Title",
@@ -19,29 +20,37 @@ function MyProducts() {
     "Actions",
   ];
 
-  const { isLoading, data: products } = useQuery({
-    queryFn: getMyProducts,
-    queryKey: ["myProducts"],
+  const { isLoading, data } = useQuery({
+    queryFn: getAllProducts,
+    queryKey: ["allProducts"],
   });
+
+  let products = [];
+
+  if (!isLoading) {
+    products = data.data.products;
+  }
 
   return (
     <Menus>
       <div>
         <div className={styles.header}>
           <Back />
-          <h1>Manage Your Products</h1>
+          <h1>Manage Listed Products</h1>
         </div>
         <div>
           {/* <div>Filter</div> */}
           <div>
             <TableHeader headers={tableHeaders} />
-            {products?.length === 0 && <EmptyPage resourceName="Product" />}
+            {products?.length === 0 && !isLoading && (
+              <EmptyPage resourceName="Product" />
+            )}
             {isLoading ? (
               <Spinner />
             ) : (
               <div className={styles.tableItems}>
                 {products.map((product) => (
-                  <UserProductTableItem
+                  <ProductTableItem
                     id={product._id}
                     key={product._id}
                     product={product}
@@ -56,4 +65,4 @@ function MyProducts() {
   );
 }
 
-export default MyProducts;
+export default ManageProducts;

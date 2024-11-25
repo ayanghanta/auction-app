@@ -1,32 +1,24 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { formatCurrency, formatDate } from "../../utils/helper";
-import styles from "./UserProductTableItem.module.css";
+import styles from "./ProductTableItem.module.css";
 import {
-  IoAlertCircleOutline,
-  IoCreateOutline,
+  IoCheckmarkDoneOutline,
+  IoCloseOutline,
+  IoEyeOutline,
   IoRadioButtonOnSharp,
-  IoRocketOutline,
-  IoTrash,
   IoWarningOutline,
 } from "react-icons/io5";
 import Menus from "../../ui/Menu";
 import { BASE_URL } from "../../constant";
 import Modal from "../../ui/Modal";
-import ConfirmDelete from "../../ui/confirms/confirmDelete";
-import { useDeleteProduct } from "./useDeleteProduct";
-import ProductForm from "./ProductForm";
-import { useUpdateProduct } from "./useUpdateProduct";
-import ConfirmPublish from "../../ui/confirms/ConfirmPublish";
-import { usePublishProduct } from "./usePublishProduct";
+import ConfirmSuspend from "../../ui/confirms/ConfirmSuspend";
 import StatusLabel from "../../ui/StatusLabel";
-import ShowRejectionCouse from "../../ui/ShowRejectionCouse";
 
 const IMAGE_URL = `${BASE_URL}/images/products`;
 
-function UserProductTableItem({ id, product }) {
-  const { deleteProduct, isLoading } = useDeleteProduct();
-  const { updateProduct, isLoading: isUpdating } = useUpdateProduct();
-  const { publishProduct, isLoading: isPublishing } = usePublishProduct();
+function ProductTableItem({ id, product }) {
+  const naviagte = useNavigate();
+
   const {
     title,
     coverImage,
@@ -35,18 +27,9 @@ function UserProductTableItem({ id, product }) {
     published,
     auctionsStartsAt,
     isLive,
-    rejectionCouse,
   } = product;
 
   const isVerified = status === "verified";
-  const isRejected = status === "rejected";
-
-  const publishButton = (
-    <>
-      <IoRocketOutline />
-      <span>Publish</span>
-    </>
-  );
 
   return (
     <div className={`${styles.container} ${isLive ? styles.liveItem : ""}`}>
@@ -69,54 +52,45 @@ function UserProductTableItem({ id, product }) {
         <Menus.Menu id={id}>
           <Menus.MenusToggle id={id} />
           <Menus.List id={id}>
-            <Modal.Button id="delete">
+            <Menus.Button onClick={() => naviagte(`/review/${id}`)}>
+              <IoEyeOutline />
+              <span>View Details</span>
+            </Menus.Button>
+
+            {!isVerified && (
+              <Modal.Button id="verify">
+                <Menus.Button>
+                  <IoCheckmarkDoneOutline />
+                  <span>Verify</span>
+                </Menus.Button>
+              </Modal.Button>
+            )}
+
+            {!isVerified && (
+              <Modal.Button id="reject">
+                <Menus.Button>
+                  <IoCloseOutline />
+                  <span>Reject</span>
+                </Menus.Button>
+              </Modal.Button>
+            )}
+
+            <Modal.Button id="suspend">
               <Menus.Button>
-                <IoTrash />
-                <span>Delete</span>
+                <IoWarningOutline />
+                <span>Suspend</span>
               </Menus.Button>
             </Modal.Button>
-
-            {!isLive && (
-              <Modal.Button id="edit">
-                <Menus.Button>
-                  <IoCreateOutline />
-                  <span>Edit</span>
-                </Menus.Button>
-              </Modal.Button>
-            )}
-
-            {isVerified && !published && (
-              <Modal.Button id="publish">
-                <Menus.Button> {publishButton}</Menus.Button>
-              </Modal.Button>
-            )}
-
-            {isRejected && (
-              <Modal.Button id="rejectionCouse">
-                <Menus.Button>
-                  <IoAlertCircleOutline />
-                  <span>Rejection couse</span>
-                </Menus.Button>
-              </Modal.Button>
-            )}
           </Menus.List>
 
-          <Modal.Window id="delete">
-            <ConfirmDelete
-              resourceName="Product"
-              onDelete={() => deleteProduct(id)}
-              disabled={isLoading}
-            />
+          <Modal.Window id="suspend">
+            <ConfirmSuspend resourceName="Product" />
           </Modal.Window>
 
-          <Modal.Window id="rejectionCouse">
-            <ShowRejectionCouse couse={rejectionCouse} />
-          </Modal.Window>
-
-          <Modal.Window id="edit">
+          {/* <Modal.Window id="edit">
             <ProductForm
-              submitHandler={updateProduct}
-              isLoading={isUpdating}
+              // submitHandler={updateProduct}
+              // isLoading={isUpdating}
               isCreate={false}
               productToEditId={product._id}
               formHeader={
@@ -137,14 +111,14 @@ function UserProductTableItem({ id, product }) {
                 </div>
               }
             />
-          </Modal.Window>
+          </Modal.Window> */}
 
           <Modal.Window id="publish">
-            <ConfirmPublish
+            {/* <ConfirmPublish
               product={product}
-              publishHandler={publishProduct}
-              isLoading={isPublishing}
-            />
+              // publishHandler={publishProduct}
+              // isLoading={isPublishing}
+            /> */}
           </Modal.Window>
         </Menus.Menu>
       </Modal>
@@ -152,4 +126,4 @@ function UserProductTableItem({ id, product }) {
   );
 }
 
-export default UserProductTableItem;
+export default ProductTableItem;
