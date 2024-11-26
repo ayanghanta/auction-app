@@ -19,14 +19,14 @@
   width: 100%;
 }
 
-.title,
 .price,
 .date,
 .status {
   justify-self: center;
+}
+.title {
   align-self: center;
 }
-
 .title a {
   text-decoration: none;
   color: #2d3748;

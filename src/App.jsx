@@ -19,6 +19,7 @@ import LiveAuctions from "./features/auction/LiveAuctions";
 import MyProducts from "./Pages/MyProducts";
 import ManageProducts from "./Pages/ManageProducts";
 import AdminProductReview from "./features/admin/AdminProductReview";
+import { CurrentBidderProvider } from "./contexts/CurrentBidderContext";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -36,7 +37,14 @@ function App() {
         <Routes>
           <Route element={<AppLayout />}>
             <Route index element={<Auctions />} />
-            <Route path="auctions/:id" element={<AuctionPage />} />
+            <Route
+              path="auctions/:id"
+              element={
+                <CurrentBidderProvider>
+                  <AuctionPage />
+                </CurrentBidderProvider>
+              }
+            />
             <Route path="live-auctions" element={<LiveAuctions />} />
             <Route path="me" element={<UserAccountPage />} />
             <Route path="myProducts" element={<MyProducts />} />

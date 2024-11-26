@@ -11,6 +11,7 @@ export function useReject() {
     mutationFn: ({ id, couse }) => rejectProductApi({ id, couse }),
     onSuccess: () => {
       queryClient.invalidateQueries(["product", productId]);
+      queryClient.invalidateQueries(["allProducts"]);
       toast.success("Product verification is rejected");
     },
     onError: (err) => toast.error(err.message),

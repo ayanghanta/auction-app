@@ -2,7 +2,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { formatCurrency, formatDate } from "../../utils/helper";
 import styles from "./ProductTableItem.module.css";
 import {
-  IoCheckmarkDoneOutline,
   IoCloseOutline,
   IoEyeOutline,
   IoRadioButtonOnSharp,
@@ -13,6 +12,7 @@ import { BASE_URL } from "../../constant";
 import Modal from "../../ui/Modal";
 import ConfirmSuspend from "../../ui/confirms/ConfirmSuspend";
 import StatusLabel from "../../ui/StatusLabel";
+import ConfirmReject from "../../ui/confirms/ConfirmReject";
 
 const IMAGE_URL = `${BASE_URL}/images/products`;
 
@@ -58,15 +58,6 @@ function ProductTableItem({ id, product }) {
             </Menus.Button>
 
             {!isVerified && (
-              <Modal.Button id="verify">
-                <Menus.Button>
-                  <IoCheckmarkDoneOutline />
-                  <span>Verify</span>
-                </Menus.Button>
-              </Modal.Button>
-            )}
-
-            {!isVerified && (
               <Modal.Button id="reject">
                 <Menus.Button>
                   <IoCloseOutline />
@@ -87,38 +78,8 @@ function ProductTableItem({ id, product }) {
             <ConfirmSuspend resourceName="Product" />
           </Modal.Window>
 
-          {/* <Modal.Window id="edit">
-            <ProductForm
-              // submitHandler={updateProduct}
-              // isLoading={isUpdating}
-              isCreate={false}
-              productToEditId={product._id}
-              formHeader={
-                <div>
-                  <h1 className={styles.updateHeading}>
-                    Edit Product : <span>{title}</span>
-                  </h1>
-                  {isVerified && (
-                    <h4 className={styles.warnText}>
-                      <IoWarningOutline className={styles.warnIcon} />
-                      <span>
-                        Any updates to the product&apos;s infromation will
-                        require re-verification. Please ensure all information
-                        is accurate before submitting for review.
-                      </span>
-                    </h4>
-                  )}
-                </div>
-              }
-            />
-          </Modal.Window> */}
-
-          <Modal.Window id="publish">
-            {/* <ConfirmPublish
-              product={product}
-              // publishHandler={publishProduct}
-              // isLoading={isPublishing}
-            /> */}
+          <Modal.Window id="reject">
+            <ConfirmReject productId={id} productTitle={title} />
           </Modal.Window>
         </Menus.Menu>
       </Modal>

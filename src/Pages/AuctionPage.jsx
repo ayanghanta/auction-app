@@ -12,6 +12,7 @@ import Slider from "../ui/Slider";
 import ProductSpecifications from "../ui/ProductSpecifications";
 import ProductAuthDetails from "../ui/ProductAuthDetails";
 import SellerOverview from "../ui/SellerOverview";
+import CreateBid from "../features/bid/CreateBid";
 
 const IMAGE_URL = `${BASE_URL}/images/products`;
 
@@ -44,11 +45,13 @@ function AuctionPage() {
     certificateNumber,
     verifiedBy,
     legalDocument,
+    isLive,
+    currentBid: currentBidAmount,
+    currentBidDeails,
   } = auctionProduct;
 
   return (
     <div className={styles.productContainer}>
-      {/* <img src={`${IMAGE_URL}/${coverImage}`} alt={`image of ${title}`} /> */}
       <Slider />
       <div className={styles.productHader}>
         <h1>{title}</h1>
@@ -60,15 +63,23 @@ function AuctionPage() {
           shippingTime={shippingTime}
           auctionsEndsAt={auctionsEndsAt}
         />
-        <CurrentBider />
+
+        <CurrentBider bidId={currentBidDeails} />
       </div>
       <div className={styles.ortherDtails}>
+        {isLive && (
+          <CreateBid
+            currentBidAmount={currentBidAmount}
+            bidDetail={currentBidDeails}
+          />
+        )}
         <div>
           <p className={styles.title}>Description:</p>
           <p className={styles.descriptionText}>
             <CollapsText wordShown={30}>{description}</CollapsText>
           </p>
         </div>
+
         <div className={styles.sideCondiner}>
           <div>
             <p className={styles.title}>Specifications:</p>
@@ -100,8 +111,6 @@ function AuctionPage() {
             legalDocument={legalDocument}
           />
         </div>
-
-        <div>ORTHER DETAILS</div>
       </div>
     </div>
   );
