@@ -4,7 +4,7 @@ import { BASE_URL } from "../../constant";
 import toast from "react-hot-toast";
 import { useParams } from "react-router-dom";
 
-export function useSocketClient() {
+export function useSocketClient(setIsBidLoading) {
   const [socket, setSocket] = useState(null);
   const { id: productId } = useParams();
 
@@ -22,10 +22,9 @@ export function useSocketClient() {
 
       socketInstance.on("AuthError", (err) => {
         toast.error(err.message);
+        setIsBidLoading?.(false);
       });
-      socketInstance.on("bidError", (err) => {
-        toast.error(err.message);
-      });
+
       return () => {
         socketInstance.disconnect();
       };

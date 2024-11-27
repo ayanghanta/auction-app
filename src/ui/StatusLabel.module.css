@@ -8,16 +8,16 @@
 }
 
 .pending {
-  background-color: #f3f4f6; /* Light gray background */
-  color: #4b5563; /* Dark gray text */
+  background-color: #f3f4f6;
+  color: #4b5563;
 }
 
 .rejected {
-  background-color: #fee2e2; /* Light red background */
-  color: #b91c1c; /* Deep red text */
+  background-color: #fee2e2;
+  color: #b91c1c;
 }
 
 .verified {
-  background-color: #d1fae5; /* Light green background */
-  color: #047857; /* Deep green text */
+  background-color: #d1fae5;
+  color: #047857;
 }

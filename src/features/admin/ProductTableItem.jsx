@@ -8,13 +8,11 @@ import {
   IoWarningOutline,
 } from "react-icons/io5";
 import Menus from "../../ui/Menu";
-import { BASE_URL } from "../../constant";
+import { PRODUCT_IMG_URL } from "../../constant";
 import Modal from "../../ui/Modal";
 import ConfirmSuspend from "../../ui/confirms/ConfirmSuspend";
 import StatusLabel from "../../ui/StatusLabel";
 import ConfirmReject from "../../ui/confirms/ConfirmReject";
-
-const IMAGE_URL = `${BASE_URL}/images/products`;
 
 function ProductTableItem({ id, product }) {
   const naviagte = useNavigate();
@@ -34,7 +32,10 @@ function ProductTableItem({ id, product }) {
   return (
     <div className={`${styles.container} ${isLive ? styles.liveItem : ""}`}>
       <p className={styles.imgContainer}>
-        <img src={`${IMAGE_URL}/${coverImage}`} alt={`image of a ${title}`} />
+        <img
+          src={`${PRODUCT_IMG_URL}/${coverImage}`}
+          alt={`image of a ${title}`}
+        />
         {isLive && <IoRadioButtonOnSharp className={styles.autionStatus} />}
       </p>
       <p className={styles.title}>

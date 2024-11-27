@@ -1,7 +1,7 @@
 import styles from "./AdminProductReview.module.css";
 import { useGetProduct } from "./useGetProduct";
 import Spinner from "../../ui/Spinner";
-import { BASE_URL } from "../../constant";
+import { DOC_URL, PRODUCT_IMG_URL } from "../../constant";
 import CollapsText from "../../utils/CollapsText";
 import { formatCurrency } from "../../utils/helper";
 import { useState } from "react";
@@ -49,7 +49,6 @@ function AdminProductReview() {
     status,
     verified,
   } = product;
-  const DOC_URL = `${BASE_URL}/documents/${legalDocument}`;
 
   return (
     <>
@@ -57,7 +56,7 @@ function AdminProductReview() {
       <div className={styles.container}>
         <div className={styles.imageSection}>
           <img
-            src={`${BASE_URL}/images/products/${coverImage}`}
+            src={`${PRODUCT_IMG_URL}/${coverImage}`}
             alt={`Cover of ${title}`}
             className={styles.coverImage}
           />
@@ -130,7 +129,9 @@ function AdminProductReview() {
                 <td>
                   <button
                     className={styles.documentButton}
-                    onClick={() => window.open(DOC_URL, "_blank")}
+                    onClick={() =>
+                      window.open(`${DOC_URL}/${legalDocument}`, "_blank")
+                    }
                   >
                     View Document
                   </button>

@@ -3,9 +3,7 @@ import styles from "./AuctionCard.module.css";
 import CollapsText from "../../utils/CollapsText";
 import Button from "../../ui/buttons/Button";
 import { formatCurrency } from "../../utils/helper";
-import { BASE_URL } from "../../constant";
-
-const IMAGE_URL = `${BASE_URL}/images/products`;
+import { PRODUCT_IMG_URL } from "../../constant";
 
 function AuctionCard({ product }) {
   const { basePrice, coverImage, summary, title, _id, latestBid } = product;
@@ -13,7 +11,7 @@ function AuctionCard({ product }) {
   return (
     <div className={styles.auctionCard}>
       <img
-        src={`${IMAGE_URL}/${coverImage}`}
+        src={`${PRODUCT_IMG_URL}/${coverImage}`}
         alt={`image of ${title}`}
         className={styles.image}
       />

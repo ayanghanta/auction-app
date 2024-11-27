@@ -1,4 +1,4 @@
-import { BASE_URL } from "../constant";
+import { USER_IMG_URL } from "../constant";
 import styles from "./UserPersonalInfo.module.css";
 import Button from "./buttons/Button";
 import { useState } from "react";
@@ -36,10 +36,7 @@ function UserPersonalInfo({ user }) {
   return (
     <form className={styles.infoContainer} onSubmit={handleSubmit(onSubmit)}>
       <div className={styles.imageContainer}>
-        <img
-          src={`${BASE_URL}/images/users/${user.photo}`}
-          alt="image of USER"
-        />
+        <img src={`${USER_IMG_URL}/${user.photo}`} alt="image of USER" />
 
         {isChangeProfileData && <input type="file" {...register("photo")} />}
       </div>

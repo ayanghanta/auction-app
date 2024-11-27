@@ -7,14 +7,12 @@ import Spinner from "../ui/Spinner";
 import CollapsText from "../utils/CollapsText";
 import AuctionStatus from "../features/auction/AuctionStatus";
 import CurrentBider from "../features/auction/CurrentBider";
-import { BASE_URL } from "../constant";
+import { PRODUCT_IMG_URL } from "../constant";
 import Slider from "../ui/Slider";
 import ProductSpecifications from "../ui/ProductSpecifications";
 import ProductAuthDetails from "../ui/ProductAuthDetails";
 import SellerOverview from "../ui/SellerOverview";
 import CreateBid from "../features/bid/CreateBid";
-
-const IMAGE_URL = `${BASE_URL}/images/products`;
 
 function AuctionPage() {
   const { id: productId } = useParams();
@@ -64,13 +62,13 @@ function AuctionPage() {
           auctionsEndsAt={auctionsEndsAt}
         />
 
-        <CurrentBider bidId={currentBidDeails} />
+        <CurrentBider currentBidDeails={currentBidDeails} />
       </div>
       <div className={styles.ortherDtails}>
         {isLive && (
           <CreateBid
-            currentBidAmount={currentBidAmount}
-            bidDetail={currentBidDeails}
+            basePrice={basePrice}
+            currentBidDeails={currentBidDeails}
           />
         )}
         <div>

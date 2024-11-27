@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BASE_URL } from "../../constant";
+import { USER_IMG_URL } from "../../constant";
 import DropdownMenu from "../../ui/DropdownMenu";
 import styles from "./UserOverview.module.css";
 function UserOverview({ imageUrl }) {
@@ -9,7 +9,7 @@ function UserOverview({ imageUrl }) {
       className={styles.userOverview}
       onClick={() => setShowMenu((sw) => !sw)}
     >
-      <img src={`${BASE_URL}/images/users/${imageUrl}`} alt="image of user" />
+      <img src={`${USER_IMG_URL}/${imageUrl}`} alt="image of user" />
       {showMenu && <DropdownMenu />}
     </div>
   );

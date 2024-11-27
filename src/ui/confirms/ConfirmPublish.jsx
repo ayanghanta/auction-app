@@ -1,5 +1,5 @@
 import toast from "react-hot-toast";
-import { BASE_URL } from "../../constant";
+import { PRODUCT_IMG_URL } from "../../constant";
 import { formatCurrency } from "../../utils/helper";
 import styles from "./ConfirmPublish.module.css";
 import { useState } from "react";
@@ -10,7 +10,6 @@ function ConfirmPublish({
   handelCloseModal,
   disabled = false,
 }) {
-  const IMAGE_URL = `${BASE_URL}/images/products`;
   const [auctionStartDate, setAuctionStartDate] = useState(getTomorrowDate());
   const [auctionEndDate, setAuctionEndDate] = useState("");
   const [isAgressTerms, setIsAgreeTerms] = useState(false);
@@ -52,7 +51,7 @@ function ConfirmPublish({
       <h2 className={styles.heading}>Confirm Publish for Auction</h2>
       <div className={styles.productPreview}>
         <img
-          src={`${IMAGE_URL}/${product.coverImage}`}
+          src={`${PRODUCT_IMG_URL}/${product.coverImage}`}
           alt={product.title}
           className={styles.productImage}
         />

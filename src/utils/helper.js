@@ -1,8 +1,12 @@
 import lookup from "country-code-lookup";
+import { HIKE } from "../constant";
 
 export const inchToCm = (inch) => (+inch * 2.54).toFixed(2);
 
 export const poundToKg = (lb) => (+lb * 0.453592).toFixed(2);
+
+export const calcMinBidPrice = (bidAmount) =>
+  Math.ceil(bidAmount + (HIKE / 100) * bidAmount);
 
 export function formatCurrency(amount) {
   const options = {
@@ -16,13 +20,17 @@ export function formatCurrency(amount) {
   return formatedCurrency;
 }
 
-export function formatDate(date) {
+export function formatDate(date, minutes = false) {
   const dateStr = new Date(date);
   const options = {
     day: "numeric",
     month: "long",
     year: "numeric",
   };
+  if (minutes) {
+    options.hour = "2-digit";
+    options.minute = "2-digit";
+  }
 
   return new Intl.DateTimeFormat("en-IN", options).format(dateStr);
 }

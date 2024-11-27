@@ -51,7 +51,7 @@ function Sidebar() {
         </li>
         <li>
           <NavLink
-            to="/me-bids"
+            to="/myBids"
             className={({ isActive }) => (isActive ? styles.activeLink : "")}
           >
             <IoHammerOutline />
@@ -60,7 +60,7 @@ function Sidebar() {
         </li>
         <li>
           <NavLink
-            to="/me-winnings"
+            to="/mywinings"
             className={({ isActive }) => (isActive ? styles.activeLink : "")}
           >
             <IoTrophyOutline />

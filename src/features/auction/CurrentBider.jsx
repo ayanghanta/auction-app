@@ -1,16 +1,12 @@
 import { formatCurrency } from "../../utils/helper";
-import { useGetBidDetail } from "../bid/useGetBidDetail";
 import Spinner from "../../ui/Spinner";
 import styles from "./CurrentBider.module.css";
-import { BASE_URL } from "../../constant";
+import { USER_IMG_URL } from "../../constant";
 import { useCurrentBidder } from "../../contexts/CurrentBidderContext";
 import { useEffect } from "react";
 import NoBid from "../bid/NoBid";
 
-const IMAGE_URL = `${BASE_URL}/images/users`;
-
-function CurrentBider({ bidId }) {
-  const { data, isLoading } = useGetBidDetail(bidId);
+function CurrentBider({ currentBidDeails }) {
   const {
     isLoading: isLoadingContext,
     currnetBidData,
@@ -19,28 +15,29 @@ function CurrentBider({ bidId }) {
 
   useEffect(
     function () {
-      if (isLoading) return dispatch({ type: "loading" });
-      if (!data) return dispatch({ type: "sattel" });
+      if (!currentBidDeails) return;
+      dispatch({ type: "loading" });
       const bidderData = {
-        fullName: data.bid.bidder.fullName,
-        photo: data.bid.bidder.photo,
-        bidAmount: data.bid.bidAmount,
+        fullName: currentBidDeails.bidder.fullName,
+        photo: currentBidDeails.bidder.photo,
+        bidAmount: currentBidDeails.bidAmount,
+        bidderId: currentBidDeails.bidder._id,
       };
 
       dispatch({ type: "updateCurrentBidder", payload: bidderData });
     },
-    [dispatch, data, isLoading, bidId]
+    [dispatch, currentBidDeails]
   );
 
-  if (isLoading || isLoadingContext) return <Spinner />;
-  if (!currnetBidData.bidAmount) return <NoBid />;
+  if (isLoadingContext) return <Spinner />;
+  if (!currentBidDeails && !currnetBidData.bidAmount) return <NoBid />;
 
   const { fullName, photo, bidAmount } = currnetBidData;
 
   return (
     <div className={styles.bidDetails}>
       <div>
-        <img src={`${IMAGE_URL}/${photo}`} alt={`image of ${fullName}`} />
+        <img src={`${USER_IMG_URL}/${photo}`} alt={`image of ${fullName}`} />
         <p>{fullName}</p>
       </div>
       <h2>

@@ -10,7 +10,7 @@ import {
   IoWarningOutline,
 } from "react-icons/io5";
 import Menus from "../../ui/Menu";
-import { BASE_URL } from "../../constant";
+import { PRODUCT_IMG_URL } from "../../constant";
 import Modal from "../../ui/Modal";
 import ConfirmDelete from "../../ui/confirms/confirmDelete";
 import { useDeleteProduct } from "./useDeleteProduct";
@@ -20,8 +20,6 @@ import ConfirmPublish from "../../ui/confirms/ConfirmPublish";
 import { usePublishProduct } from "./usePublishProduct";
 import StatusLabel from "../../ui/StatusLabel";
 import ShowRejectionCouse from "../../ui/ShowRejectionCouse";
-
-const IMAGE_URL = `${BASE_URL}/images/products`;
 
 function UserProductTableItem({ id, product }) {
   const { deleteProduct, isLoading } = useDeleteProduct();
@@ -51,7 +49,10 @@ function UserProductTableItem({ id, product }) {
   return (
     <div className={`${styles.container} ${isLive ? styles.liveItem : ""}`}>
       <p className={styles.imgContainer}>
-        <img src={`${IMAGE_URL}/${coverImage}`} alt={`image of a ${title}`} />
+        <img
+          src={`${PRODUCT_IMG_URL}/${coverImage}`}
+          alt={`image of a ${title}`}
+        />
         {isLive && <IoRadioButtonOnSharp className={styles.autionStatus} />}
       </p>
       <p className={styles.title}>

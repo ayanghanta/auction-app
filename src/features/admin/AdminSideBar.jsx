@@ -8,10 +8,8 @@ import {
   IoPersonOutline,
 } from "react-icons/io5";
 import ProductCategory from "../../ui/ProductCategory";
-import { useUser } from "../auth/useUser";
 
 function AdminSideBar() {
-  const { user } = useUser();
   return (
     <div className={styles.sidebar}>
       <ul className={styles.navList}>

@@ -20,6 +20,8 @@ import MyProducts from "./Pages/MyProducts";
 import ManageProducts from "./Pages/ManageProducts";
 import AdminProductReview from "./features/admin/AdminProductReview";
 import { CurrentBidderProvider } from "./contexts/CurrentBidderContext";
+import MyWinings from "./Pages/MyWinings";
+import MyBids from "./features/bid/MyBids";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -47,6 +49,8 @@ function App() {
             />
             <Route path="live-auctions" element={<LiveAuctions />} />
             <Route path="me" element={<UserAccountPage />} />
+            <Route path="myWinings" element={<MyWinings />} />
+            <Route path="myBids" element={<MyBids />} />
             <Route path="myProducts" element={<MyProducts />} />
             <Route path="addProduct" element={<AddNewProduct />} />
             <Route path="manageProducts" element={<ManageProducts />} />

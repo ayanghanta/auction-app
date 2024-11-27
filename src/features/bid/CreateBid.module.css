@@ -7,20 +7,34 @@
   border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 5px;
   width: 100%;
-  max-width: 600px;
+  /* max-width: 600px; */
   margin: 2rem auto;
 }
 
 .form {
   display: flex;
-  justify-content: center;
-  /* align-items: center; */
+  /* justify-content: center; */
+  align-items: center;
   gap: 2.4rem;
   /* width: 100%; */
 }
-
+.sing {
+  padding: 1.2rem;
+  background: #f3eded;
+  border-radius: 0.5rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+.form p {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+.form div {
+  display: flex;
+  gap: 0.4rem;
+}
 .input {
-  padding: 1rem 1.6rem;
+  /* padding: 1rem 1.6rem; */
   font-size: 1.8rem;
   border: 1px solid #d1d5db;
   border-radius: 4px;
@@ -48,4 +62,13 @@
 
 .submitButton:hover {
   background-color: #359094;
+}
+.currentBidderMessage {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #2d3748;
+  background-color: #e6fffa;
+  padding: 1rem 1.6rem;
+  border-radius: 4px;
+  text-align: center;
 }

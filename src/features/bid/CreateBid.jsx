@@ -2,68 +2,110 @@ import { useEffect, useState } from "react";
 import Button from "../../ui/buttons/Button";
 import { useSocketClient } from "../hooks/useSocketClient";
 import styles from "./CreateBid.module.css";
-import { HIKE } from "../../constant";
 import toast from "react-hot-toast";
 import { useParams } from "react-router-dom";
 import { useUser } from "../auth/useUser";
 import { useCurrentBidder } from "../../contexts/CurrentBidderContext";
+import { calcMinBidPrice } from "../../utils/helper";
+import SmallSpinner from "../../ui/SmallSpinner";
 
-function CreateBid({ currentBidAmount, bidDetail }) {
-  const { socketClient } = useSocketClient();
-  const [minBidAmount, setMinBidAmount] = useState(function () {});
-  const [amount, setAmount] = useState("");
+function CreateBid({ basePrice, currentBidDeails }) {
+  const [minBidAmount, setMinBidAmount] = useState(function () {
+    return currentBidDeails
+      ? calcMinBidPrice(currentBidDeails.bidAmount)
+      : basePrice;
+  });
+  const [amount, setAmount] = useState(minBidAmount);
+  const [isBidLoading, setIsBidLoading] = useState(false);
   const { id: productId } = useParams();
   const { user, isLoading } = useUser();
   const { dispatch, currnetBidData } = useCurrentBidder();
+  const { socketClient } = useSocketClient(setIsBidLoading);
 
   // LISTEN FOR ANY BID EVENT
   useEffect(
     function () {
       if (!socketClient) return;
 
-      socketClient.on("bidAccepted", (data) => {
+      function handleBidAccepted(data) {
         const bidderData = {
           fullName: data.bidder.fullName,
           photo: data.bidder.photo,
           bidAmount: data.bidAmount,
+          bidderId: data.bidder._id,
         };
         dispatch({ type: "updateCurrentBidder", payload: bidderData });
-      });
+        setAmount(calcMinBidPrice(data.bidAmount));
+        setMinBidAmount(calcMinBidPrice(data.bidAmount));
+        setIsBidLoading(false);
+
+        // ONLY SEND NOTIFICATION TO THE BIDDER
+        if (user?._id === data.bidder._id)
+          toast.success("You are now the highest bidder 🎉");
+      }
+
+      function handleBidError(err) {
+        toast.error(err.message);
+        setIsBidLoading(false);
+      }
+
+      //LISTEN FOR THE SERVER EVENT FOR BID ACCEPETED
+      socketClient.on("bidAccepted", handleBidAccepted);
+
+      // LISTEN FOR ANY BID ERROR
+      socketClient.on("bidError", handleBidError);
+
+      return () => {
+        socketClient.off("bidAccepted", handleBidAccepted);
+        socketClient.off("bidError", handleBidError);
+      };
     },
-    [socketClient, dispatch]
+    [socketClient, dispatch, user]
   );
 
   function handleSubmitBid() {
     if (!amount || isLoading) toast.error("Enter ammount");
     if (!socketClient) return;
 
-    const newBidData = { amount, bidder: user._id };
+    const newBidData = { amount, bidder: user?._id };
     const data = {
       productId,
       newBidData,
     };
+    setIsBidLoading(true);
     // Emmit event for the server
     socketClient.emit("placeBid", data);
   }
 
+  if (currnetBidData.bidderId === user?._id)
+    return (
+      <p className={styles.currentBidderMessage}>
+        You Are the Current Winner 🎊
+      </p>
+    );
+
   return (
     <div className={styles.container}>
       <div className={styles.form}>
-        <input
-          type="number"
-          placeholder="Amount"
-          value={amount}
-          onChange={(e) => setAmount(+e.target.value)}
-          min={currnetBidData.bidAmount || currentBidAmount}
-          className={styles.input}
-        />
+        <p>Next Valid bid</p>
+        <div>
+          {/* <p className={styles.sing}>₹</p> */}
+          <input
+            type="number"
+            placeholder="Amount"
+            value={amount}
+            onChange={(e) => setAmount(+e.target.value)}
+            min={minBidAmount}
+            className={styles.input}
+            disabled={isBidLoading}
+          />
+        </div>
         <Button
           type="primary"
-          size="big"
           className={styles.submitButton}
           onClick={handleSubmitBid}
         >
-          BID For the Product
+          {isBidLoading ? <SmallSpinner /> : "BID For the Product"}
         </Button>
       </div>
     </div>
