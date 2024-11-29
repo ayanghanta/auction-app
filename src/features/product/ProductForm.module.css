@@ -4,14 +4,14 @@
   gap: 1.6rem;
   width: 80%;
   margin: 4.2rem auto 6.4rem;
-  background-color: #fff;
+  background-color: var(--color-grey-0);
 }
 .ProductFormModal {
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
   /* width: 70vw; */
-  background-color: #fff;
+  background-color: var(--color-grey-0);
   padding: 4.8rem;
 }
 .ProductFormModal div,

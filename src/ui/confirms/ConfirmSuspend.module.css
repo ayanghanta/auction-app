@@ -1,24 +1,23 @@
 .deleteContiner {
   width: 100%;
   max-width: 50rem;
-  /* text-align: center; */
-  background-color: #ffffff;
+  background-color: var(--color-grey-0);
   padding: 1.5rem;
-  border-radius: 0.8rem;
-  box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.2);
+  border-radius: var(--border-radius-md);
+  box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
   position: relative;
 }
 
 .heading {
   margin-left: 2.4rem;
   font-size: 1.8rem;
-  color: #333;
+  color: var(--color-grey-800);
 }
 
 .warningText {
   font-size: 1.6rem;
   padding: 2.4rem;
-  color: #666;
+  color: var(--color-grey-600);
   line-height: 1.4;
   margin-bottom: 1.5rem;
 }
@@ -31,28 +30,28 @@
 
 .deleteButton {
   padding: 0.8rem 1.6rem;
-  background-color: #ed8936;
-  color: #ffffff;
+  background-color: var(--color-orange-500);
+  color: var(--color-grey-0);
   border: none;
-  border-radius: 0.4rem;
+  border-radius: var(--border-radius-sm);
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
 .deleteButton:hover {
-  background-color: #dd6b20;
+  background-color: var(--color-orange-600);
 }
 
 .cancelButton {
   padding: 0.8rem 1.6rem;
-  background-color: #edf2f7;
-  color: #2d3748;
+  background-color: var(--color-grey-100);
+  color: var(--color-grey-800);
   border: none;
-  border-radius: 0.4rem;
+  border-radius: var(--border-radius-sm);
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
 .cancelButton:hover {
-  background-color: #e2e8f0;
+  background-color: var(--color-grey-200);
 }

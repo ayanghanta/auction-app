@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   padding: 0.8rem 0;
-  border-bottom: 0.1rem solid #e0e0e0;
+  border-bottom: 0.1rem solid var(--color-grey-200);
   align-items: center;
   width: 95%;
   margin: 0 auto;
@@ -25,18 +25,20 @@
   justify-self: center;
   align-self: center;
 }
+
 .title {
   align-items: center;
 }
+
 .title a {
   text-decoration: none;
-  color: #2d3748;
+  color: var(--color-grey-800);
   font-weight: 600;
   transition: color 0.3s ease;
 }
 
 .title a:hover {
-  color: #42b4b9;
+  color: var(--color-brand-600);
 }
 
 .title {
@@ -46,13 +48,13 @@
 
 .price {
   font-size: 1.2rem;
-  color: #3182ce;
+  color: var(--color-blue-500);
   font-weight: 500;
 }
 
 .date {
   font-size: 1.2rem;
-  color: #38a169;
+  color: var(--color-vert);
   font-weight: 500;
 }
 
@@ -61,7 +63,7 @@
   display: flex;
   align-items: center;
   gap: 0.8rem;
-  color: #4a5568;
+  color: var(--color-grey-700);
 }
 
 .updateHeading {
@@ -69,11 +71,11 @@
   margin-top: 2.4rem;
   font-size: 1.8rem;
   font-weight: 600;
-  color: #2d3748;
+  color: var(--color-grey-800);
 }
 
 .updateHeading span {
-  color: #42b4b9;
+  color: var(--color-brand-600);
 }
 
 .warnText {
@@ -83,7 +85,7 @@
   display: flex;
   font-size: 1.4rem;
   line-height: 1.6;
-  color: #dd6b20;
+  color: var(--color-orange-500);
   align-items: center;
 }
 
@@ -97,20 +99,20 @@
   font-size: 1.8rem;
   bottom: 0;
   right: 0;
-  color: #42b4b9;
-  background-color: #ffffff;
+  color: var(--color-brand-600);
+  background-color: var(--color-grey-0);
   border-radius: 50%;
   animation: pulseEffect 1.5s infinite alternate;
 }
 
 @keyframes pulseEffect {
   0% {
-    color: #42b4b9;
+    color: var(--color-red-600);
   }
   50% {
-    color: #359094;
+    color: var(--color-red-200);
   }
   100% {
-    color: #42b4b9;
+    color: var(--color-red-600);
   }
 }

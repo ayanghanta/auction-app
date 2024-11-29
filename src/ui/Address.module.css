@@ -1,27 +1,32 @@
 .addressBox {
   padding: 2.4rem;
-  background-color: #e8e8e8;
+  background-color: var(--color-grey-200);
 }
+
 .addressBox .tag {
   display: inline-block;
   padding: 0.2rem;
-  background-color: #a4a4a4;
-  color: #fff;
+  background-color: var(--color-grey-500);
+  color: var(--color-sec-50);
   font-weight: 500;
   letter-spacing: 0.5px;
 }
+
 .addressBox .userText {
   margin-top: 1.2rem;
   font-size: 1.3rem;
   font-weight: 500;
-  color: #1c1c1c;
+  color: var(--color-grey-800);
 }
+
 .addressBox .addresstext {
   font-size: 1.5rem;
   margin-top: 0.8rem;
   line-height: 1.5;
+  color: var(--color-grey-700);
 }
+
 .addressBox strong {
   font-weight: 500;
-  color: #333333;
+  color: var(--color-grey-900);
 }

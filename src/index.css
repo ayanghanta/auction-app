@@ -1,126 +1,193 @@
 /* 
 BRAND COLOR: #42b4b9
+
+new
+BRAND COLOR: #4a4e69
 BACKGROUND COLOR:#fff
 HEADING COLOR:#1c1c1c
 DESCRIPTION COLOR :#686a6f
  */
+:root {
+  /* --color-brand-main: #4a4e69; */
+  /* --color-sec-main: #f2cc8f; */
+
+  --color-brand-50: #ededf0;
+  --color-brand-100: #c9cad2;
+  --color-brand-200: #9295a5;
+  --color-brand-500: #6e7187;
+  --color-brand-600: #4a4e69;
+  --color-brand-700: #43465f;
+  --color-brand-800: #3b3e54;
+  --color-brand-900: #2c2f3f;
+
+  /* SECONDARY COLOR */
+  --color-sec-50: #fefaf4;
+  --color-sec-100: #fbf0dd;
+  --color-sec-200: #f7e0bc;
+  --color-sec-500: #f5d6a5;
+  --color-sec-600: #f2cc8f;
+  --color-sec-700: #dab881;
+  --color-sec-800: #a98f64;
+  --color-sec-900: #917a56;
+
+  /* Grey */
+  --color-grey-0: #fff;
+  --color-grey-50: #f9fafb;
+  --color-grey-100: #f3f4f6;
+  --color-grey-200: #e5e7eb;
+  --color-grey-300: #d1d5db;
+  --color-grey-400: #9ca3af;
+  --color-grey-500: #6b7280;
+  --color-grey-600: #4b5563;
+  --color-grey-700: #374151;
+  --color-grey-800: #1f2937;
+  --color-grey-900: #111827;
+
+  --color-white: #fff;
+
+  /*  BG COLOR */
+  --color-bg-main: #fef8f0;
+  --color-bg-shade: #fffcf8;
+
+  /* HEADING COLOR */
+  --color-heading: #4a4e69;
+
+  /* BORDER RADIUS */
+  --border-radius-tiny: 3px;
+  --border-radius-sm: 5px;
+  --border-radius-md: 7px;
+  --border-radius-lg: 9px;
+
+  /* BOX SHADOW */
+  --box-shadow-card: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+
+  /* ORANGE */
+  --color-orange-100: #fcf0e9;
+  --color-orange-200: #f8e1d2;
+  --color-orange-300: #eba679;
+  --color-orange-400: #e4894d;
+  --color-orange-500: #dd6b20;
+  --color-orange-600: #c05621;
+  --color-orange-700: #9c4221;
+
+  /* RED */
+  --color-red-200: #fee2e2;
+  --color-red-300: #ef8b8b;
+  --color-red-400: #ea6565;
+  --color-red-500: #e53e3e;
+  --color-red-600: #c53030;
+  --color-red-700: #b91c1c;
+  --color-red-800: #9b2c2c;
+
+  /* GREEN */
+  --color-vert-light: #c6f6d5;
+  --color-vert: #38a169;
+  --color-vert-dark: #2f855a;
+  --color-green-bg: #d1fae5;
+  --color-green-text: #047857;
+
+  /* BLUE */
+  --color-blue-500: #3182ce;
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
-  background-color: #fff;
-  color: #444;
+  color: var(--color-grey-700);
   font-family: "Rubik", sans-serif;
   overflow-x: hidden;
-  /* font-family: "Asap", sans-serif; */
 }
+
 html {
   font-size: 62.5%;
 }
+
 h1,
 h2 {
   font-family: "Asap", sans-serif;
+  color: var(--color-heading); /* Brand heading color */
 }
+
 h3,
 h4,
 h5 {
   font-family: "Asap", sans-serif;
   font-weight: 500;
+  color: var(--color-heading);
 }
+
 main {
   margin-left: auto;
   margin-right: auto;
   max-width: 135rem;
   padding: 0 1.2rem;
-  /* min-height: 65vh; */
 }
+
 .outlet {
   margin-top: 3.2rem;
 }
-/* .outlet {
-  height: 90vh;
-  overflow-y: scroll;
-  padding-bottom: 3.2rem;
-} */
+
+/* Layout Styles */
 .grid-col-sidebar-main {
   display: grid;
   grid-template-columns: 18fr 82fr;
   column-gap: 2.4rem;
 }
+
+/* Form Styles */
 .formError {
   font-size: 1.4rem !important;
-  color: #d9534f;
+  color: var(--color-sec-700);
   margin-top: 0.5rem;
 }
 
 input,
 select,
 textarea {
-  background-color: #f9f9f9;
+  background-color: var(--color-grey-50);
   padding: 0.8rem 1.6rem;
   font-family: inherit;
   font-size: 1.6rem;
-  border: 0.1rem solid #d1d3d6;
-  border-radius: 0.5rem;
+  border: 0.1rem solid var(--color-grey-200);
+  border-radius: var(--border-radius-sm);
   transition: border-color 0.3s, background-color 0.3s;
-  color: #333;
+  color: var(--color-grey-700);
 }
 
 select {
   padding: 0.6rem 1.2rem;
-  background-color: #f9f9f9;
+  background-color: var(--color-grey-50);
   cursor: pointer;
 }
 
 input::placeholder,
 textarea::placeholder {
-  color: #a9adb1;
+  color: var(--color-grey-400);
   font-style: italic;
 }
 
 input:focus,
 textarea:focus,
 select:focus {
-  /* border-color: #42b4b9; */
-  outline: 0.2rem solid #c6e9ea;
-  background-color: #ffffff;
+  outline: 0.2rem solid var(--color-brand-200);
+  background-color: var(--color-grey-0);
 }
 
 input:disabled,
 textarea:disabled,
 select:disabled {
   cursor: not-allowed;
-  color: #a1a3a8;
-  background-color: #f1f2f4;
-  border: 0.1rem solid #d1d3d6;
+  color: var(--color-grey-400);
+  background-color: var(--color-grey-200);
+  border: 0.1rem solid var(--color-grey-300);
+}
+strong {
+  color: var(--color-sec-800);
 }
 
-/* input.error,
-textarea.error {
-  border-color: #d9534f;
-  background-color: #fbe3e4;
-}
-
-select.error {
-  border-color: #d9534f;
-  background-color: #fbe3e4;
-} */
-
-/* Scroll Bar */
-/*
-.outlet {
-  -ms-overflow-style: none; 
-  scrollbar-width: none; 
-  overflow-y: scroll;
-}
-.outlet::-webkit-scrollbar {
-  display: none; 
-}
-*/
-
-/*  */
 .text-right {
   text-align: right;
 }

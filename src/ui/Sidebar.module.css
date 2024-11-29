@@ -1,7 +1,7 @@
 .sidebar {
   height: 100vh;
-  background-color: #f9f9f9;
-  border-right: 0.1rem solid #e8e8e8;
+  background-color: var(--color-grey-50);
+  border-right: 0.1rem solid var(--color-grey-200);
   display: flex;
   flex-direction: column;
   padding: 1.5rem;
@@ -10,7 +10,7 @@
 .logo {
   font-size: 1.8rem;
   font-weight: bold;
-  color: #333;
+  color: var(--color-heading);
   margin-bottom: 2rem;
   text-align: center;
   cursor: pointer;
@@ -31,23 +31,23 @@
 
 .navList li a {
   text-decoration: none;
-  color: #333;
+  color: var(--color-grey-700);
   display: flex;
   align-items: center;
   gap: 1rem;
   padding: 0.8rem 1rem;
-  border-radius: 0.5rem;
+  border-radius: var(--border-radius-sm);
   transition: background-color 0.3s, transform 0.2s;
 }
 
 .navList li a:hover {
-  background-color: #dff3f3;
+  background-color: var(--color-brand-100);
   transform: translateX(0.5rem);
 }
 
 .activeLink {
-  background-color: #c6e9ea;
-  color: #007b7f;
+  background-color: var(--color-brand-200);
+  color: var(--color-sec-50) !important;
   font-weight: bold;
   box-shadow: inset 0rem 0rem 0.5rem rgba(0, 0, 0, 0.1);
 }

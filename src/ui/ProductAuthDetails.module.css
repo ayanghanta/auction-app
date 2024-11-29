@@ -1,16 +1,16 @@
 .authDetailsContainer {
   margin-top: 2rem;
-  border: 0.1rem solid #ddd;
-  border-radius: 0.8rem;
+  border: 0.1rem solid var(--color-grey-300);
+  border-radius: var(--border-radius-md);
   padding: 1rem;
-  background-color: #f9f9f9;
+  background-color: var(--color-grey-50);
 }
 
 .sectionTitle {
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  color: #333;
+  color: var(--color-grey-800);
 }
 
 .authTable {
@@ -22,21 +22,21 @@
 .authTable td {
   font-size: 1.4rem;
   padding: 0.8rem;
-  border: 0.1rem solid #ddd;
+  border: 0.1rem solid var(--color-grey-200);
 }
 
 .tableLabel {
   font-weight: 500;
-  color: #555;
+  color: var(--color-grey-600);
   width: 40%;
 }
 
 .downloadLink {
-  color: #007bff;
+  color: var(--color-blue-500);
   text-decoration: none;
 }
 
 .downloadLink:hover {
   text-decoration: underline;
-  color: #0056b3;
+  color: var(--color-blue-600);
 }

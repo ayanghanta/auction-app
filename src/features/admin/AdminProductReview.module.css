@@ -1,11 +1,11 @@
 .container {
   display: flex;
-  align-items: self-start;
+  align-items: flex-start;
   gap: 2rem;
   padding: 2rem;
-  background-color: #f9f9f9;
-  border: 0.1rem solid #e0e0e0;
-  border-radius: 0.8rem;
+  background-color: var(--color-grey-50);
+  border: 0.1rem solid var(--color-grey-200);
+  border-radius: var(--border-radius-md);
   margin-top: 1.6rem;
 }
 
@@ -20,7 +20,7 @@
 .coverImage {
   width: 100%;
   max-width: 30rem;
-  border-radius: 0.8rem;
+  border-radius: var(--border-radius-md);
 }
 
 .detailsSection {
@@ -33,7 +33,7 @@
 .title {
   font-size: 2rem;
   font-weight: 600;
-  color: #2d3748;
+  color: var(--color-grey-800);
   margin-bottom: 1rem;
   display: flex;
   align-items: center;
@@ -48,35 +48,30 @@
 .detailsTable td {
   padding: 0.8rem;
   font-size: 1.4rem;
-  color: #4a5568;
+  color: var(--color-grey-700);
   vertical-align: top;
 }
 
 .label {
   font-weight: 600;
-  color: #2d3748;
+  color: var(--color-grey-800);
   width: 30%;
 }
 
 .documentButton {
-  background-color: #42b4b9;
-  color: #ffffff;
+  background-color: var(--color-brand-600);
+  color: var(--color-grey-0);
   font-weight: 600;
   padding: 0.6rem 1.2rem;
   font-size: 1.4rem;
   border: none;
-  border-radius: 0.4rem;
+  border-radius: var(--border-radius-sm);
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .documentButton:hover {
-  background-color: #359094;
-}
-.label {
-  font-weight: 600;
-  color: #2d3748;
-  width: 30%;
+  background-color: var(--color-brand-800);
 }
 
 .declaration {
@@ -97,7 +92,7 @@
 
 .checkboxText {
   font-size: 1.4rem;
-  color: #4a5568;
+  color: var(--color-grey-700);
 }
 
 .actionButtons {
@@ -110,27 +105,33 @@
   padding: 0.8rem 1.6rem;
   font-size: 1.4rem;
   font-weight: 600;
-  border-radius: 0.4rem;
+  border-radius: var(--border-radius-sm);
   cursor: pointer;
   transition: background-color 0.3s;
   border: none;
 }
 
 .verifyButton {
-  background-color: #42b4b9;
-  color: #ffffff;
+  background-color: var(--color-vert);
+  color: var(--color-grey-0);
+}
+.verifyButton:hover {
+  transition: all 0.3s;
+  background-color: var(--color-vert-dark);
+  color: var(--color-grey-0);
 }
 
 .verifyButton:disabled {
-  background-color: #a0aec0;
+  background-color: var(--color-grey-300);
   cursor: not-allowed;
 }
 
 .rejectButton {
-  background-color: #e53e3e;
-  color: #ffffff;
+  background-color: var(--color-red-500);
+  color: var(--color-grey-0);
 }
 
 .rejectButton:hover {
-  background-color: #c53030;
+  transition: all 0.3s;
+  background-color: var(--color-red-600);
 }

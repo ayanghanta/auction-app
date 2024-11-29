@@ -1,5 +1,5 @@
 .loginContainer {
-  background-color: #f4f4f4;
+  background-color: var(--color-bg-main);
   max-width: 120rem;
   display: grid;
   grid-template-columns: 55fr 45fr;
@@ -15,7 +15,7 @@
 .loginForm h1 {
   font-size: 3.2rem;
   text-align: center;
-  color: #359094;
+  color: var(--color-heading);
   margin-bottom: 1.2rem;
 }
 .loginForm p {
@@ -46,11 +46,11 @@
   font-family: inherit;
   font-size: 2rem;
   padding: 0.8rem 1.6rem;
-  color: #1c1c1c;
+  color: var(--color-brand-900);
 }
 .forgotText a {
   font-size: 1.4rem;
-  color: #606060;
+  color: var(--color-grey-500);
 }
 .loginContainer .singUpText {
   margin-top: 3.2rem;
@@ -58,7 +58,7 @@
   font-size: 1.6rem;
 }
 .loginContainer .singUpText a {
-  color: #42b4b9;
+  color: var(--color-brand-900);
   font-weight: 500;
   margin-left: 1.2rem;
 }

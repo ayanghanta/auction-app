@@ -21,14 +21,8 @@ function AuctionCard({ product }) {
           <CollapsText>{summary}</CollapsText>
         </p>
         <div className={styles.pricing}>
-          <p>
-            <strong>Base Price:</strong> {formatCurrency(basePrice)}
-          </p>
-          {latestBid && (
-            <p>
-              <strong>Latest Bid:</strong> {formatCurrency(latestBid)}
-            </p>
-          )}
+          <p>Base Price: {formatCurrency(basePrice)}</p>
+          {latestBid && <p>Latest Bid: {formatCurrency(latestBid)}</p>}
         </div>
         <div className={styles.cta}>
           <Link to={`/auctions/${_id}`}>

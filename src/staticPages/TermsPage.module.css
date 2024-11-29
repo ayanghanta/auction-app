@@ -1,20 +1,20 @@
 .termsContainer {
-  color: #686a6f;
+  color: var(--color-grey-600);
   padding: 4rem;
   max-width: 100rem;
   margin: 0 auto;
-  border-radius: 0.8rem;
+  border-radius: var(--border-radius-md);
 }
 
 .termsContainer h1 {
-  color: #359094;
+  color: var(--color-brand-600);
   text-align: center;
   margin-bottom: 2rem;
   font-size: 2.8rem;
 }
 
 .termsContainer h2 {
-  color: #3ba2a7;
+  color: var(--color-vert);
   margin-top: 3rem;
   margin-bottom: 1.5rem;
   font-size: 1.8rem;
@@ -34,8 +34,4 @@
 
 .termsContainer ul li {
   margin-bottom: 1rem;
-}
-
-strong {
-  color: #42b4b9;
 }

@@ -8,8 +8,8 @@
 }
 
 .spinner div {
-  border: 0.4rem solid #f4f4f4;
-  border-top: 0.4rem solid #42b4b9;
+  border: 0.4rem solid var(--color-sec-100);
+  border-top: 0.4rem solid transparent;
   border-radius: 50%;
   width: 100%;
   height: 100%;

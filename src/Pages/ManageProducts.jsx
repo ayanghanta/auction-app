@@ -1,5 +1,4 @@
 import { useQuery } from "@tanstack/react-query";
-import UserProductTableItem from "../features/product/UserProductTableItem";
 import Back from "../ui/Back";
 import Menus from "../ui/Menu";
 import TableHeader from "../ui/TableHeader";

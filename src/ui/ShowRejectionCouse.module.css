@@ -11,12 +11,12 @@
   gap: 1.2rem;
   font-size: 2rem;
   font-weight: 600;
-  color: #dc2626;
+  color: var(--color-red-500);
   margin-bottom: 1rem;
 }
 
 .reason {
   font-size: 1.6rem;
-  color: #444141;
+  color: var(-color-grey-800);
   line-height: 1.6;
 }

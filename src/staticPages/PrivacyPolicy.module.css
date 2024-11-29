@@ -1,5 +1,5 @@
 .privacyPolicy {
-  color: #686a6f;
+  color: var(--color-grey-600);
   padding: 4rem;
   max-width: 100rem;
   margin: 0 auto;
@@ -7,14 +7,14 @@
 }
 
 .privacyPolicy h1 {
-  color: #359094;
+  color: var(--color-brand-600);
   text-align: center;
   font-size: 2.8rem;
   margin-bottom: 2rem;
 }
 
 .privacyPolicy h2 {
-  color: #3ba2a7;
+  color: var(--color-vert);
   margin-top: 3rem;
   margin-bottom: 1.5rem;
   font-size: 1.8rem;
@@ -33,8 +33,4 @@
 
 .privacyPolicy ul li {
   margin-bottom: 1rem;
-}
-
-.privacyPolicy strong {
-  color: #42b4b9;
 }

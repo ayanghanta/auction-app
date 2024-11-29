@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 1.2rem;
-  border-bottom: 1px solid #f6f6f6;
+  border-bottom: 1px solid var(--color-grey-50);
   /* margin-bottom: 6.4rem; */
 }
 .pageNav ul {
@@ -17,11 +17,11 @@
 .pageNav ul li a {
   color: inherit;
   font-size: 1.6rem;
-  color: #1c1c1c;
+  color: var(--color-brand-900);
   text-decoration: none;
   transition: all 0.3s;
 }
 .pageNav ul li a:hover {
-  color: #42b4b9;
+  color: var(--color-brand-600);
   transition: all 0.3s;
 }

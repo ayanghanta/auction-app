@@ -1,8 +1,8 @@
 /* Modal content */
 .modalContent {
-  background-color: white;
+  background-color: var(--color-grey-0);
   padding: 2rem;
-  border-radius: 0.8rem;
+  border-radius: var(--border-radius-md);
   max-width: 60rem;
   text-align: center;
   box-shadow: 0rem 0.4rem 2rem rgba(0, 0, 0, 0.1);
@@ -13,6 +13,7 @@
   font-size: 2.4rem;
   font-weight: bold;
   margin-bottom: 2rem;
+  color: var(--color-grey-800);
 }
 
 /* Product Preview Section */
@@ -27,7 +28,7 @@
 .productImage {
   width: 30% !important;
   object-fit: cover;
-  border-radius: 0.8rem;
+  border-radius: var(--border-radius-sm);
 }
 
 .productDetails {
@@ -39,17 +40,18 @@
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 1rem;
+  color: var(--color-grey-800);
 }
 
 .productSummary {
   font-size: 1.6rem;
-  color: #555;
+  color: var(--color-grey-600);
   margin-bottom: 1rem;
 }
 
 .productBasePrice {
   font-size: 1.8rem;
-  color: #333;
+  color: var(--color-grey-800);
 }
 
 /* Auction Rules Section */
@@ -62,13 +64,14 @@
   font-size: 1.8rem;
   font-weight: bold;
   margin-bottom: 1rem;
+  color: var(--color-grey-800);
 }
 
 .rulesList {
   list-style-type: disc;
   padding-left: 2rem;
   font-size: 1.6rem;
-  color: #444;
+  color: var(--color-grey-600);
 }
 
 .rulesList li {
@@ -90,20 +93,20 @@
   font-size: 1.6rem;
   font-weight: 600;
   margin-bottom: 0.8rem;
-  color: #333;
+  color: var(--color-grey-800);
 }
 
 .dateInput {
   width: 100%;
   padding: 1rem;
   font-size: 1.6rem;
-  border: 0.1rem solid #ccc;
-  border-radius: 0.8rem;
+  border: 0.1rem solid var(--color-grey-300);
+  border-radius: var(--border-radius-sm);
   outline: none;
 }
 
 .dateInput:focus {
-  border-color: #007bff;
+  border-color: var(--color-brand-600);
 }
 
 /* Checkbox Container */
@@ -120,7 +123,7 @@
 }
 
 .termsLabel {
-  color: #333;
+  color: var(--color-grey-800);
   font-size: 1.6rem;
   cursor: pointer;
 }
@@ -139,21 +142,29 @@
   font-size: 1.6rem;
   border: none;
   cursor: pointer;
-  border-radius: 0.8rem;
+  border-radius: var(--border-radius-sm);
+  font-weight: 500;
 }
 
 .publishButton {
-  background-color: #28a745;
-  color: white;
+  background-color: var(--color-vert);
+  color: var(--color-grey-0);
 }
-
+.publishButton:hover {
+  transition: all 0.3s;
+  background-color: var(--color-vert-dark);
+}
 .cancelButton {
-  background-color: #dc3545;
-  color: white;
+  background-color: var(--color-red-500);
+  color: var(--color-grey-0);
+}
+.cancelButton:hover {
+  transition: all 0.3s;
+  background-color: var(--color-red-600);
 }
 
 .publishButton:disabled,
 .cancelButton:disabled {
-  background-color: #ccc;
+  background-color: var(--color-grey-300);
   cursor: not-allowed;
 }

@@ -3,7 +3,7 @@
   display: grid;
   grid-template-columns: 3fr 7fr;
   column-gap: 9.6rem;
-  background-color: #f8f8f8;
+  background-color: var(--color-grey-50);
 }
 .infoContainer .imageContainer {
   display: flex;
@@ -30,7 +30,7 @@
   gap: 1.2rem;
 }
 .infoData div label {
-  color: #86888c;
+  color: var(--color-grey-700);
   font-size: 1.6rem;
 }
 .buttns {

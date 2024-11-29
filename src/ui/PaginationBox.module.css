@@ -12,24 +12,24 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem 1rem;
-  background-color: #ffffff;
-  color: #007b83;
+  background-color: var(--color-grey-0);
+  color: var(--color-sec-800);
   font-size: 1.4rem;
   font-weight: bold;
-  border: 0.1rem solid #d1d1d1;
-  border-radius: 0.5rem;
+  border: 0.1rem solid var(--color-grey-300);
+  border-radius: var(--border-radius-sm);
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .navButton:hover {
-  background-color: #e0f4f5;
+  background-color: var(--color-sec-100);
 }
 
 .navButton:disabled,
 .navButton.disabled {
-  background-color: #eaeaea;
-  color: #9e9e9e;
+  background-color: var(--color-grey-200);
+  color: var(--color-grey-400);
   cursor: not-allowed;
 }
 
@@ -39,10 +39,10 @@
 }
 
 .pageButton {
-  background-color: #ffffff;
-  color: #007b83;
-  border: 0.1rem solid #d1d1d1;
-  border-radius: 0.5rem;
+  background-color: var(--color-grey-0);
+  color: var(--color-sec-800);
+  border: 0.1rem solid var(--color-grey-300);
+  border-radius: var(--border-radius-sm);
   padding: 0.5rem 1rem;
   font-size: 1.4rem;
   font-weight: bold;
@@ -51,18 +51,18 @@
 }
 
 .pageButton:hover {
-  background-color: #e0f4f5;
+  background-color: var(--color-sec-100);
 }
 
 .active {
-  background-color: #007b83;
-  color: #ffffff;
-  border: 0.1rem solid #007b83;
+  background-color: var(--color-sec-800);
+  color: var(--color-grey-0);
+  border: 0.1rem solid var(--color-sec-800);
   transform: none;
 }
 
 .pageButton:disabled {
-  background-color: #eaeaea;
-  color: #9e9e9e;
+  background-color: var(--color-grey-200);
+  color: var(--color-grey-400);
   cursor: not-allowed;
 }

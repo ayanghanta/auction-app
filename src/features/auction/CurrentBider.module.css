@@ -19,5 +19,5 @@
 .bidDetails div p {
   font-size: 1.4rem;
   font-weight: 600;
-  color: #606060;
+  color: var(--color-grey-600);
 }

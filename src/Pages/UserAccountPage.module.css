@@ -7,58 +7,8 @@
 .header h1 {
   font-size: 2.2rem;
   text-align: center;
-  /* margin-bottom: 6.4rem; */
 }
 .buttons {
   display: flex;
   gap: 6.4rem;
 }
-/* .header {
-  display: flex;
-  align-items: center;
-  gap: 3.2rem;
-  border-radius: 0.2rem;
-  padding: 0.8rem 1.6rem;
-  max-width: 50rem;
-  margin: 0 auto;
-  margin-bottom: 6.4rem;
-} */
-
-/*
-.accountContainer .userdata {
-  display: grid;
-  grid-template-columns: 30fr 70fr;
-  align-items: center;
-  gap: 6.4rem;
-  margin-bottom: 4.8rem;
-}
-
-.imgContainer img {
-  width: 15rem;
-  border-radius: 50%;
-}
-.accountContainer .imgContainer {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.accountContainer .userNames {
-  display: flex;
-  flex-direction: column;
-  gap: 2.4rem;
-  align-self: flex-end;
-  align-items: start;
-}
-.accountContainer .userNames input {
-  font-family: inherit;
-  font-size: 1.4rem;
-  padding: 0.4rem 0.8rem;
-  width: 50%;
-}
-.accountContainer h3 {
-  font-size: 1.8rem;
-  color: #333333;
-  margin-bottom: 1.2rem;
-}
-*/

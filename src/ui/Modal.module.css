@@ -17,18 +17,16 @@
   display: flex;
   flex-direction: column;
   max-height: 90vh;
-  /* max-width: 90vw; */
-  /* width: 80%; */
   overflow: hidden;
-  border-radius: 0.4rem;
+  border-radius: var(--border-radius-sm);
   box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.2);
 }
 
 .window {
   position: relative;
   overflow-y: auto;
-  background-color: #fff;
-  border-radius: 0.8rem;
+  background-color: var(--color-grey-0);
+  border-radius: var(--border-radius-md);
   max-width: 70vw;
 }
 
@@ -38,13 +36,13 @@
   top: 0.4rem;
   right: 0.4rem;
   font-size: 2.8rem;
-  color: #1c1c1c;
+  color: var(--color-grey-800);
   z-index: 999;
   cursor: pointer;
-  border-radius: 0.2rem;
+  border-radius: var(--border-radius-xs);
 }
 
 .modalCloses:hover {
   transition: all 0.3s;
-  background-color: #e8e8e8;
+  background-color: var(--color-grey-200);
 }

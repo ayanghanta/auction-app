@@ -1,5 +1,5 @@
 .addressInfo {
-  background-color: #f8f8f8;
+  background-color: var(--color-grey-50);
   padding: 6.4rem 4.8rem;
   display: flex;
   flex-direction: column;
@@ -9,7 +9,6 @@
   font-size: 1.8rem;
   text-align: center;
   margin: 3.2rem 0;
-  color: #aaa;
 }
 .addButton {
   display: flex;

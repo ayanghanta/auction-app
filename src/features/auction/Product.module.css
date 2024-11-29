@@ -5,38 +5,40 @@
   grid-template-columns: 50fr 50fr;
   row-gap: 4.2rem;
 }
+
 .productContainer img {
-  /* margin-left: auto;
-  margin-right: auto; */
   width: 90%;
 }
+
 .productContainer .productHader {
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
 }
+
 .productContainer .productHader h1 {
   font-size: 3.6rem;
-  color: #1c1c1c;
+  color: var(--color-grey-800);
 }
+
 .productContainer .productHader p {
   font-size: 1.6rem;
   line-height: 1.5;
+  color: var(--color-grey-700);
 }
+
 .productContainer .statusConatiner {
   font-weight: 500;
-  color: #494949;
+  color: var(--color-grey-600);
   margin-top: 2.4rem;
   display: flex;
   justify-content: space-between;
 }
-/* .ortherDtails {
-  grid-column: 1/-1;
-} */
+
 .ortherDtails h3 {
   font-weight: 600;
   font-size: 2.2rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  color: #494949;
+  color: var(--color-grey-600);
 }

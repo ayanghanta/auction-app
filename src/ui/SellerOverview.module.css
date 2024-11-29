@@ -1,15 +1,15 @@
 .sellerOverviewContainer {
   margin-top: 2rem;
   padding: 1rem;
-  border: 0.1rem solid #ddd;
-  border-radius: 0.8rem;
-  background-color: #f9f9f9;
+  border: 0.1rem solid var(--color-grey-300);
+  border-radius: var(--border-radius-sm);
+  background-color: var(--color-grey-50);
 }
 
 .title {
   font-size: 1.6rem;
   font-weight: bold;
-  color: #333;
+  color: var(--color-grey-800);
   margin-bottom: 1rem;
 }
 
@@ -22,7 +22,7 @@
 .sellerImage {
   width: 3.2rem !important;
   border-radius: 50%;
-  border: 0.2rem solid #eee;
+  border: 0.2rem solid var(--color-grey-200);
 }
 
 .sellerInfo {
@@ -34,12 +34,12 @@
 .sellerName {
   font-size: 1.2rem;
   font-weight: 500;
-  color: #333;
+  color: var(--color-grey-800);
   margin: 0;
 }
 
 .sellerStats {
   font-size: 1.2rem;
-  color: #555;
+  color: var(--color-grey-600);
   margin: 0.2rem 0;
 }

@@ -1,3 +1,8 @@
+/* :root {
+
+} */
+
+/* Global Button Styles */
 .btn {
   all: unset;
   font-family: inherit;
@@ -16,144 +21,152 @@
 :global(.error) {
   align-self: center;
   font-size: 1.6rem;
-  background-color: #e53e3e;
-  color: #ffffff;
+  background-color: var(--color-red-500);
+  color: var(--color-grey-0);
   font-weight: 600;
   padding: 0.8rem 1.6rem;
-  border-radius: 4px;
+  border-radius: var(--border-radius-sm);
   transition: background-color 0.3s;
 }
+
 :global(.error):hover {
-  background-color: #c53030;
+  background-color: var(--color-red-600);
 }
 
 /* Primary Button */
 :global(.primary) {
   font-weight: 600;
-  background-color: #42b4b9; /* Brand color */
-  color: #ffffff;
+  background-color: var(--color-brand-600);
+  color: var(--color-sec-50);
   padding: 1rem 2rem;
-  border-radius: 4px;
+  border-radius: var(--border-radius-sm);
   transition: background-color 0.3s;
 }
+
 :global(.primary):hover {
-  background-color: #359094; /* Darker shade of the brand color */
+  background-color: var(--color-brand-800);
 }
 
 /* Secondary Button */
 :global(.secondary) {
   font-weight: 600;
-  background-color: #edf2f7;
-  color: #2d3748;
+  background-color: var(--color-grey-100);
+  color: var(--color-grey-800);
   padding: 1rem 2rem;
-  border-radius: 4px;
+  border-radius: var(--border-radius-sm);
   transition: background-color 0.3s;
 }
+
 :global(.secondary):hover {
-  background-color: #e2e8f0;
+  background-color: var(--color-grey-200);
 }
 
 /* Small Button */
 :global(.small) {
   padding: 0.4rem 1rem;
   font-size: 1.2rem;
-  border-radius: 3px;
+  border-radius: var(--border-radius-tiny);
 }
 
 /* Medium Button */
 :global(.mid) {
   padding: 0.8rem 1.6rem;
   font-size: 1.4rem;
-  border-radius: 4px;
+  border-radius: var(--border-radius-sm);
 }
 
 /* Large Button */
 :global(.big) {
   padding: 1.6rem 3.2rem;
   font-size: 1.6rem;
-  border-radius: 5px;
+  border-radius: var(--border-radius-md);
 }
 
 /* Bid Button */
 :global(.bid) {
   font-size: 1.6rem;
-  background-color: #48bb78;
-  color: #ffffff;
+  background-color: var(--color-vert);
+  color: var(--color-grey-0);
   padding: 0.8rem 1.6rem;
-  border-radius: 4px;
+  border-radius: var(--border-radius-sm);
   transition: background-color 0.3s;
 }
+
 :global(.bid):hover {
-  background-color: #38a169;
+  background-color: var(--color-vert-dark);
 }
 
 /* CTA Button */
 :global(.cta) {
-  background-color: #42b4b9;
-  color: #ffffff;
+  background-color: var(--color-brand-600);
+  color: var(--color-sec-50);
   font-weight: 600;
   letter-spacing: 0.5px;
   padding: 1rem 2rem;
-  border-radius: 4px;
+  border-radius: var(--border-radius-sm);
   transition: background-color 0.3s;
 }
+
 :global(.cta):hover {
-  background-color: #359094;
+  background-color: var(--color-brand-800);
 }
 
 /* Authentication Button */
 :global(.auth) {
   text-align: center;
-  background-color: #42b4b9;
+  background-color: var(--color-brand-600);
+  color: var(--color-sec-50);
   font-size: 1.6rem;
   font-weight: 600;
-  color: #ffffff;
   padding: 1rem 2rem;
-  border-radius: 4px;
+  border-radius: var(--border-radius-sm);
   transition: background-color 0.3s, color 0.3s;
 }
+
 :global(.auth):hover {
-  background-color: #359094;
-  color: #ffffff;
+  background-color: var(--color-brand-800);
 }
 
 /* Logout Button */
 :global(.logout) {
   font-size: 1.4rem;
   font-weight: 600;
-  background-color: #e2e8f0;
-  color: #4a5568;
+  background-color: var(--color-grey-100);
+  color: var(--color-grey-800);
   padding: 0.8rem 1.6rem;
-  border-radius: 4px;
+  border-radius: var(--border-radius-sm);
   transition: background-color 0.3s, color 0.3s;
 }
+
 :global(.logout):hover {
-  background-color: #cbd5e0;
-  color: #2d3748;
+  background-color: var(--color-grey-200);
+  color: var(--color-grey-900);
 }
 
 /* Update Button */
 :global(.update) {
   font-weight: 600;
-  background-color: #ecc94b;
-  color: #1a202c;
+  background-color: var(--color-orange-500);
+  color: var(--color-grey-0);
   padding: 1rem 2rem;
-  border-radius: 4px;
+  border-radius: var(--border-radius-sm);
   transition: background-color 0.3s;
 }
+
 :global(.update):hover {
-  background-color: #d69e2e;
+  background-color: var(--color-orange-700);
 }
 
 /* Warning Button */
 :global(.warn) {
   font-weight: 600;
-  background-color: #ed8936;
-  color: #ffffff;
+  background-color: var(--color-orange-500);
+  color: var(--color-grey-0);
   padding: 1rem 2rem;
-  border-radius: 4px;
+  border-radius: var(--border-radius-sm);
   transition: background-color 0.3s;
 }
+
 :global(.warn):hover {
-  background-color: #dd6b20;
+  background-color: var(--color-orange-700);
 }

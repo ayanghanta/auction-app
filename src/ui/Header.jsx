@@ -1,5 +1,4 @@
 import { NavLink } from "react-router-dom";
-import { useSelector } from "react-redux";
 
 import styles from "./Header.module.css";
 import Logo from "./Logo";
@@ -9,7 +8,6 @@ import UserOverview from "../features/user/UserOverview";
 import { useUser } from "../features/auth/useUser";
 
 function Header() {
-  // const { isLogin, user } = useSelector((store) => store.user);
   const { isLoading, user, isAuthenticated } = useUser();
   return (
     <div className={styles.pageNav}>
