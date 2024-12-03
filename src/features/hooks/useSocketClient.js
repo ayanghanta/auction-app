@@ -29,7 +29,7 @@ export function useSocketClient(setIsBidLoading) {
         socketInstance.disconnect();
       };
     },
-    [productId]
+    [productId, setIsBidLoading]
   );
 
   return { socketClient: socket };

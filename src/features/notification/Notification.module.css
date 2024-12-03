@@ -1,0 +1,35 @@
+.notificationCard {
+  background-color: var(--color-grey-50);
+  width: 100%;
+  padding: 0.8rem;
+  display: flex;
+}
+.notificationCard:hover {
+  transition: background-color 0.3s ease-in-out;
+  background-color: var(--color-grey-100);
+}
+.notificationText {
+  font-size: 1.3rem;
+  line-height: 1.5;
+}
+.notificationButton {
+  all: unset;
+  margin-left: auto;
+  margin-top: 0.4rem;
+  font-size: 1.1rem;
+  color: var(--color-vert);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  font-weight: 500;
+  white-space: nowrap;
+  margin-left: 1.2rem;
+}
+
+.notificationButton:hover {
+  color: var(--color-vert-dark);
+}
+
+.notificationButton:active {
+  color: var(--color-vert-dark);
+}

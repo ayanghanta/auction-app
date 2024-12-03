@@ -69,7 +69,7 @@
   font-size: 1.6rem;
   font-weight: 600;
   color: var(--color-grey-800);
-  background-color: var(--color-vert-100);
+  background-color: var(--color-vert-light);
   padding: 1rem 1.6rem;
   border-radius: var(--border-radius-sm);
   text-align: center;

@@ -58,3 +58,13 @@ export function getCountryFlag(countryName) {
   // src = "https://flagsapi.com/IN/flat/64.png";
   return flagLink;
 }
+
+export const getViewLink = (notificationType, id) => {
+  let url;
+
+  if (notificationType === "auctionEnd") url = `/myProducts`;
+  else if (notificationType === "auctionWin") url = `/mywinings`;
+  else url = "/";
+
+  return url;
+};

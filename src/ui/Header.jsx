@@ -6,9 +6,10 @@ import SearchBar from "./SearchBar";
 import Button from "./buttons/Button";
 import UserOverview from "../features/user/UserOverview";
 import { useUser } from "../features/auth/useUser";
+import NotificationBell from "../features/notification/NotificationBell";
 
 function Header() {
-  const { isLoading, user, isAuthenticated } = useUser();
+  const { user, isAuthenticated } = useUser();
   return (
     <div className={styles.pageNav}>
       <Logo />
@@ -18,6 +19,7 @@ function Header() {
           <li>
             <NavLink to="/aboutus">About us</NavLink>
           </li>
+          {isAuthenticated && <NotificationBell />}
           <li>
             {isAuthenticated ? (
               <UserOverview imageUrl={user.photo} />

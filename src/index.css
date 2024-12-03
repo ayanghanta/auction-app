@@ -57,6 +57,7 @@ DESCRIPTION COLOR :#686a6f
   --border-radius-sm: 5px;
   --border-radius-md: 7px;
   --border-radius-lg: 9px;
+  --border-radius-full: 50%;
 
   /* BOX SHADOW */
   --box-shadow-card: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
@@ -80,10 +81,10 @@ DESCRIPTION COLOR :#686a6f
   --color-red-800: #9b2c2c;
 
   /* GREEN */
-  --color-vert-light: #c6f6d5;
   --color-vert: #38a169;
-  --color-vert-dark: #2f855a;
   --color-green-bg: #d1fae5;
+  --color-vert-dark: #2f855a;
+  --color-vert-light: #c6f6d5;
   --color-green-text: #047857;
 
   /* BLUE */
