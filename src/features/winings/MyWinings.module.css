@@ -1,0 +1,10 @@
+.container h2 {
+  text-align: center;
+  font-size: 2.2rem;
+}
+.winningCards {
+  margin-top: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}

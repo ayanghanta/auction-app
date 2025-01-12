@@ -20,7 +20,7 @@ import MyProducts from "./Pages/MyProducts";
 import ManageProducts from "./Pages/ManageProducts";
 import AdminProductReview from "./features/admin/AdminProductReview";
 import { CurrentBidderProvider } from "./contexts/CurrentBidderContext";
-import MyWinings from "./Pages/MyWinings";
+import MyWinings from "./features/winings/MyWinings";
 import MyBids from "./features/bid/MyBids";
 
 const queryClient = new QueryClient({

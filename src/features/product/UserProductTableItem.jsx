@@ -4,6 +4,7 @@ import styles from "./UserProductTableItem.module.css";
 import {
   IoAlertCircleOutline,
   IoCreateOutline,
+  IoHammerOutline,
   IoRadioButtonOnSharp,
   IoRocketOutline,
   IoTrash,
@@ -33,6 +34,7 @@ function UserProductTableItem({ id, product }) {
     published,
     auctionsStartsAt,
     isLive,
+    isAuctionEnds,
     rejectionCouse,
   } = product;
 
@@ -70,14 +72,16 @@ function UserProductTableItem({ id, product }) {
         <Menus.Menu id={id}>
           <Menus.MenusToggle id={id} />
           <Menus.List id={id}>
-            <Modal.Button id="delete">
-              <Menus.Button>
-                <IoTrash />
-                <span>Delete</span>
-              </Menus.Button>
-            </Modal.Button>
+            {!isLive && !isAuctionEnds && (
+              <Modal.Button id="delete">
+                <Menus.Button>
+                  <IoTrash />
+                  <span>Delete</span>
+                </Menus.Button>
+              </Modal.Button>
+            )}
 
-            {!isLive && (
+            {!isLive && !isAuctionEnds && (
               <Modal.Button id="edit">
                 <Menus.Button>
                   <IoCreateOutline />
@@ -97,6 +101,15 @@ function UserProductTableItem({ id, product }) {
                 <Menus.Button>
                   <IoAlertCircleOutline />
                   <span>Rejection couse</span>
+                </Menus.Button>
+              </Modal.Button>
+            )}
+
+            {(isLive || isAuctionEnds) && (
+              <Modal.Button id="bidHistory">
+                <Menus.Button>
+                  <IoHammerOutline />
+                  <span>Bid History</span>
                 </Menus.Button>
               </Modal.Button>
             )}
