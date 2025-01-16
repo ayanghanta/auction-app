@@ -96,7 +96,7 @@ function AuctionPage() {
             </div>
             <SellerOverview
               sellerImage={"/users/default-user.jpg"}
-              sellerName="Ayan ghanta"
+              sellerName="Ajoy Adak"
               productsSold={7}
             />
           </div>
