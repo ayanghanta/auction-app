@@ -1,0 +1,113 @@
+.container h2 {
+  text-align: center;
+  font-size: 2.2rem;
+}
+.productDetails {
+  margin-top: 6.4rem;
+  display: grid;
+  grid-template-columns: 3fr 7fr;
+  column-gap: 2.4rem;
+}
+.coverImage {
+  width: 90%;
+  border-radius: 1.2rem;
+}
+
+.details {
+  max-width: 90%;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 2.4rem;
+  margin-bottom: 2.4rem;
+}
+.summary {
+  font-size: 1.4rem;
+}
+.basePrice,
+.finalPrice {
+  margin-top: 1.8rem;
+  display: flex;
+  align-items: center;
+  font-size: 1.8rem;
+  gap: 1.2rem;
+}
+
+.finalPrice .tag {
+  color: var(--color-vert);
+  font-weight: 500;
+}
+.linkBox {
+  display: flex;
+}
+.productLink {
+  margin-top: 1.8rem;
+  text-decoration: none;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 0.6rem 1.2rem;
+  background-color: var(--color-brand-500);
+  color: white;
+  transition: all 0.3s;
+  border-radius: 0.6rem;
+}
+.productLink:hover {
+  background-color: var(--color-brand-600);
+}
+
+.addressDetails {
+  margin-top: 5.2rem;
+}
+.container h3,
+.addressDetails h3 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+}
+.noAddress {
+  margin-top: 3.2rem;
+  text-align: center;
+  font-size: 1.6rem;
+  color: rgb(172, 172, 172);
+}
+.btnsConteiner {
+  display: flex;
+  justify-content: center;
+  padding: 1.2rem 0 1.2rem 0;
+}
+.addNewAddress {
+  all: unset;
+  background-color: var(--color-sec-700);
+  color: var(--color-brand-700);
+  padding: 0.8rem 1.6rem;
+  font-size: 1.6rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.addNewAddress:hover {
+  background-color: var(--color-sec-800);
+}
+.addressInfo {
+  background-color: var(--color-grey-50);
+  padding: 3.2rem 4.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.addressContainer {
+  display: flex;
+  align-items: start;
+  gap: 1.2rem;
+}
+.selectCheckBox {
+  margin-top: 1.2rem;
+  width: 20px;
+  height: 20px;
+}
+.editFormConainer {
+  padding: 3.2rem 0 1.2rem 0;
+}

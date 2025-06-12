@@ -20,6 +20,7 @@ function AddressForm({
   submitHandler,
   isLoading,
   isEdit = false,
+  isNewAddress = false,
 }) {
   const { reset, register, formState, handleSubmit } = useForm({
     defaultValues: address,
@@ -55,13 +56,13 @@ function AddressForm({
 
   return (
     <div className={styles.addressEditBox}>
-      <p>Edit Address</p>
+      <p>{isNewAddress ? "Create New" : "Edit"} Address</p>
       <Button type="primary" onClick={getCurrentPosition}>
         <IoLocationOutline />
         {isGettingPosition ? (
           <SmallSpinner />
         ) : (
-          <span>Use My Current Location</span>
+          <span>Use My GPS Location</span>
         )}
       </Button>
       <form onSubmit={handleSubmit(onSubmit)}>

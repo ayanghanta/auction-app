@@ -7,11 +7,11 @@ import {
   IoHammerOutline,
   IoHomeOutline,
   IoPersonOutline,
-  IoTrophyOutline,
 } from "react-icons/io5";
-import ProductCategory from "./ProductCategory";
-import { useUser } from "../features/auth/useUser";
+import { PiPackage } from "react-icons/pi";
 import AdminSideBar from "../features/admin/AdminSideBar";
+import { useUser } from "../features/auth/useUser";
+import ProductCategory from "./ProductCategory";
 
 function Sidebar() {
   const { user } = useUser();
@@ -60,11 +60,12 @@ function Sidebar() {
         </li>
         <li>
           <NavLink
-            to="/mywinings"
+            to="/myOrders"
             className={({ isActive }) => (isActive ? styles.activeLink : "")}
           >
-            <IoTrophyOutline />
-            <span>Winnings</span>
+            <PiPackage />
+
+            <span>Orders</span>
           </NavLink>
         </li>
         <li>

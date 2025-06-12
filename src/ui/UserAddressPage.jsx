@@ -12,6 +12,15 @@ function UserAddressPage({ user }) {
 
   return (
     <Menus>
+      <div className={styles.editFormConainer}>
+        {addAddress && (
+          <AddressForm
+            onCancel={() => setAddAddress(false)}
+            isLoading={isLoading}
+            submitHandler={createAddress}
+          />
+        )}
+      </div>
       {user.addresses?.length > 0 ? (
         <div className={styles.addressInfo}>
           {user.addresses.map((address) => (
@@ -26,13 +35,6 @@ function UserAddressPage({ user }) {
           {addAddress ? "Cancel" : "+ Add new Address"}
         </Button>
       </div>
-      {addAddress && (
-        <AddressForm
-          onCancel={() => setAddAddress(false)}
-          isLoading={isLoading}
-          submitHandler={createAddress}
-        />
-      )}
     </Menus>
   );
 }

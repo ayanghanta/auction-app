@@ -29,16 +29,29 @@ function MyBidsCard({ bidData }) {
         </p>
       </div>
       <div className={styles.statusContainer}>
-        {bidStatus === "winning" ? (
+        {bidStatus === "winning" && (
           <span className={`${styles.statusTag} ${styles.winning}`}>
             YOU WINNING ⚡
           </span>
-        ) : (
+        )}
+        {bidStatus === "outbid" && (
           <span className={`${styles.statusTag} ${styles.outbid}`}>OUTBID</span>
         )}
-        <Button size="small" type="primary" to={`/auctions/${productId}`}>
-          {bidStatus === "winning" ? "View Auction" : "Bid now"}
-        </Button>
+
+        {bidStatus === "finalized" && (
+          <span className={`${styles.statusTag} ${styles.finalized}`}>
+            WIN BIDDING 🎉
+          </span>
+        )}
+        {bidStatus === "finalized" ? (
+          <Button size="small" type="primary" to={`/checkout/${productId}`}>
+            Place order
+          </Button>
+        ) : (
+          <Button size="small" type="primary" to={`/auctions/${productId}`}>
+            {bidStatus === "winning" ? "View Auction" : "Bid now"}
+          </Button>
+        )}
       </div>
     </div>
   );

@@ -11,6 +11,7 @@
     "server": "json-server --watch data/auctions.json --port 8000"
   },
   "dependencies": {
+    "@paddle/paddle-js": "^1.4.1",
     "@reduxjs/toolkit": "^2.2.7",
     "@tanstack/react-query": "^4.36.1",
     "@tanstack/react-query-devtools": "^4.36.1",

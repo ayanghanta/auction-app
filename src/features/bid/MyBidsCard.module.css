@@ -71,3 +71,8 @@
   background-color: var(--color-green-bg);
   color: var(--color-green-text);
 }
+
+.finalized {
+  background-color: var(--color-green-bg);
+  color: var(--color-green-text);
+}
