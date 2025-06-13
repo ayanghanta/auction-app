@@ -52,15 +52,6 @@ function AdminSideBar() {
             <span>Manage Products</span>
           </NavLink>
         </li>
-        <li>
-          <NavLink
-            to="/me-bids"
-            className={({ isActive }) => (isActive ? styles.activeLink : "")}
-          >
-            <IoPeopleOutline />
-            <span>Manage Users</span>
-          </NavLink>
-        </li>
       </ul>
     </div>
   );

@@ -2,11 +2,20 @@ import { Link } from "react-router-dom";
 import styles from "./AuctionCard.module.css";
 import CollapsText from "../../utils/CollapsText";
 import Button from "../../ui/buttons/Button";
-import { formatCurrency } from "../../utils/helper";
+import { formatCurrency, formatDate } from "../../utils/helper";
 import { PRODUCT_IMG_URL } from "../../constant";
 
 function AuctionCard({ product }) {
-  const { basePrice, coverImage, summary, title, _id, latestBid } = product;
+  const {
+    basePrice,
+    coverImage,
+    summary,
+    title,
+    _id,
+    latestBid,
+    isLive,
+    auctionsStartsAt,
+  } = product;
 
   return (
     <div className={styles.auctionCard}>
@@ -23,6 +32,20 @@ function AuctionCard({ product }) {
         <div className={styles.pricing}>
           <p>Base Price: {formatCurrency(basePrice)}</p>
           {latestBid && <p>Latest Bid: {formatCurrency(latestBid)}</p>}
+        </div>
+        <div>
+          {isLive ? (
+            <p className={styles.liveTag}>
+              <span>Live</span>
+            </p>
+          ) : (
+            <p className={styles.auctionStartDate}>
+              <span>Action starts at :</span>
+              <span className={styles.date}>
+                {formatDate(auctionsStartsAt, true)}
+              </span>
+            </p>
+          )}
         </div>
         <div className={styles.cta}>
           <Link to={`/auctions/${_id}`}>

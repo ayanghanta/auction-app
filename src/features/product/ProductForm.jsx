@@ -382,16 +382,18 @@ function ProductForm({
           >
             cancel
           </Button>
-          <Button type="primary" role="submit" disabled={isLoading}>
-            {isLoading ? <SmallSpinner /> : buttonText}
-          </Button>
+          {editAllfields && (
+            <Button type="primary" role="submit" disabled={isLoading}>
+              {isLoading ? <SmallSpinner /> : buttonText}
+            </Button>
+          )}
           {isVerified && (
             <Button
               type="warn"
               onClick={() => setEditAllFileds(true)}
               disabled={isLoading}
             >
-              Update Product
+              Enable Product update
             </Button>
           )}
         </div>

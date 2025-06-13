@@ -77,6 +77,8 @@ function CreateBid({ basePrice, currentBidDeails }) {
     socketClient.emit("placeBid", data);
   }
 
+  if (!user?._id) return null;
+
   if (currnetBidData.bidderId === user?._id)
     return (
       <p className={styles.currentBidderMessage}>

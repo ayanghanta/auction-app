@@ -21,6 +21,7 @@ export function formatCurrency(amount) {
 }
 
 export function formatDate(date, minutes = false) {
+  if (!date) return "";
   const dateStr = new Date(date);
   const options = {
     day: "numeric",
@@ -63,8 +64,31 @@ export const getViewLink = (notificationType, id) => {
   let url;
 
   if (notificationType === "auctionEnd") url = `/myProducts`;
-  else if (notificationType === "auctionWin") url = `/mywinings`;
+  else if (notificationType === "auctionWin") url = `/myBids`;
   else url = "/";
 
   return url;
+};
+
+export const getDeliveryProgress = (
+  deliveryDate,
+  orderPlaceAt,
+  nowTimestamp = Date.now()
+) => {
+  const deliveryTime = new Date(deliveryDate).getTime(); // UTC ms
+  const orderTime = new Date(orderPlaceAt).getTime(); // UTC ms
+
+  // Handle edge case where delivery date is same or before order
+  if (deliveryTime <= orderTime) return 100;
+
+  const elapsed = nowTimestamp - orderTime;
+  const total = deliveryTime - orderTime;
+
+  let progress = 3 > (elapsed / total) * 100 ? 3 : (elapsed / total) * 100;
+
+  // Clamp between 0 and 100
+  if (progress < 0) return 0;
+  if (progress > 100) return 100;
+
+  return parseFloat(progress.toFixed(2));
 };

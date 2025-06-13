@@ -44,7 +44,7 @@ function CheckOutButton({ productId, addressId }) {
         transactionId: data.transaction,
         settings: {
           displayMode: "overlay",
-          successUrl: "http://localhost:5173",
+          successUrl: "http://localhost:5173/thank-you",
         },
       });
     } catch (err) {

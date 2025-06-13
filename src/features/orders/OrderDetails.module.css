@@ -1,0 +1,142 @@
+.container h2 {
+  text-align: center;
+  font-size: 2.2rem;
+}
+.orderInfo {
+  display: grid;
+  grid-template-columns: 5fr 5fr;
+  column-gap: 2.4rem;
+  margin: 5.2rem 2.4rem 3.2rem 2.4rem;
+}
+.imageBox img {
+  width: 60%;
+  margin-bottom: 1.2rem;
+  border-radius: 0.6rem;
+}
+.imageBox p {
+  font-size: 1.6rem;
+}
+.itemTitle {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1rem;
+}
+.summary {
+  color: #777;
+  line-height: 1.4;
+  margin-bottom: 1.2rem;
+}
+.basedPrice {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-weight: 500;
+}
+.basedPrice .tag {
+  font-weight: 600;
+  color: var(--color-sec-900);
+}
+
+.delivaryInfo {
+  font-size: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.winningPrice {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-weight: 500;
+}
+
+.winningPrice .tag {
+  font-weight: 600;
+  color: var(--color-vert);
+}
+.tagId {
+  font-weight: 500;
+  color: #444;
+}
+.deliveryDateCon {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+.deliveryDate {
+  color: var(--color-vert-dark);
+}
+.statusTag {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: var(--border-radius-sm);
+  text-transform: capitalize;
+  white-space: pre-wrap;
+}
+
+.out_for_delivery {
+  background-color: var(--color-sec-100);
+  color: var(--color-sec-900);
+}
+
+.delivered {
+  background-color: var(--color-green-bg);
+  color: var(--color-green-text);
+}
+
+/* PROGREESS BAR */
+.progreeBg {
+  height: 10px;
+  background-color: var(--color-grey-200);
+  border-radius: 0.6rem;
+  overflow: hidden;
+  margin-top: 1.2rem;
+  margin-bottom: 2.4rem;
+}
+.progreeBar {
+  height: 100%;
+  border-radius: 0.6rem;
+  background-color: var(--color-vert);
+}
+.progesstext {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.2rem;
+}
+.deliveryDateInProg {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+.addressContainer {
+  margin-top: 2.4rem;
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 0.75rem 1rem;
+  background-color: #fcfcfc;
+  border-radius: 8px;
+  border: 1px solid #eeeeee;
+  color: #333;
+  max-width: 400px;
+}
+
+.heading {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+.name {
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.tag {
+  font-style: italic;
+  color: #555;
+  margin-top: 0.25rem;
+}

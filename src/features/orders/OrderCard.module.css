@@ -7,6 +7,7 @@
   padding: 1rem;
   background-color: var(--color-grey-50);
   width: 80%;
+  align-items: center;
 }
 
 .imgContainer img {
@@ -19,14 +20,20 @@
 .details {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 1rem;
   margin-left: 2.4rem;
 }
-
+.orderNumber {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
 .title {
   font-size: 1.6rem;
   font-weight: 600;
-  color: var(--color-grey-800);
+  color: var(--color-grey-500);
   margin-bottom: 0.5rem;
 }
 
@@ -37,11 +44,15 @@
   margin: 0.5rem 0;
 }
 
-.time {
+.orderTime {
   font-size: 1.4rem;
   color: var(--color-grey-500);
 }
-
+.devileryTime {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--color-blue-500);
+}
 .statusContainer {
   display: flex;
   flex-direction: column;
@@ -60,19 +71,12 @@
   white-space: pre-wrap;
 }
 
-/* OUTBID Tag */
-.outbid {
-  background-color: var(--color-orange-100);
-  color: var(--color-orange-600);
+.out_for_delivery {
+  background-color: var(--color-sec-100);
+  color: var(--color-sec-900);
 }
 
-/* WINNING Tag */
-.winning {
-  background-color: var(--color-green-bg);
-  color: var(--color-green-text);
-}
-
-.finalized {
+.delivered {
   background-color: var(--color-green-bg);
   color: var(--color-green-text);
 }

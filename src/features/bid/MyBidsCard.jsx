@@ -2,11 +2,18 @@ import { formatCurrency, formatDate } from "../../utils/helper";
 import styles from "./MyBidsCard.module.css";
 import { PRODUCT_IMG_URL } from "../../constant";
 import Button from "../../ui/buttons/Button";
+import { useGetProduct } from "../admin/useGetProduct";
+import { HiMiniArrowTopRightOnSquare } from "react-icons/hi2";
+import { NavLink } from "react-router-dom";
 
 function MyBidsCard({ bidData }) {
   const { bidStatus, myLatestBid, leatestBidAt, productId } = bidData;
 
   const { title, coverImage, basePrice } = bidData.auctionDetails.at(0);
+
+  const { product, isLoading } = useGetProduct(productId);
+
+  const { plasedOrder, orderId } = product || {};
 
   return (
     <div className={styles.container}>
@@ -28,31 +35,41 @@ function MyBidsCard({ bidData }) {
           Last Bid Placed on {formatDate(leatestBidAt, true)}
         </p>
       </div>
-      <div className={styles.statusContainer}>
-        {bidStatus === "winning" && (
-          <span className={`${styles.statusTag} ${styles.winning}`}>
-            YOU WINNING ⚡
-          </span>
-        )}
-        {bidStatus === "outbid" && (
-          <span className={`${styles.statusTag} ${styles.outbid}`}>OUTBID</span>
-        )}
+      {!isLoading && (
+        <div className={styles.statusContainer}>
+          {bidStatus === "winning" && (
+            <span className={`${styles.statusTag} ${styles.winning}`}>
+              YOU WINNING ⚡
+            </span>
+          )}
+          {bidStatus === "outbid" && (
+            <span className={`${styles.statusTag} ${styles.outbid}`}>
+              OUTBID
+            </span>
+          )}
 
-        {bidStatus === "finalized" && (
-          <span className={`${styles.statusTag} ${styles.finalized}`}>
-            WIN BIDDING 🎉
-          </span>
-        )}
-        {bidStatus === "finalized" ? (
-          <Button size="small" type="primary" to={`/checkout/${productId}`}>
-            Place order
-          </Button>
-        ) : (
-          <Button size="small" type="primary" to={`/auctions/${productId}`}>
-            {bidStatus === "winning" ? "View Auction" : "Bid now"}
-          </Button>
-        )}
-      </div>
+          {bidStatus === "finalized" && (
+            <span className={`${styles.statusTag} ${styles.finalized}`}>
+              WIN BIDDING 🎉
+            </span>
+          )}
+
+          {plasedOrder ? (
+            <NavLink className={styles.viewOrder} to={`/myOrders/${orderId}`}>
+              <HiMiniArrowTopRightOnSquare />
+              <span>View Order Details</span>
+            </NavLink>
+          ) : bidStatus === "finalized" ? (
+            <Button size="small" type="primary" to={`/checkout/${productId}`}>
+              Place order
+            </Button>
+          ) : (
+            <Button size="small" type="primary" to={`/auctions/${productId}`}>
+              {bidStatus === "winning" ? "View Auction" : "Bid now"}
+            </Button>
+          )}
+        </div>
+      )}
     </div>
   );
 }

@@ -68,15 +68,6 @@ function Sidebar() {
             <span>Orders</span>
           </NavLink>
         </li>
-        <li>
-          <NavLink
-            to="/recharge"
-            className={({ isActive }) => (isActive ? styles.activeLink : "")}
-          >
-            <IoCardOutline />
-            <span>Recharge</span>
-          </NavLink>
-        </li>
       </ul>
     </div>
   );

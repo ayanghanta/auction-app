@@ -68,3 +68,21 @@
 .auctionCard a {
   text-decoration: none;
 }
+.auctionStartDate {
+  font-size: 1.4rem;
+  display: flex;
+  gap: 0.6rem;
+}
+.auctionStartDate .date {
+  font-weight: 500;
+  color: #777;
+}
+.liveTag span {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--color-vert-dark);
+  border-radius: 0.4rem;
+  padding: 0.4rem 0.8rem;
+  display: inline-block;
+  background-color: var(--color-green-bg);
+}

@@ -24,6 +24,9 @@ import MyWinings from "./features/winings/MyWinings";
 import MyBids from "./features/bid/MyBids";
 import MyOrders from "./features/orders/MyOrders";
 import Checkout from "./features/checkout/Checkout";
+import ThankYou from "./ui/ThankYou";
+import OrderDetails from "./features/orders/OrderDetails";
+import ProtectedRoute from "./ui/ProtectedRoute";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -50,14 +53,22 @@ function App() {
               }
             />
             <Route path="live-auctions" element={<LiveAuctions />} />
-            <Route path="me" element={<UserAccountPage />} />
-            <Route path="myOrders" element={<MyOrders />} />
-            <Route path="checkout/:productId" element={<Checkout />} />
-            <Route path="myBids" element={<MyBids />} />
-            <Route path="myProducts" element={<MyProducts />} />
-            <Route path="addProduct" element={<AddNewProduct />} />
-            <Route path="manageProducts" element={<ManageProducts />} />
-            <Route path="review/:productId" element={<AdminProductReview />} />
+
+            <Route element={<ProtectedRoute />}>
+              <Route path="me" element={<UserAccountPage />} />
+              <Route path="checkout/:productId" element={<Checkout />} />
+              <Route path="myBids" element={<MyBids />} />
+              <Route path="myProducts" element={<MyProducts />} />
+              <Route path="addProduct" element={<AddNewProduct />} />
+              <Route path="manageProducts" element={<ManageProducts />} />
+              <Route
+                path="review/:productId"
+                element={<AdminProductReview />}
+              />
+              <Route path="thank-you" element={<ThankYou />} />
+              <Route path="myOrders" element={<MyOrders />} />
+              <Route path="myOrders/:orderId" element={<OrderDetails />} />
+            </Route>
           </Route>
 
           <Route path="login" element={<Login />} />
