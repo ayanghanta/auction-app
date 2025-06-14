@@ -1,4 +1,4 @@
-import styles from "./FAQ.module.css";
+import styles from "./Faq.module.css";
 import Header from "../ui/Header";
 import Footer from "../ui/Footer";
 import { useState } from "react";
