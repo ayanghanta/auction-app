@@ -22,7 +22,7 @@ export const getGeoPositionAddress = async ({ latitude, longitude }) => {
     };
     return addressObj;
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     toast.error(`Can't fetch you location!`);
     return null;
   }

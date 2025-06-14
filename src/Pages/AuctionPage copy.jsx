@@ -15,12 +15,12 @@ function AuctionPage() {
     setSocket(socketInstance);
 
     socketInstance.on("connect", () => {
-      console.log("Connected to backend!");
+      // console.log("Connected to backend!");
       socketInstance.emit("joinRoom", productId);
     });
 
     socketInstance.on("hello", (data) => {
-      console.log(data);
+      // console.log(data);
     });
 
     socketInstance.on("AuthError", (error) => {

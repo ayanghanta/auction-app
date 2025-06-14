@@ -9,8 +9,10 @@ import { useLogin } from "./useLogin";
 import SmallSpinner from "../../ui/SmallSpinner";
 
 function Login() {
-  const [email, setEmail] = useState("test7@gmail.com");
-  const [password, setPassword] = useState("test1234");
+  // const [email, setEmail] = useState("test7@gmail.com");
+  // const [password, setPassword] = useState("test1234");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const { login, isLoading } = useLogin();
   const navigate = useNavigate();
 

@@ -25,7 +25,7 @@ function Checkout() {
   const { product, isLoading } = useGetProduct(productId);
   const { isLoading: loadingUserData, user } = useUser();
 
-  console.log(product);
+  // console.log(product);
 
   function handleSelectAddress(addressId) {
     if (!addressId) return;
