@@ -37,7 +37,7 @@ function Login() {
       <Header />
       <main className={styles.loginContainer}>
         <div className={styles.loginForm}>
-          <h1>Welcome Back to Vintage Vault</h1>
+          <h1>Welcome Back to Antique Bazzar</h1>
           <p style={styles.tagline}>
             Unlock the treasures of history. Log in to start bidding on
             exclusive items!

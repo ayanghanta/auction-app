@@ -11,16 +11,16 @@ function TermsPage() {
         <p>Effective Date: September 1, 2024</p>
 
         <p>
-          Welcome to <strong>Vintage Vault</strong>. By accessing or using our
+          Welcome to <strong>Antique Bazzar</strong>. By accessing or using our
           website and services, you agree to comply with and be bound by the
           following terms and conditions. Please review these terms carefully.
         </p>
 
         <h2>1. Acceptance of Terms</h2>
         <p>
-          By accessing or using the <strong>Vintage Vault</strong> platform, you
-          agree to be bound by these Terms of Service and any additional terms
-          applicable to certain features of our website.
+          By accessing or using the <strong>Antique Bazzar</strong> platform,
+          you agree to be bound by these Terms of Service and any additional
+          terms applicable to certain features of our website.
         </p>
 
         <h2>2. Changes to Terms</h2>
@@ -93,9 +93,9 @@ function TermsPage() {
 
         <h2>7. Intellectual Property</h2>
         <p>
-          All content on the <strong>Vintage Vault</strong> platform, including
+          All content on the <strong>Antique Bazzar</strong> platform, including
           text, images, graphics, logos, and software, is the property of
-          <strong> Vintage Vault</strong> or its licensors and is protected by
+          <strong> Antique Bazzar</strong> or its licensors and is protected by
           intellectual property laws. You may not use, reproduce, or distribute
           any content without our prior written permission.
         </p>
@@ -110,7 +110,7 @@ function TermsPage() {
 
         <h2>9. Limitation of Liability</h2>
         <p>
-          In no event shall <strong>Vintage Vault</strong> be liable for any
+          In no event shall <strong>Antique Bazzar</strong> be liable for any
           indirect, incidental, special, consequential, or punitive damages
           arising out of or relating to your use of our platform or services.
         </p>

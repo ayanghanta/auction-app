@@ -5,9 +5,9 @@ import { useState } from "react";
 
 const faqData = [
   {
-    question: "What is Vintage Vault?",
+    question: "What is Antique Bazzar?",
     answer:
-      "Vintage Vault is an online auction platform where users can buy and sell vintage and historical items like books, memorabilia, and more.",
+      "Antique Bazzar is an online auction platform where users can buy and sell vintage and historical items like books, memorabilia, and more.",
   },
   {
     question: "How do I participate in an auction?",
@@ -27,12 +27,12 @@ const faqData = [
   {
     question: "Is there any fee for listing an item?",
     answer:
-      "Listing items on Vintage Vault is free. However, we charge a small commission fee when an item is sold.",
+      "Listing items on Antique Bazzar is free. However, we charge a small commission fee when an item is sold.",
   },
   {
     question: "How long does an auction last?",
     answer:
-      "Typically, auctions on Vintage Vault last between 3-5 days, giving users plenty of time to place their bids.",
+      "Typically, auctions on Antique Bazzar last between 3-5 days, giving users plenty of time to place their bids.",
   },
   {
     question: "How can I track my bids?",

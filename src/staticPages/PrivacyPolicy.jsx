@@ -9,8 +9,8 @@ function PrivacyPolicy() {
         <h1>Privacy Policy</h1>
 
         <p>
-          At <strong>Vintage Vault</strong>, we are committed to protecting your
-          privacy. This Privacy Policy outlines how we collect, use, and
+          At <strong>Antique Bazzar</strong>, we are committed to protecting
+          your privacy. This Privacy Policy outlines how we collect, use, and
           safeguard your personal information when you use our website and
           services.
         </p>

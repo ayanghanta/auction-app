@@ -3,7 +3,7 @@ export const testimonials = [
   {
     id: 1,
     quote:
-      "Vintage Vault transformed my antique collection! The verification process was thorough, and I felt completely secure. Highly recommended!",
+      "Antique Bazzar transformed my antique collection! The verification process was thorough, and I felt completely secure. Highly recommended!",
     author: "Eleanor Vance, Collector",
   },
   {
@@ -15,7 +15,7 @@ export const testimonials = [
   {
     id: 3,
     quote:
-      "Selling my inherited watch was a breeze with Vintage Vault. Their team handled everything professionally, and I got a great price. A truly trustworthy service.",
+      "Selling my inherited watch was a breeze with Antique Bazzar. Their team handled everything professionally, and I got a great price. A truly trustworthy service.",
     author: "Sophia Chen, Seller",
   },
 ];
@@ -28,7 +28,7 @@ export const faqs = [
       "To list an item, simply sign in, navigate to &apos;Submit Your Item&apos;, fill out the required documentation, and our team will verify your product. Once verified, you can schedule your auction.",
   },
   {
-    question: "What kind of items can I sell on Vintage Vault?",
+    question: "What kind of items can I sell on Antique Bazzar?",
     answer:
       "We welcome a wide range of authentic antique and historical items, including historical artifacts, rare books, memorabilia, vintage collectibles, and unique pieces with significant historical or sentimental value.",
   },

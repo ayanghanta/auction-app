@@ -39,7 +39,7 @@ const LandingPage = () => {
         <div className={styles.logoContainer}>
           <img
             src="/logo.png"
-            alt="Vintage Vault Logo"
+            alt="Antique Bazzar Logo"
             className={styles.logo}
           />
         </div>
@@ -92,7 +92,7 @@ const LandingPage = () => {
           </h1>
           <p className={styles.heroSubheading}>
             Welcome to{" "}
-            <strong className={styles.highlight}>Vintage Vault</strong>, your
+            <strong className={styles.highlight}>Antique Bazzar</strong>, your
             gateway to discovering and bidding on timeless treasures.
           </p>
           <div className={styles.heroCta}>
@@ -216,7 +216,7 @@ const LandingPage = () => {
 
         {/* Why Choose Us Section */}
         <section className={styles.whyChooseUsSection}>
-          <h2 className={styles.sectionHeading}>Why Choose Vintage Vault?</h2>
+          <h2 className={styles.sectionHeading}>Why Choose Antique Bazzar?</h2>
           <p className={styles.sectionSubheading}>
             Dedicated to providing a secure, transparent, and enjoyable auction
             experience.
@@ -261,7 +261,7 @@ const LandingPage = () => {
         <section id="faq" className={styles.faqSection}>
           <h2 className={styles.sectionHeading}>Frequently Asked Questions</h2>
           <p className={styles.sectionSubheading}>
-            Find quick answers to common questions about Vintage Vault.
+            Find quick answers to common questions about Antique Bazzar.
           </p>
           <div className={styles.faqContainer}>
             {faqs.map((faq, index) => (
@@ -298,7 +298,7 @@ const LandingPage = () => {
           <div className={styles.footerBrand}>
             <img
               src="/footer-logo.png"
-              alt="Vintage Vault Footer Logo"
+              alt="Antique Bazzar Footer Logo"
               className={styles.footerLogo}
             />
             <p className={styles.footerTagline}>
@@ -353,7 +353,7 @@ const LandingPage = () => {
         </div>
         <div className={styles.footerBottom}>
           <p>
-            &copy; {new Date().getFullYear()} Vintage Vault. All rights
+            &copy; {new Date().getFullYear()} Antique Bazzar. All rights
             reserved.
           </p>
         </div>

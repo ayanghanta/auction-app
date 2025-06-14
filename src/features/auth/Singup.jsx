@@ -35,7 +35,7 @@ function Singup() {
       <Header />
       <main className={styles.singupContainer}>
         <div className={styles.singupForm}>
-          <h1>Join Vintage Vault</h1>
+          <h1>Join Antique Bazzar</h1>
           <p className={styles.tagline}>
             Create your account and start bidding on unique, historical items.
           </p>

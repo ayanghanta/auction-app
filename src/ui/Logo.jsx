@@ -6,7 +6,7 @@ function Logo() {
       <Link to="/app">
         <img
           src="/logo.png"
-          alt="logo of vintage vault"
+          alt="logo of Antique Bazzar"
           className={styles.logo}
         />
       </Link>
