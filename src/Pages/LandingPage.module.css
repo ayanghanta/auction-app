@@ -662,6 +662,7 @@ strong {
   }
 
   .heroSection {
+    gap: 0rem;
     grid-template-columns: 9.9fr 0.1fr;
     padding: 12.8rem 3.2rem 16.8rem 3.2rem;
   }
