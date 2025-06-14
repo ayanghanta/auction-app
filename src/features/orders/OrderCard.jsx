@@ -1,11 +1,11 @@
 import { HiMiniArrowTopRightOnSquare } from "react-icons/hi2";
 import { PRODUCT_IMG_URL } from "../../constant";
-import Button from "../../ui/buttons/Button";
 import { formatCurrency, formatDate } from "../../utils/helper";
 import styles from "./OrderCard.module.css";
 import { NavLink } from "react-router-dom";
 
 function OrderCard({ order }) {
+  console.log(order);
   const {
     _id: orderId,
     productId: { coverImage, title },

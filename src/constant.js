@@ -1,6 +1,6 @@
 // export const BASE_URL = `http://localhost:3000`;
 export const BASE_URL = `https://vintage-vault-server.onrender.com`;
-export const RES_PER_PAGE_HOME = 5;
+export const RES_PER_PAGE_HOME = 6;
 
 // PUBLIC URLS
 export const PRODUCT_IMG_URL = `${BASE_URL}/images/products`;
