@@ -5,6 +5,7 @@ import Button from "../../ui/buttons/Button";
 import { useGetProduct } from "../admin/useGetProduct";
 import { HiMiniArrowTopRightOnSquare } from "react-icons/hi2";
 import { NavLink } from "react-router-dom";
+import { useUser } from "../auth/useUser";
 
 function MyBidsCard({ bidData }) {
   const { bidStatus, myLatestBid, leatestBidAt, productId } = bidData;
@@ -14,6 +15,8 @@ function MyBidsCard({ bidData }) {
   const { product, isLoading } = useGetProduct(productId);
 
   const { plasedOrder, orderId } = product || {};
+
+  if (bidStatus === "outbid" && plasedOrder) return null;
 
   return (
     <div className={styles.container}>
@@ -55,16 +58,27 @@ function MyBidsCard({ bidData }) {
           )}
 
           {plasedOrder ? (
-            <NavLink className={styles.viewOrder} to={`/myOrders/${orderId}`}>
+            <NavLink
+              className={styles.viewOrder}
+              to={`/app/myOrders/${orderId}`}
+            >
               <HiMiniArrowTopRightOnSquare />
               <span>View Order Details</span>
             </NavLink>
           ) : bidStatus === "finalized" ? (
-            <Button size="small" type="primary" to={`/checkout/${productId}`}>
+            <Button
+              size="small"
+              type="primary"
+              to={`/app/checkout/${productId}`}
+            >
               Place order
             </Button>
           ) : (
-            <Button size="small" type="primary" to={`/auctions/${productId}`}>
+            <Button
+              size="small"
+              type="primary"
+              to={`/app/auctions/${productId}`}
+            >
               {bidStatus === "winning" ? "View Auction" : "Bid now"}
             </Button>
           )}

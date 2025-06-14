@@ -11,6 +11,7 @@ function Product() {
   // })
 
   return <p>This is product page</p>;
+
   // return (
   //   <div className={styles.productContainer}>
   //     <img src={product.image} alt={`image fo a ${product.title}`} />

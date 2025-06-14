@@ -63,9 +63,9 @@ export function getCountryFlag(countryName) {
 export const getViewLink = (notificationType, id) => {
   let url;
 
-  if (notificationType === "auctionEnd") url = `/myProducts`;
-  else if (notificationType === "auctionWin") url = `/myBids`;
-  else url = "/";
+  if (notificationType === "auctionEnd") url = `/app/myProducts`;
+  else if (notificationType === "auctionWin") url = `/app/myBids`;
+  else url = "/app";
 
   return url;
 };

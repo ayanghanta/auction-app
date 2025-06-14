@@ -48,7 +48,7 @@ function AuctionCard({ product }) {
           )}
         </div>
         <div className={styles.cta}>
-          <Link to={`/auctions/${_id}`}>
+          <Link to={`/app/auctions/${_id}`}>
             <Button type="primary">Place a Bid</Button>
           </Link>
         </div>

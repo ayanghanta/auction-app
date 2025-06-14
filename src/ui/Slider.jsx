@@ -6,18 +6,23 @@ import {
 } from "react-icons/io5";
 import { useState } from "react";
 import styles from "./Slider.module.css";
+import { PRODUCT_IMG_URL } from "../constant";
 
-function Slider({ imagesx }) {
+function Slider({ coverImage, ortherImages }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const images = [
-    "/images/antique-camera.jpg",
-    "/images/gold-old-compas.jpg",
-    "/images/pocket-watch.jpg",
-    "/images/retro-typewriter.jpg",
-    "/images/sand-watch.jpg",
-    "/images/vintage-mask.jpg",
-  ];
+  console.log({ coverImage, ortherImages });
+
+  // const dummy_images = [
+  //   "/images/antique-camera.jpg",
+  //   "/images/gold-old-compas.jpg",
+  //   "/images/pocket-watch.jpg",
+  //   "/images/retro-typewriter.jpg",
+  //   "/images/sand-watch.jpg",
+  //   "/images/vintage-mask.jpg",
+  // ];
+
+  const images = [coverImage, ...ortherImages];
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
@@ -45,7 +50,7 @@ function Slider({ imagesx }) {
           {images.map((image, index) => (
             <img
               key={index}
-              src={image}
+              src={`${PRODUCT_IMG_URL}/${image}`}
               alt={`Slide ${index + 1}`}
               className={styles.slideImage}
             />

@@ -3,7 +3,7 @@ import styles from "./Logo.module.css";
 function Logo() {
   return (
     <div className={styles.logoContainer}>
-      <Link to="/">
+      <Link to="/app">
         <img
           src="/logo.png"
           alt="logo of vintage vault"

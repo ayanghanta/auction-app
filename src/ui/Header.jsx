@@ -13,7 +13,7 @@ function Header() {
   return (
     <div className={styles.pageNav}>
       <Logo />
-      <SearchBar />
+      {/* <SearchBar /> */}
       <ul>
         <ul>
           <li>

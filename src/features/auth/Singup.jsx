@@ -21,7 +21,7 @@ function Singup() {
       { ...data },
       {
         onSuccess: () => {
-          navigate("/");
+          navigate("/app");
         },
         onSettled: () => {
           reset();

@@ -53,7 +53,7 @@ function OrderCard({ order }) {
             Devivered
           </span>
         )}
-        <NavLink className={styles.viewOrder} to={`/myOrders/${orderId}`}>
+        <NavLink className={styles.viewOrder} to={`/app/myOrders/${orderId}`}>
           <HiMiniArrowTopRightOnSquare />
           <span>View Order Details</span>
         </NavLink>

@@ -92,7 +92,7 @@ function ProductForm({
 
     submitHandler(productData, {
       onSuccess: () => {
-        navigate("/myProducts");
+        navigate("/app/myProducts");
         handelCloseModal?.();
       },
     });
@@ -382,11 +382,13 @@ function ProductForm({
           >
             cancel
           </Button>
-          {editAllfields && (
+
+          {(isCreate || editAllfields) && (
             <Button type="primary" role="submit" disabled={isLoading}>
               {isLoading ? <SmallSpinner /> : buttonText}
             </Button>
           )}
+
           {isVerified && (
             <Button
               type="warn"

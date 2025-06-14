@@ -78,7 +78,10 @@ function Checkout() {
             <p>{formatCurrency(currentBid)}</p>
           </div>
           <div className={styles.linkBox}>
-            <a href={`/auctions/${productId}`} className={styles.productLink}>
+            <a
+              href={`/app/auctions/${productId}`}
+              className={styles.productLink}
+            >
               <HiMiniArrowTopRightOnSquare />
               <span>View item details</span>
             </a>

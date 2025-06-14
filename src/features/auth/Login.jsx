@@ -25,7 +25,7 @@ function Login() {
           setEmail("");
           setPassword("");
         },
-        onSuccess: () => navigate("/"),
+        onSuccess: () => navigate("/app"),
       }
     );
   }

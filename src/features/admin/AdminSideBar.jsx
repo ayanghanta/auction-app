@@ -4,7 +4,6 @@ import {
   IoFileTrayFullOutline,
   IoFlameOutline,
   IoHomeOutline,
-  IoPeopleOutline,
   IoPersonOutline,
 } from "react-icons/io5";
 import ProductCategory from "../../ui/ProductCategory";
@@ -15,7 +14,7 @@ function AdminSideBar() {
       <ul className={styles.navList}>
         <li>
           <NavLink
-            to="/"
+            to="/app"
             className={({ isActive }) => (isActive ? styles.activeLink : "")}
           >
             <IoHomeOutline />
@@ -24,7 +23,7 @@ function AdminSideBar() {
         </li>
         <li>
           <NavLink
-            to="/live-auctions"
+            to="/app/live-auctions"
             className={({ isActive }) => (isActive ? styles.activeLink : "")}
           >
             <IoFlameOutline />
@@ -36,7 +35,7 @@ function AdminSideBar() {
         </li>
         <li>
           <NavLink
-            to="/me"
+            to="/app/me"
             className={({ isActive }) => (isActive ? styles.activeLink : "")}
           >
             <IoPersonOutline />
@@ -45,7 +44,7 @@ function AdminSideBar() {
         </li>
         <li>
           <NavLink
-            to="/manageProducts"
+            to="/app/manageProducts"
             className={({ isActive }) => (isActive ? styles.activeLink : "")}
           >
             <IoFileTrayFullOutline />

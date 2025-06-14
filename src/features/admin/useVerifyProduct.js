@@ -10,7 +10,7 @@ export function useVerifyProduct() {
     mutationFn: verifyProductApi,
     onSuccess: () => {
       toast.success("Product is verified successfully");
-      navigate("/manageProducts");
+      navigate("/app/manageProducts");
     },
     onError: (err) => toast.error(err.message),
   });

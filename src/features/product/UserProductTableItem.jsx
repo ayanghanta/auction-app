@@ -58,7 +58,7 @@ function UserProductTableItem({ id, product }) {
         {isLive && <IoRadioButtonOnSharp className={styles.autionStatus} />}
       </p>
       <p className={styles.title}>
-        <Link to="/">{title}</Link>
+        <Link to="/app">{title}</Link>
       </p>
       <p className={styles.price}> {formatCurrency(basePrice)}</p>
       <p className={styles.date}>

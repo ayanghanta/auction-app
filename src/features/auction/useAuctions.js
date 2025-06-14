@@ -3,7 +3,7 @@ import { getAllAuctions as getAllAuctionsApi } from "../../services/apiAuctions"
 import { useSearchParams } from "react-router-dom";
 import { RES_PER_PAGE_HOME } from "../../constant";
 
-export function useAuctions(isLiveAuction) {
+export function useAuctions(isLiveAuction, numResult) {
   const [searchParams] = useSearchParams();
   const queryClinet = useQueryClient();
   const queryFilter = {};
@@ -22,7 +22,7 @@ export function useAuctions(isLiveAuction) {
   const numPage = +searchParams.get("page") || 1;
   // const queryStr = `page=${numPage}&limit=${RES_PER_PAGE_HOME}`;
   queryFilter.page = numPage;
-  queryFilter.limit = RES_PER_PAGE_HOME;
+  queryFilter.limit = numResult || RES_PER_PAGE_HOME;
 
   const uniqueKey = `live-${isLiveAuction}-page-${numPage}-cate-${category}`;
   const { data, isLoading, status } = useQuery({

@@ -25,6 +25,7 @@ function AuctionPage() {
 
   const {
     coverImage,
+    otherImages,
     title,
     description,
     basePrice,
@@ -50,7 +51,7 @@ function AuctionPage() {
 
   return (
     <div className={styles.productContainer}>
-      <Slider />
+      <Slider coverImage={coverImage} ortherImages={otherImages} />
       <div className={styles.productHader}>
         <h1>{title}</h1>
         <p>

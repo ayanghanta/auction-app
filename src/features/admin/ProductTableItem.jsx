@@ -39,7 +39,7 @@ function ProductTableItem({ id, product }) {
         {isLive && <IoRadioButtonOnSharp className={styles.autionStatus} />}
       </p>
       <p className={styles.title}>
-        <Link to="/">{title}</Link>
+        <Link to="/app">{title}</Link>
       </p>
       <p className={styles.price}> {formatCurrency(basePrice)}</p>
       <p className={styles.date}>
@@ -53,7 +53,7 @@ function ProductTableItem({ id, product }) {
         <Menus.Menu id={id}>
           <Menus.MenusToggle id={id} />
           <Menus.List id={id}>
-            <Menus.Button onClick={() => naviagte(`/review/${id}`)}>
+            <Menus.Button onClick={() => naviagte(`/app/review/${id}`)}>
               <IoEyeOutline />
               <span>View Details</span>
             </Menus.Button>

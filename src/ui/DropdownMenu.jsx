@@ -8,7 +8,10 @@ function DropdownMenu() {
   const navigate = useNavigate();
   return (
     <div className={styles.dropdownMenu}>
-      <button className={styles.dropdownItem} onClick={() => navigate("/me")}>
+      <button
+        className={styles.dropdownItem}
+        onClick={() => navigate("/app/me")}
+      >
         <IoPersonOutline />
         <span>Visit Profile</span>
       </button>

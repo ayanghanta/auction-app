@@ -27,6 +27,7 @@ import Checkout from "./features/checkout/Checkout";
 import ThankYou from "./ui/ThankYou";
 import OrderDetails from "./features/orders/OrderDetails";
 import ProtectedRoute from "./ui/ProtectedRoute";
+import LandingPage from "./Pages/LandingPage";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -42,7 +43,8 @@ function App() {
 
       <BrowserRouter>
         <Routes>
-          <Route element={<AppLayout />}>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="app" element={<AppLayout />}>
             <Route index element={<Auctions />} />
             <Route
               path="auctions/:id"

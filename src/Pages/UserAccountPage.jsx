@@ -8,10 +8,10 @@ function UserAccountPage() {
       <div className={styles.header}>
         <h1>Manage Your Account</h1>
         <div className={styles.buttons}>
-          <Button type="primary" to="/myProducts">
+          <Button type="primary" to="/app/myProducts">
             See your product details
           </Button>
-          <Button type="primary" to="/addProduct">
+          <Button type="primary" to="/app/addProduct">
             Sell your product &rarr;
           </Button>
         </div>

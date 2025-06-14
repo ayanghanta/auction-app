@@ -15,7 +15,7 @@ export default function ThankYou() {
         </p>
         <button
           className={styles.button}
-          onClick={() => (window.location.href = "/")}
+          onClick={() => (window.location.href = "/app")}
         >
           Browse new items
         </button>

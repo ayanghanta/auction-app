@@ -5,7 +5,7 @@ function ErrorPage() {
     <div className={styles.error}>
       <p>Something went Wrong :/</p>
       <p className={styles.message}>Page not found !</p>
-      <Button type="error" to="/">
+      <Button type="error" to="/app">
         &larr; Back To Home
       </Button>
     </div>

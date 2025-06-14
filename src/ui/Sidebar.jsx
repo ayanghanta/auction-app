@@ -21,7 +21,7 @@ function Sidebar() {
       <ul className={styles.navList}>
         <li>
           <NavLink
-            to="/"
+            to="/app"
             className={({ isActive }) => (isActive ? styles.activeLink : "")}
           >
             <IoHomeOutline />
@@ -30,7 +30,7 @@ function Sidebar() {
         </li>
         <li>
           <NavLink
-            to="/live-auctions"
+            to="/app/live-auctions"
             className={({ isActive }) => (isActive ? styles.activeLink : "")}
           >
             <IoFlameOutline />
@@ -42,7 +42,7 @@ function Sidebar() {
         </li>
         <li>
           <NavLink
-            to="/me"
+            to="/app/me"
             className={({ isActive }) => (isActive ? styles.activeLink : "")}
           >
             <IoPersonOutline />
@@ -51,7 +51,7 @@ function Sidebar() {
         </li>
         <li>
           <NavLink
-            to="/myBids"
+            to="/app/myBids"
             className={({ isActive }) => (isActive ? styles.activeLink : "")}
           >
             <IoHammerOutline />
@@ -60,7 +60,7 @@ function Sidebar() {
         </li>
         <li>
           <NavLink
-            to="/myOrders"
+            to="/app/myOrders"
             className={({ isActive }) => (isActive ? styles.activeLink : "")}
           >
             <PiPackage />
