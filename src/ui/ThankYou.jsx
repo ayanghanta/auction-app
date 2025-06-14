@@ -19,9 +19,9 @@ export default function ThankYou() {
         </p>
         <button
           className={styles.button}
-          onClick={() => (window.location.href = "/app")}
+          onClick={() => (window.location.href = "/app/myOrders")}
         >
-          Browse new items
+          Track your orders
         </button>
       </div>
     </main>

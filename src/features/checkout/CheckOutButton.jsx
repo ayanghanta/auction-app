@@ -44,7 +44,7 @@ function CheckOutButton({ productId, addressId }) {
         transactionId: data.transaction,
         settings: {
           displayMode: "overlay",
-          successUrl: "http://localhost:5173/app/thank-you",
+          successUrl: "https://antiquebazzar.netlify.app/app/thank-you",
         },
       });
     } catch (err) {
