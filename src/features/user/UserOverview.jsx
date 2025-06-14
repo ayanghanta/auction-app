@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { USER_IMG_URL } from "../../constant";
 import DropdownMenu from "../../ui/DropdownMenu";
-import styles from "./UserOverview.module.css";
+import styles from "./userOverview.module.css";
 function UserOverview({ imageUrl }) {
   const [showMenu, setShowMenu] = useState(false);
   return (
