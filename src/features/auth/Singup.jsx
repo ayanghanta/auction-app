@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 import Footer from "../../ui/Footer";
 import Header from "../../ui/Header";
-import styles from "./Singup.module.css";
+import styles from "./SingUp.module.css";
 import Button from "../../ui/buttons/Button";
 import { useForm } from "react-hook-form";
 import InputError from "../../ui/InputError";
