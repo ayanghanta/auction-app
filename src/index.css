@@ -104,6 +104,7 @@ body {
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 h1,
@@ -209,35 +210,42 @@ strong {
   fill: #788585;
   color: #788585;
 }
-
 .navLinks {
-  list-style: none;
   display: flex;
-  gap: 2.2rem;
-  position: absolute;
-  flex-direction: column;
-  right: 0;
-  top: 0;
-  width: 90%;
-  height: 100vh;
-  background-color: rgba(255, 237, 208, 0.884);
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(10px);
-  text-align: center;
-  z-index: 99;
-  border-radius: 0.2rem;
-  align-items: center;
-  padding: 9.6rem;
-  /* make invisible form the page */
-  transform: translateX(100%);
-  /* opacity: 0; */
-  pointer-events: none;
-  visibility: hidden;
-  transition: all 0.2s ease-in;
+  list-style: none;
+  gap: 3.2rem;
 }
-.navOpen .navLinks {
-  opacity: 1;
-  pointer-events: auto;
-  visibility: visible;
-  transform: translateX(0);
+
+@media (max-width: 992px) {
+  .navLinks {
+    list-style: none;
+    display: flex;
+    gap: 2.2rem;
+    position: absolute;
+    flex-direction: column;
+    right: 0;
+    top: 0;
+    width: 90%;
+    height: 100vh;
+    background-color: rgba(255, 237, 208, 0.884);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    z-index: 99;
+    border-radius: 0.2rem;
+    align-items: center;
+    padding: 9.6rem;
+    /* make invisible form the page */
+    transform: translateX(100%);
+    /* opacity: 0; */
+    pointer-events: none;
+    visibility: hidden;
+    transition: all 0.2s ease-in;
+  }
+  .navOpen .navLinks {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translateX(0);
+  }
 }

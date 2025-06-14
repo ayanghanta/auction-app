@@ -125,12 +125,6 @@ strong {
   color: var(--color-brand-800);
 }
 
-.navLinks {
-  display: flex;
-  list-style: none;
-  gap: 3.2rem;
-}
-
 .navLink {
   font-size: 1.8rem;
   font-weight: 500;
