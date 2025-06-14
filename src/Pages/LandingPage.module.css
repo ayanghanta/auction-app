@@ -173,19 +173,11 @@ strong {
   display: none; /* Hide underline for CTA button */
 }
 
-.hamburger {
+.mobileNavButtton {
   display: none; /* Hidden on desktop */
   cursor: pointer;
   flex-direction: column;
   gap: 0.5rem;
-}
-
-.hamburger span {
-  display: block;
-  width: 2.5rem;
-  height: 3px;
-  background-color: var(--color-brand-600);
-  border-radius: var(--border-radius-tiny);
 }
 
 /* 2. Hero Section */
@@ -193,7 +185,7 @@ strong {
   display: grid;
   grid-template-columns: 8fr 2fr;
   gap: 6rem;
-  padding: 12.8rem 3.2rem 14.8rem 3.2rem;
+  padding: 12.8rem 3.2rem 16.8rem 3.2rem;
 
   background-image: linear-gradient(
       90deg,
@@ -670,9 +662,7 @@ strong {
   }
 
   .heroSection {
-    flex-direction: column;
-    text-align: center;
-    padding: 6.4rem 0;
+    padding: 12.8rem 3.2rem 16.8rem 3.2rem;
   }
 
   .heroContent {
@@ -695,12 +685,17 @@ strong {
     padding: 1.6rem 2rem;
   }
 
-  .navLinks {
-    display: none; /* Hide nav links on smaller screens, can add a mobile menu later */
+  .mobileNavButtton {
+    display: flex;
+    flex-direction: row;
+    gap: 1.2rem;
+    align-items: center;
   }
-
-  .hamburger {
-    display: flex; /* Show hamburger icon */
+  .mobileNavButtton p {
+    z-index: 999;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--color-grey-700);
   }
 
   .heroHeading {

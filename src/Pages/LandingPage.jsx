@@ -22,18 +22,28 @@ import Spinner from "../ui/Spinner";
 import { PRODUCT_IMG_URL } from "../constant";
 import CollapsText from "../utils/CollapsText";
 import { testimonials, faqs } from "../utils/demmyData";
+import { formatCurrency } from "../utils/helper";
+import { HiBars3BottomRight, HiXMark } from "react-icons/hi2";
 
 const LandingPage = () => {
   const [activeFaq, setActiveFaq] = useState(null);
   const navigate = useNavigate();
   const { auctions, isLoading } = useAuctions();
+  const [displayMobileNav, setDisplayMobileNav] = useState(false);
 
   const toggleFaq = (index) => {
     setActiveFaq(activeFaq === index ? null : index);
   };
 
+  function toggleMobileNav() {
+    setDisplayMobileNav((d) => !d);
+    console.log("hello");
+  }
+
   return (
-    <div className={styles.landingPage}>
+    <div
+      className={`${styles.landingPage} ${displayMobileNav ? "navOpen" : ""}`}
+    >
       {/* Sticky Navigation Bar */}
       <nav className={styles.navbar}>
         <div className={styles.logoContainer}>
@@ -43,7 +53,7 @@ const LandingPage = () => {
             className={styles.logo}
           />
         </div>
-        <ul className={styles.navLinks}>
+        <ul className="navLinks">
           <li>
             <NavLink to="/aboutus" className={styles.navLink}>
               About Us
@@ -78,10 +88,16 @@ const LandingPage = () => {
             </NavLink>
           </li>
         </ul>
-        <div className={styles.hamburger}>
-          <span></span>
-          <span></span>
-          <span></span>
+        <div className={styles.mobileNavButtton} onClick={toggleMobileNav}>
+          {displayMobileNav ? (
+            <p>
+              <HiXMark size={28} />
+            </p>
+          ) : (
+            <p>
+              <HiBars3BottomRight size={28} />
+            </p>
+          )}
         </div>
       </nav>
 
@@ -381,7 +397,7 @@ function ExploreProductCard({ product }) {
         </p>
         <div className={styles.bidInfo}>
           <span className={styles.currentBid}>
-            Base Price : <strong>{basePrice}</strong>
+            Base Price : <strong>{formatCurrency(basePrice)}</strong>
           </span>
         </div>
         <button
