@@ -18,7 +18,6 @@ function CheckOutButton({ productId, addressId }) {
     }).then((paddle) => setPaddle(paddle));
   }, []);
 
-  // NOTEME: THIS PRICE MUST BE REMOVE FORM THE CLINET
   const handleCheckout = async () => {
     if (!paddle) return;
     if (!productId || !addressId) return;

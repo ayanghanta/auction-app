@@ -2,7 +2,6 @@ import { NavLink, useLocation } from "react-router-dom";
 import styles from "./Sidebar.module.css";
 
 import {
-  IoCardOutline,
   IoFlameOutline,
   IoHammerOutline,
   IoHomeOutline,
@@ -16,7 +15,6 @@ import ProductCategory from "./ProductCategory";
 function Sidebar() {
   const { user } = useUser();
   const location = useLocation();
-  console.log(location.pathname);
 
   if (user?.role === "admin") return <AdminSideBar />;
   return (

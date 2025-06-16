@@ -3,11 +3,11 @@ import styles from "./DropdownMenu.module.css";
 import { IoLogOutOutline, IoPersonOutline } from "react-icons/io5";
 import { useLogout } from "../features/auth/useLogout";
 
-function DropdownMenu() {
+function DropdownMenu({ refElement }) {
   const { logout, isLoading } = useLogout();
   const navigate = useNavigate();
   return (
-    <div className={styles.dropdownMenu}>
+    <div className={styles.dropdownMenu} ref={refElement}>
       <button
         className={styles.dropdownItem}
         onClick={() => navigate("/app/me")}
