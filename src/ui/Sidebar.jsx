@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import styles from "./Sidebar.module.css";
 
 import {
@@ -15,6 +15,9 @@ import ProductCategory from "./ProductCategory";
 
 function Sidebar() {
   const { user } = useUser();
+  const location = useLocation();
+  console.log(location.pathname);
+
   if (user?.role === "admin") return <AdminSideBar />;
   return (
     <div className={styles.sidebar}>
@@ -22,7 +25,7 @@ function Sidebar() {
         <li>
           <NavLink
             to="/app"
-            className={({ isActive }) => (isActive ? styles.activeLink : "")}
+            className={location.pathname === "/app" ? styles.activeLink : ""}
           >
             <IoHomeOutline />
             <span>Home</span>
