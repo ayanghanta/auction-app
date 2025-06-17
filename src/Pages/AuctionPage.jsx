@@ -46,6 +46,7 @@ function AuctionPage() {
     legalDocument,
     isLive,
     currentBid: currentBidAmount,
+    seller: sellerId,
     currentBidDeails,
   } = auctionProduct;
 
@@ -95,11 +96,7 @@ function AuctionPage() {
               <p className={styles.title}>Historical Significance:</p>
               <p className={styles.descriptionText}>{historicalSignificance}</p>
             </div>
-            <SellerOverview
-              sellerImage={"/users/default-user.jpg"}
-              sellerName="Ajoy Adak"
-              productsSold={7}
-            />
+            <SellerOverview sellerId={sellerId} />
           </div>
         </div>
         <div>

@@ -86,6 +86,18 @@ function CreateBid({ basePrice, currentBidDeails }) {
       </p>
     );
 
+  if (!isLoading && user.role === "admin")
+    return (
+      <div className={styles.adminResText}>
+        <p className={styles.mainWarnText}>
+          Admins cannot participate in the auction
+        </p>
+        <p className={styles.subtext}>
+          This account is for administrative purposes only
+        </p>
+      </div>
+    );
+
   return (
     <div className={styles.container}>
       <div className={styles.form}>
