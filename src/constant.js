@@ -1,5 +1,5 @@
-export const BASE_URL = `http://localhost:3000`;
-// export const BASE_URL = `https://vintage-vault-server.onrender.com`;
+// export const BASE_URL = `http://localhost:3000`;
+export const BASE_URL = `https://vintage-vault-server.onrender.com`;
 export const RES_PER_PAGE_HOME = 6;
 
 const RESOURSE_URL = "https://pub-d6a7e6da52644dd6a6b521489ffdcba2.r2.dev";
